@@ -15,4 +15,8 @@ class TeachersController < ApplicationController
       redirect_to '/404'
     end
   end
+
+  def show
+    @teacher = Teacher.find(params[:id])
+  end
 end

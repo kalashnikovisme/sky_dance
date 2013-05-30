@@ -22,4 +22,9 @@ class TeachersControllerTest < ActionController::TestCase
     post :create, teacher: attributes
     assert_redirected_to '/404'
   end
+
+  test "should show teacher" do
+    get :show, id: @teacher
+    assert_response :success
+  end
 end

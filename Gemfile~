@@ -12,7 +12,7 @@ gem 'validates'
 gem 'coveralls', require: false
 gem 'jquery-rails'
 gem 'enumerize'
-gem 'paperclip'
+gem "paperclip"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

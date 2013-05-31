@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530210556) do
+ActiveRecord::Schema.define(:version => 20130531003231) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(:version => 20130530210556) do
     t.integer  "teacher_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "teacher_photos", :force => true do |t|
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "teacher_id"
   end
 
   create_table "teachers", :force => true do |t|

@@ -45,4 +45,14 @@ class TeachersController < ApplicationController
       redirect_to '/404'
     end
   end
+
+  def destroy
+    if admin_signed_in?
+      @teacher = Teacher.find params[:id]
+      @teacher.destroy
+      redirect_to teachers_url
+    else
+     redirect_to '/404'
+    end
+  end
 end

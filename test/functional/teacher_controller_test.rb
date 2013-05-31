@@ -69,4 +69,21 @@ class TeachersControllerTest < ActionController::TestCase
     put :update, id: @teacher, teacher: attributes
     assert_redirected_to '/404'
   end
+
+  test "should destroy teacher" do
+    admin_sign_in @admin    
+
+    assert_difference('Teacher.count', -1) do
+      delete :destroy, id: @teacher
+    end
+
+    assert_redirected_to teachers_path
+  end
+
+  test "should not destroy teacher" do
+    assert_difference('Teacher.count', 0) do
+      delete :destroy, id: @teacher
+    end
+    assert_redirected_to '/404'
+  end
 end

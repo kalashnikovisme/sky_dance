@@ -7,7 +7,7 @@ class TeachersControllerTest < ActionController::TestCase
   end
  
   test 'should create teacher' do
-    admin_sign_in(@admin)
+    admin_sign_in @admin
     
     attributes = attributes_for :teacher
     post :create, teacher: attributes
@@ -32,5 +32,12 @@ class TeachersControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns :teachers
+  end
+
+  test "should get new" do
+    admin_sign_in @admin
+
+    get :new
+    assert_response :success
   end
 end

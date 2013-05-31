@@ -3,11 +3,3 @@ class Teacher < ActiveRecord::Base
   
   has_many :teacher_photos, :dependent => :destroy
 end
-
-class TeacherPhoto < ActiveRecord::Base
-  attr_accessible :teacher_id
-
-  belongs_to :teacher
-  has_attached_file :photo
-  validates :photo, :presence => true
-end

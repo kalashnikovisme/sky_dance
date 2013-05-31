@@ -5,7 +5,9 @@ SkyDance::Application.routes.draw do
   match "/404" => "errors#not_found"
   match "admin" => "admins#login"
 
-  resources :teachers
+  resources :teachers do
+    resources :teacher_photos
+  end
   resources :admins do
     collection do
       post "login"
@@ -13,4 +15,6 @@ SkyDance::Application.routes.draw do
       get "panel" => "admins#panel"
     end
   end
+  
+  resource :teacher_photos
 end

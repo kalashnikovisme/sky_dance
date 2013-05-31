@@ -41,6 +41,11 @@ class TeachersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test 'should not get new' do
+    get :new
+    assert_redirected_to '/404'
+  end
+
   test "should get edit" do
     admin_sign_in @admin  
 

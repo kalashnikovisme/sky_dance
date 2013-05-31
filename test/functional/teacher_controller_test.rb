@@ -23,8 +23,14 @@ class TeachersControllerTest < ActionController::TestCase
     assert_redirected_to '/404'
   end
 
-  test "should show teacher" do
+  test 'should show teacher' do
     get :show, id: @teacher
     assert_response :success
+  end
+
+  test "should get index" do
+    get :index
+    assert_response :success
+    assert_not_nil assigns :teachers
   end
 end

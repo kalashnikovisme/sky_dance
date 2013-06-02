@@ -82,6 +82,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.1)
     mime-types (1.23)
     minitest (4.3.3)
     multi_json (1.7.4)
@@ -92,6 +93,10 @@ GEM
       cocaine (~> 0.5.0)
       mime-types
     polyglot (0.3.3)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -139,6 +144,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
+    slop (3.4.4)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -179,6 +185,7 @@ DEPENDENCIES
   jquery-rails
   minitest
   paperclip
+  pry
   rails (= 3.2.13)
   rspec
   sass-rails (~> 3.2.3)

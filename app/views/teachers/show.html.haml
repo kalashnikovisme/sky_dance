@@ -5,5 +5,7 @@
 = @teacher.description 
 %br
 = @teacher.motto
-%br
+%p
+-@teacher.teacher_photos.each do |photo|
+  %img{ :src => photo }
 = link_to t('.upload_photos'), "#{@teacher.id}/teacher_photos/new"

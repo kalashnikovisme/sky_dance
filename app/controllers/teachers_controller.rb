@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
   def new
-    if admin_signed_in?
+    if admin_signed_in? 
       @teacher = Teacher.new
     else
       redirect_to '/404'
@@ -10,7 +10,7 @@ class TeachersController < ApplicationController
   def create
     if admin_signed_in?
       @teacher = Teacher.new params[:teacher]
-      if @teacher.save
+      if @teacher.save  
         redirect_to @teacher
       else
         render action: "new"
@@ -21,7 +21,9 @@ class TeachersController < ApplicationController
   end
 
   def show
-    @teacher = Teacher.find(params[:id])
+    @teacher = Teacher.find params[:id]
+    @teacher_photos = TeacherPhoto.find_by_teacher_id @teacher.id
+    session[:teacher_id] = @teacher.id
   end
   
   def index

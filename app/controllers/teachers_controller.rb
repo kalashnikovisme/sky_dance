@@ -1,6 +1,10 @@
 class TeachersController < ApplicationController
   def new
-    @teacher = Teacher.new
+    if admin_signed_in?
+      @teacher = Teacher.new
+    else
+      redirect_to '/404'
+    end
   end
   
   def create

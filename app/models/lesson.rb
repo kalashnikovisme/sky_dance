@@ -6,5 +6,5 @@ class Lesson < ActiveRecord::Base
   enumerize :status, in: [ :places, :not_places, :record_group ], default: :record_group
 
   belongs_to :teacher
-  belongs_to :dance_genre
+  belongs_to :genre
 end

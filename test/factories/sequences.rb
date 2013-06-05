@@ -7,6 +7,10 @@ FactoryGirl.define do
     "string-#{n}"
   end
 
+  sequence :photo do |n|
+    "photo#{n}.jpg"
+  end
+
   sequence :email do |n|
     "email#{n}@test.ru"
   end

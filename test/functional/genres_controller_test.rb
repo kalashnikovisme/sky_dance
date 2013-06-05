@@ -22,4 +22,15 @@ class GenresControllerTest < ActionController::TestCase
     post :create, genre: attributes
     assert_redirected_to '/404'
   end
+
+  test "should get genres index" do
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:genres)
+  end
+
+  test "should show genre" do
+    get :show, id: @genre
+    assert_response :success
+  end
 end

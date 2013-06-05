@@ -1,4 +1,13 @@
 class GenresController < ApplicationController
+  def index
+    @genres = Genre.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @genres }
+    end
+  end
+
   def new
     @genre = Genre.new
   end
@@ -13,6 +22,15 @@ class GenresController < ApplicationController
       end
     else
       redirect_to '/404'
+    end
+  end
+
+  def show
+    @genre = Genre.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @genre }
     end
   end
 end

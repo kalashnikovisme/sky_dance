@@ -6,6 +6,9 @@ ru:
   teachers:
     show:
       upload_photo: 'Загрузить фотографию'
+      back:         'Назад'
+      edit:         'Изменить'
+      destroy:      'Удалить'
 
   date:
     abbr_day_names:

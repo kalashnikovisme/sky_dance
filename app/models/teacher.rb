@@ -2,11 +2,9 @@ class Teacher < ActiveRecord::Base
   attr_accessible :description,
                   :first_name,
                   :middle_name,
-                  :motto,
-                  :photo
+                  :motto
 
-  has_attached_file :photo
-  mount_uploader :photo, PhotoUploader
+  has_many :photos
 
   validates :first_name, presence: true
   validates :middle_name, presence: true

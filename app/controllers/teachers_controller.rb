@@ -22,7 +22,7 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find params[:id]
-    session[:teacher_id] = @teacher.id
+    set_viewed_teacher(@teacher)
   end
 
   def index

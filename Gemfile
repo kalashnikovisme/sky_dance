@@ -10,11 +10,11 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'validates'
 gem 'enumerize'
-gem 'paperclip'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'carrierwave'
+gem 'nested_form'
 
 group :assets do
   gem 'jquery-rails'

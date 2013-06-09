@@ -16,7 +16,7 @@
     - @teachers.each do |teacher|
       %tr
         %th
-        -#  %img{ :src => teacher.photo }
+          %img{ :src => teacher.photos.first.photo }
         %td= link_to teacher.id, teacher_path(teacher)
         %td= teacher.first_name
         %td= teacher.middle_name

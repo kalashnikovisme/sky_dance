@@ -14,6 +14,7 @@ gem 'paperclip'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem 'carrierwave'
 
 group :assets do
   gem 'jquery-rails'

@@ -6,6 +6,7 @@
       = f.input :middle_name
       = f.input :description
       = f.input :motto
+      = f.file_field :photo, :label => 'Your avatar please'
       .form-actions
         = f.button :submit, :class => 'btn-primary'
         = link_to t('.cancel'), teachers_path, :class => 'btn'

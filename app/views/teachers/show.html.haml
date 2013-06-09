@@ -1,25 +1,16 @@
 - model_class = Teacher
 .page-header
-  %h1=t '.title'
-
+  %h1= @teacher.fio
 %p
-  %strong= :fio
-  %br
-  = @teacher.fio
-%p
-  %strong= :description
-  %br
   = @teacher.description
 %p
-  %strong= :motto
-  %br
   = @teacher.motto
+  -# -@teacher.teacher_photos.each do |photo|
+    %img.img-polaroid{ :src => photo }
+  -#%br
 
 %p
-  -@teacher.teacher_photos.each do |photo|
-    %img{ :src => photo }
-  =link_to t('.upload_photo'), "#{@teacher.id}/teacher_photos/new"
-
+  = link_to t('.upload_photo'), "#{@teacher.id}/teacher_photos/new", :class => "btn"
 .form-actions
   = link_to t('.back'), teachers_path, :class => 'btn'
   = link_to t('.edit'), edit_teacher_path(@teacher), :class => 'btn'

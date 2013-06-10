@@ -11,8 +11,4 @@ class Teacher < ActiveRecord::Base
   validates :description, presence: true
   validates :motto, presence: true,
                     length: { maximum: 140 }
-
-  def fio
-    "#{first_name} #{middle_name}"
-  end
 end

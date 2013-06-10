@@ -21,12 +21,12 @@ class TeachersController < ApplicationController
   end
 
   def show
-    @teacher = Teacher.find params[:id]
+    @teacher = Teacher.find(params[:id]).decorate
     set_viewed_teacher(@teacher)
   end
 
   def index
-    @teachers = Teacher.all
+    @teachers = TeacherDecorator.decorate_collection(Teacher.all)
   end
 
   def edit

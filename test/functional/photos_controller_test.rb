@@ -13,5 +13,8 @@ class PhotosControllerTest < ActionController::TestCase
     attributes = attributes_for :photo
     post :create, photo: attributes
     assert_response :redirect
+
+    #photo = Photo.last
+    #assert_equal attributes[:photo].url, photo[:photo].url
   end
 end

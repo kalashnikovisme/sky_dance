@@ -5,12 +5,16 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new params[:photo]
-    @photo.teacher = viewed_teacher
-    if @photo.save
-      redirect_to @photo.teacher
+    if admin_signed_in?
+      @photo = Photo.new params[:photo]
+      @photo.teacher = viewed_teacher
+      if @photo.save
+        redirect_to @photo.teacher
+      else
+        render action: 'new'
+      end
     else
-      render action: 'new'
+      redirect_to '/404'
     end
   end
 end

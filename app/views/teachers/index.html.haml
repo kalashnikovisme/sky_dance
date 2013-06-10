@@ -16,6 +16,7 @@
     - @teachers.each do |teacher|
       %tr
         %th
+        - unless teacher.photos.blank?
           %img{ :src => teacher.photos.first.photo }
         %td= link_to teacher.id, teacher_path(teacher)
         %td= teacher.first_name

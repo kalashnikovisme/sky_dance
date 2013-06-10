@@ -9,11 +9,11 @@ class AdminsController < ApplicationController
         admin_sign_in @admin
         redirect_to "/admins/panel"
       else
-        flash[:notice] = "Неверный логин или пароль"
+        flash[:notice] = t 'wrong_login'
       end
     end
   end
-  
+
   def logout
     admin_sign_out
     redirect_to :root

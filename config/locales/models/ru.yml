@@ -1,0 +1,13 @@
+ru:
+  activerecord:
+    models:
+      teacher:        Учитель
+    attributes:
+      teacher:
+        first_name:   Фамилия
+        middle_name:  Имя
+        description:  Резюме
+        motto:        Девиз
+        fio:          Полное имя
+      teacher_photo:
+        photo:        Фото

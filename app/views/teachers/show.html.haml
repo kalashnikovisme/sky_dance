@@ -9,8 +9,9 @@
   - @teacher.photos.each do |file|
     %img{ :src => file.photo }
     %br
-  = link_to t('.add_photo'), add_photo_teacher_url, :class => 'btn'
-.form-actions
+  - if session[:admin_id]
+    = link_to t('.add_photo'), add_photo_teacher_url, :class => 'btn'
+    .form-actions
+      = link_to t('.edit'), edit_teacher_path(@teacher), :class => 'btn'
+      = link_to t('.destroy'), teacher_path(@teacher), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
   = link_to t('.back'), teachers_path, :class => 'btn'
-  = link_to t('.edit'), edit_teacher_path(@teacher), :class => 'btn'
-  = link_to t('.destroy'), teacher_path(@teacher), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

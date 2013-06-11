@@ -16,6 +16,7 @@ gem "twitter-bootstrap-rails"
 gem 'carrierwave'
 gem 'nested_form'
 gem 'draper', '~> 1.0.0'
+gem 'enumerize'
 
 group :assets do
   gem 'jquery-rails'

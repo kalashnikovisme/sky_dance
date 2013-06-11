@@ -1,11 +1,6 @@
 class GenresController < ApplicationController
   def index
     @genres = Genre.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @genres }
-    end
   end
 
   def new
@@ -26,11 +21,6 @@ class GenresController < ApplicationController
   end
 
   def show
-    @genre = Genre.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @genre }
-    end
+    @genre = Genre.find params[:id]
   end
 end

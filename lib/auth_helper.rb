@@ -10,7 +10,7 @@ module AuthHelper
   def admin_sign_out
     session[:admin_id] = nil
   end
-  
+
   def authenticate_admin?(admin, password)
     admin.password === password
   end
@@ -21,5 +21,13 @@ module AuthHelper
 
   def viewed_teacher
     viewed_teacher = Teacher.find(session[:viewed_teacher_id])
+  end
+
+  def set_viewed_genre(viewed_genre)
+    session[:viewed_genre_id] = viewed_genre.id
+  end
+
+  def viewed_genre
+    viewed_genre = Genre.find(session[:viewed_genre_id])
   end
 end

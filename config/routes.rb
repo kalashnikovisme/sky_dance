@@ -20,5 +20,10 @@ SkyDance::Application.routes.draw do
     end
   end
 
-  resources :genres
+  resources :videos
+  resources :genres do
+    member do
+      get 'add_video' => "videos#create"
+    end
+  end
 end

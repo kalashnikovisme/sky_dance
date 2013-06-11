@@ -4,13 +4,11 @@
   %tr
     %th description
     %th title
-    %th video_link
 
   - @genres.each do |genre|
     %tr
       %td= genre.description
       %td= genre.title
-      %td= genre.video_link
 %br
 
 = link_to 'New genre', new_genre_path

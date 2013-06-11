@@ -8,6 +8,7 @@ class Genre < ActiveRecord::Base
   #validates :photo, presence: true
 
   has_many :videos
+  has_many :groups
 
   mount_uploader :photo, PhotoUploader
 end

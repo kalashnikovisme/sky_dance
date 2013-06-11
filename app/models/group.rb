@@ -1,7 +1,12 @@
 class Group < ActiveRecord::Base
-  attr_accessible :category,
-                  :once_price,
-                  :price
+  extend Enumerize
+
+  attr_accessible :once_price,
+                  :price,
+                  :space_group
+
+  enumerize :space_group, in: [:there_places, :there_not_places, :group_formed],
+                          default: :there_places
 
   belongs_to :genre
   belongs_to :teacher

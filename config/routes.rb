@@ -20,5 +20,5 @@ SkyDance::Application.routes.draw do
     end
   end
 
-  resource :teacher_photos
+  resources :genres
 end

@@ -3,9 +3,9 @@ class Group < ActiveRecord::Base
 
   attr_accessible :once_price,
                   :price,
-                  :space_group
+                  :space
 
-  enumerize :space_group, in: [:there_places, :there_not_places, :group_formed],
+  enumerize :space, in: [:there_places, :there_not_places, :group_formed],
                           default: :there_places
 
   belongs_to :genre
@@ -14,5 +14,5 @@ class Group < ActiveRecord::Base
 
   validates :once_price, presence: true
   validates :price, presence: true
-  validates :space_group, presence: true
+  validates :space, presence: true
 end

@@ -57,7 +57,7 @@ class TeachersController < ApplicationController
       @teacher.destroy
       redirect_to teachers_url
     else
-     redirect_to '/404'
+      redirect_to '/404'
     end
   end
 end

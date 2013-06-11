@@ -10,8 +10,9 @@ class Group < ActiveRecord::Base
 
   belongs_to :genre
   belongs_to :teacher
+  belongs_to :category
 
-  validates :category, presence: true
   validates :once_price, presence: true
   validates :price, presence: true
+  validates :space_group, presence: true
 end

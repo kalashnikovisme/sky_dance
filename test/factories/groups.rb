@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :group do
-    category    { generate :string }
+    category
     once_price  { generate :integer }
     price       { generate :integer }
     teacher

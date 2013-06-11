@@ -20,6 +20,7 @@ SkyDance::Application.routes.draw do
     end
   end
 
+  resources :groups
   resources :videos
   resources :genres do
     member do

@@ -14,6 +14,7 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'carrierwave'
+gem 'rmagick'
 gem 'nested_form'
 gem 'draper', '~> 1.0.0'
 gem 'enumerize'

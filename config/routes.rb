@@ -1,8 +1,4 @@
 SkyDance::Application.routes.draw do
-<<<<<<< Temporary merge branch 1
-  resources :teachers
-  resources :genres
-=======
 
   root :to => "welcome#index"
 
@@ -24,6 +20,13 @@ SkyDance::Application.routes.draw do
     end
   end
 
-  resource :teacher_photos
->>>>>>> Temporary merge branch 2
+  resources :lessons
+  resources :categories
+  resources :groups
+  resources :videos
+  resources :genres do
+    member do
+      get 'add_video' => "videos#create"
+    end
+  end
 end

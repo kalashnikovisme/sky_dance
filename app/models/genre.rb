@@ -5,7 +5,7 @@ class Genre < ActiveRecord::Base
 
   validates :description, presence: true
   validates :title, presence: true
-  #validates :photo, presence: true
+  validates :photo, presence: true
 
   has_many :videos
   has_many :groups

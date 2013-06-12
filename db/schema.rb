@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< Temporary merge branch 1
-ActiveRecord::Schema.define(:version => 20130605204726) do
-=======
-ActiveRecord::Schema.define(:version => 20130609191523) do
->>>>>>> Temporary merge branch 2
+ActiveRecord::Schema.define(:version => 20130611234400) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -24,26 +20,35 @@ ActiveRecord::Schema.define(:version => 20130609191523) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "categories", :force => true do |t|
+    t.string   "describe"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "genres", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.string   "video_link"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.string "description"
+    t.string "photo"
+    t.string "title"
+  end
+
+  create_table "groups", :force => true do |t|
+    t.integer  "once_price"
+    t.integer  "price"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "genre_id"
+    t.integer  "teacher_id"
+    t.string   "space"
+    t.integer  "category_id"
   end
 
   create_table "lessons", :force => true do |t|
-    t.string   "group"
-    t.date     "day_of_week"
     t.time     "time"
-    t.integer  "price"
-    t.integer  "teacher_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "day"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "group_id"
   end
 
   create_table "photos", :force => true do |t|
@@ -57,16 +62,6 @@ ActiveRecord::Schema.define(:version => 20130609191523) do
 
   add_index "photos", ["attachable_id"], :name => "index_photos_on_attachable_id"
 
-  create_table "teacher_photos", :force => true do |t|
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.integer  "teacher_id"
-  end
-
   create_table "teachers", :force => true do |t|
     t.string   "first_name"
     t.string   "middle_name"
@@ -75,6 +70,13 @@ ActiveRecord::Schema.define(:version => 20130609191523) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "photo"
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "link"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "genre_id"
   end
 
 end

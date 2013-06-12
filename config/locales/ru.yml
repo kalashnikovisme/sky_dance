@@ -1,4 +1,7 @@
 ru:
+
+  wrong_login: 'Неверный логин или пароль'
+
   time:
     formats:
       default: "%d-%m-%Y %H:%M"

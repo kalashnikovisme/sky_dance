@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530210556) do
+<<<<<<< Temporary merge branch 1
+ActiveRecord::Schema.define(:version => 20130605204726) do
+=======
+ActiveRecord::Schema.define(:version => 20130609191523) do
+>>>>>>> Temporary merge branch 2
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -20,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20130530210556) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "dance_genres", :force => true do |t|
+  create_table "genres", :force => true do |t|
     t.string   "title"
     t.string   "description"
     t.string   "photo_file_name"
@@ -42,6 +46,27 @@ ActiveRecord::Schema.define(:version => 20130530210556) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "photos", :force => true do |t|
+    t.text     "description"
+    t.string   "photo"
+    t.integer  "attachable_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "teacher_id"
+  end
+
+  add_index "photos", ["attachable_id"], :name => "index_photos_on_attachable_id"
+
+  create_table "teacher_photos", :force => true do |t|
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "teacher_id"
+  end
+
   create_table "teachers", :force => true do |t|
     t.string   "first_name"
     t.string   "middle_name"
@@ -49,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20130530210556) do
     t.string   "motto"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "photo"
   end
 
 end

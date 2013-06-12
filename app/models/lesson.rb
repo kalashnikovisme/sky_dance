@@ -1,10 +1,19 @@
 class Lesson < ActiveRecord::Base
   extend Enumerize
-  
-  attr_accessible :day_of_week, :group, :price, :teacher_id, :time
 
-  enumerize :status, in: [ :places, :not_places, :record_group ], default: :record_group
+  attr_accessible :day, :time
 
-  belongs_to :teacher
-  belongs_to :genre
+  enumerize :day, in: [:monday,
+                       :tuesday,
+                       :wednesday,
+                       :thursday,
+                       :friday,
+                       :saturday,
+                       :sunday],
+                  default: :monday
+
+  belongs_to :group
+
+  validates :day, presence: true
+  validates :time, presence: true
 end

@@ -55,6 +55,10 @@ GEM
       simplecov (>= 0.7)
       thor
     diff-lcs (1.2.1)
+    draper (1.0.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0.3)
     enumerize (0.6.1)
       activesupport (>= 3.2)
     erubis (2.7.0)
@@ -124,6 +128,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.2)
+    request_store (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.13.0)
@@ -188,6 +193,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   coveralls
+  draper (~> 1.0.0)
   enumerize
   factory_girl_rails
   haml

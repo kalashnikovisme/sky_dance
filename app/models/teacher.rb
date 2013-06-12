@@ -5,14 +5,11 @@ class Teacher < ActiveRecord::Base
                   :motto
 
   has_many :photos
+  has_many :groups
 
   validates :first_name, presence: true
   validates :middle_name, presence: true
   validates :description, presence: true
   validates :motto, presence: true,
                     length: { maximum: 140 }
-
-  def fio
-    "#{first_name} #{middle_name}"
-  end
 end

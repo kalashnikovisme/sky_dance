@@ -21,12 +21,12 @@ class TeachersController < ApplicationController
   end
 
   def show
-    @teacher = Teacher.find params[:id]
+    @teacher = Teacher.find(params[:id]).decorate
     set_viewed_teacher(@teacher)
   end
 
   def index
-    @teachers = Teacher.all
+    @teachers = TeacherDecorator.decorate_collection(Teacher.all)
   end
 
   def edit
@@ -57,7 +57,7 @@ class TeachersController < ApplicationController
       @teacher.destroy
       redirect_to teachers_url
     else
-     redirect_to '/404'
+      redirect_to '/404'
     end
   end
 end

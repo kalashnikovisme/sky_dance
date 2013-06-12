@@ -7,7 +7,7 @@
   = @genre.description
 %p
   - @genre.videos.each do |video|
-    %iframe {:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "135", :src => "http://www.youtube.com/embed/#{video.link}", :title => "YouTube video player", :width => "240"}
+    %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "135", :src => "http://www.youtube.com/embed/#{video.link}", :title => "YouTube video player", :width => "240"}
 %br
   -#FIXME
   - if session[:admin_id]

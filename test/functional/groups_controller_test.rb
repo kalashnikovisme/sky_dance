@@ -59,7 +59,7 @@ class GroupsControllerTest < ActionController::TestCase
       delete :destroy, id: @group
     end
 
-    assert_redirected_to schedule_path
+    assert_redirected_to lessons_path
   end
 
   test "should not destroy group" do

@@ -1,5 +1,9 @@
 class LessonsController < ApplicationController
 
+  def index
+    @lessons = Lesson.all
+  end
+
   def new
     @lesson = Lesson.new
   end
@@ -8,7 +12,7 @@ class LessonsController < ApplicationController
     if admin_signed_in?
       @lesson = Lesson.new params[:lesson]
       if @lesson.save
-        redirect_to schedule_path
+        redirect_to lessons_path
       else
         render action: 'new'
       end
@@ -29,7 +33,7 @@ class LessonsController < ApplicationController
     if admin_signed_in?
       @lesson = Lesson.find params[:id]
       if @lesson.update_attributes params[:lesson]
-        redirect_to schedule_path
+        redirect_to lessons_path
       else
         render action: 'edit'
       end
@@ -42,7 +46,7 @@ class LessonsController < ApplicationController
     if admin_signed_in?
       @lesson = Lesson.find params[:id]
       @lesson.destroy
-      redirect_to schedule_path
+      redirect_to lessons_path
     else
       redirect_to '/404'
     end

@@ -25,6 +25,7 @@ ru:
     index:
       teachers:             'Преподаватели'
       text_about_sky_dance: 'SKYDance is the best dance school in the world!!!'
+      sky_dance_video:      'Видео Sky Dance'
 
   date:
     abbr_day_names:

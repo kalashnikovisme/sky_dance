@@ -4,6 +4,7 @@ class Video < ActiveRecord::Base
 
   belongs_to :genre
 
+  #FIXME
   validates :link, presence: true
   #                 url: true
 end

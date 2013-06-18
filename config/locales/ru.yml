@@ -23,7 +23,8 @@ ru:
 
   welcome:
     index:
-      teachers:   'Преподаватели'
+      teachers:             'Преподаватели'
+      text_about_sky_dance: 'SKYDance is the best dance school in the world!!!'
 
   date:
     abbr_day_names:

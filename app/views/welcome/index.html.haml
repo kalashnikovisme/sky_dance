@@ -7,4 +7,10 @@
   .fotorama{ "data-nav" => "thumbs", "data-width" => "300px", "data-ratio" => "800/600" }
     = @teachers.each do |teacher|
       %img{ :src => teacher.photos.first.photo, "data-caption" => teacher.fio }
+.span4
+  = @video.from_youtube
+.span4
+  = t('.text_about_sky_dance')
+.span4
+
 

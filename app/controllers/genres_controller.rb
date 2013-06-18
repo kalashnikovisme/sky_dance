@@ -22,5 +22,6 @@ class GenresController < ApplicationController
 
   def show
     @genre = Genre.find params[:id]
+    set_viewed_genre @genre
   end
 end

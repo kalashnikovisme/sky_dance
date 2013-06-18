@@ -1,3 +1,10 @@
-= @photos_top.each do |p|
-  %img{ :src => p.photo }
+= javascript_include_tag  "jquery-1.10.1.min.js"
+= stylesheet_link_tag     "fotorama"
+= javascript_include_tag  "fotorama"
+= stylesheet_link_tag     "welcome"
+.center
+  %h2= t('.teachers')
+  .fotorama{ "data-nav" => "thumbs", "data-width" => "300px", "data-ratio" => "800/600" }
+    = @teachers.each do |teacher|
+      %img{ :src => teacher.photos.first.photo, "data-caption" => teacher.fio }
 

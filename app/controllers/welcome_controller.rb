@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
     #@news = News.first 3
     @video = Video.last
     @photos_bottom = Photo.last 3
-    @photos_top = Photo.all
+    @teachers = TeacherDecorator.decorate_collection Teacher.all.shuffle!
   end
 
   def contacts

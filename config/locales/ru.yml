@@ -21,6 +21,10 @@ ru:
       teachers:             'Преподаватели '
       contacts:             'Контакты'
 
+  welcome:
+    index:
+      teachers:   'Преподаватели'
+
   date:
     abbr_day_names:
     - Вс

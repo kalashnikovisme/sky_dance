@@ -1,7 +1,27 @@
-/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require_tree .
-*/
+body {
+  font-family: micfont;
+  background-color: lightgrey;
+  padding-bottom: 20px;
+  min-width: 1200px;
+  padding: 10px;
+}
+
+.navbar-opacity-white {
+  opacity: 0.7
+  background-color: white;
+}
+
+.navbar-margin-top {
+  margin-top: 200px;
+}
+
+.content {
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -khtml-border-radius:10px;
+  box-shadow: 0 0 20px;
+  background-color: white;
+  padding: 10px;
+  min-height: 300px;
+}

@@ -6,14 +6,11 @@
   = stylesheet_link_tag    "bootstrap_and_overrides", :media => "all"
   = csrf_meta_tags
 %body
-  .navbar-wrapper
+  .navbar-wrapper.navbar-margin-top
     .container
-      .navbar.navbar-inverse
+      .navbar.navbar-opacity-white
         .navbar-inner
           %a.btn.btn-navbar{ "data-target" => ".nav-collapse", "data-toggle" => "collapse" }
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
           .nav-collapse.collapse
             %ul.nav
               %li.active
@@ -26,4 +23,6 @@
                 %a{ :href => "teachers#index"}= t('.teachers')
               %li
                 %a{ :href => "welcome#contacts" }= t('.contacts')
-  = yield
+  .row-fluid
+    .container.content
+      = yield

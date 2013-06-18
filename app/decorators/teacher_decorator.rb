@@ -11,4 +11,5 @@ class TeacherDecorator < Draper::Decorator
   def fio
     "#{model.first_name} #{model.middle_name}"
   end
+
 end

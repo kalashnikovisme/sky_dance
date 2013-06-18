@@ -26,7 +26,7 @@ class TeachersController < ApplicationController
   end
 
   def index
-    @teachers = TeacherDecorator.decorate_collection(Teacher.all)
+    @teachers = TeacherDecorator.decorate_collection Teacher.all
   end
 
   def edit

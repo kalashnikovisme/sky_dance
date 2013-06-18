@@ -16,11 +16,11 @@
               %li.active
                 %a{ :href => "welcome#about" }= t('.about_us')
               %li
-                %a{ :href => "lessons#index" }= t('.schedule_and_prices')
+                %a{ :href => lessons_path }= t('.schedule_and_prices')
               %li
-                %a{ :href => "genres#index" }= t('.dances')
+                %a{ :href => genres_path }= t('.dances')
               %li
-                %a{ :href => "teachers#index"}= t('.teachers')
+                %a{ :href => teachers_path }= t('.teachers')
               %li
                 %a{ :href => "welcome#contacts" }= t('.contacts')
   .row-fluid

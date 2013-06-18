@@ -1,0 +1,6 @@
+= simple_form_for @video, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :link
+  = f.input :genre_id
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), videos_path, :class => 'btn'

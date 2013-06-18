@@ -1,0 +1,33 @@
+= javascript_include_tag  "jquery-1.10.1.min.js"
+= stylesheet_link_tag     "fotorama"
+= javascript_include_tag  "fotorama"
+= stylesheet_link_tag     "welcome"
+.row
+  .center
+    %h2= t('.teachers')
+    .fotorama{ "data-nav" => "thumbs", "data-width" => "300px", "data-ratio" => "800/600" }
+      = @teachers.each do |teacher|
+        %img{ :src => teacher.photos.first.photo, "data-caption" => teacher.fio }
+%hr
+.span4
+  .row
+    %h3= t('.sky_dance_video')
+    = @video.from_youtube
+  .row
+    %h3= t('.last_photos')
+    - @photos_bottom.each do |photo|
+      %img.img-polaroid.mini{ :src => photo.photo }
+.span4
+  = t('.text_about_sky_dance')
+.span4
+  %h3= t('.dances')
+  %table.table.table-hover
+    - @genres.each do |genre|
+      %tr.table-aligned
+        %th
+          %a{ :href => genre_path(genre) }
+            %img.img-circle.micro{ :src => genre.photo }
+        %th
+          %a{ :href => genre_path(genre) }
+            = genre.title
+

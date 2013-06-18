@@ -1,0 +1,13 @@
+%h1 Listing genres
+
+%table
+  - @genres.each do |genre|
+    %tr
+      %td= image_tag genre.photo.thumb.url
+      %td
+        %h3= link_to genre.title, genre
+        %br= genre.description
+
+%br
+
+= link_to 'New genre', new_genre_path

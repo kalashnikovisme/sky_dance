@@ -1,0 +1,12 @@
+= stylesheet_link_tag "teachers", :media => "all"
+
+= simple_form_for @teacher, :html => { :class => 'form-horizontal' } do |f|
+  - f.with_options :input_html => { :class => :span6 } do |f|
+    .field
+      = f.input :first_name
+      = f.input :middle_name
+      = f.input :description
+      = f.input :motto
+      .form-actions
+        = f.button :submit, :class => 'btn-primary'
+        = link_to t('.cancel'), teachers_path, :class => 'btn'

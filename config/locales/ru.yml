@@ -13,6 +13,14 @@ ru:
       edit:         'Изменить'
       destroy:      'Удалить'
 
+  layouts:
+    application:
+      about_us:             'О нас'
+      schedule_and_prices:  'Расписание и цены'
+      dances:               'Танцы'
+      teachers:             'Преподаватели '
+      contacts:             'Контакты'
+
   date:
     abbr_day_names:
     - Вс

@@ -3,6 +3,27 @@
   %title SkyDance
   = stylesheet_link_tag    "application", :media => "all	"
   = javascript_include_tag "application"
+  = stylesheet_link_tag    "bootstrap_and_overrides", :media => "all"
   = csrf_meta_tags
 %body
+  .navbar-wrapper
+    .container
+      .navbar.navbar-inverse
+        .navbar-inner
+          %a.btn.btn-navbar{ "data-target" => ".nav-collapse", "data-toggle" => "collapse" }
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          .nav-collapse.collapse
+            %ul.nav
+              %li.active
+                %a{ :href => "welcome#about" }= t('.about_us')
+              %li
+                %a{ :href => "lessons#index" }= t('.schedule_and_prices')
+              %li
+                %a{ :href => "genres#index" }= t('.dances')
+              %li
+                %a{ :href => "teachers#index"}= t('.teachers')
+              %li
+                %a{ :href => "welcome#contacts" }= t('.contacts')
   = yield

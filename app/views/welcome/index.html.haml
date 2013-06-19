@@ -13,10 +13,15 @@
   .row
     %h3= t('.sky_dance_video')
     = @video.from_youtube
+    %br
+    %a.btn.btn-info{ :href => "http://vk.com/ulmic" }= t('.video_our_group_vk')
   .row
     %h3= t('.last_photos')
     - @photos_bottom.each do |photo|
       %img.img-polaroid.mini{ :src => photo.photo }
+    %br
+    %br
+    %a.btn.btn-info{ :href => "http://vk.com/ulmic" }= t('.photo_our_group_vk')
 .span4
   = t('.text_about_sky_dance')
 .span4

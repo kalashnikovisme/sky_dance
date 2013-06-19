@@ -13,16 +13,17 @@
           %a.btn.btn-navbar{ "data-target" => ".nav-collapse", "data-toggle" => "collapse" }
           .nav-collapse.collapse
             %ul.nav
-              %li.active
+              %li
                 %a{ :href => "welcome#about" }= t('.about_us')
               %li
-                %a{ :href => "lessons#index" }= t('.schedule_and_prices')
+                %a{ :href => lessons_path }= t('.schedule_and_prices')
               %li
-                %a{ :href => "genres#index" }= t('.dances')
+                %a{ :href => genres_path }= t('.dances')
               %li
-                %a{ :href => "teachers#index"}= t('.teachers')
+                %a{ :href => teachers_path }= t('.teachers')
               %li
                 %a{ :href => "welcome#contacts" }= t('.contacts')
   .row-fluid
     .container.content
       = yield
+  = render 'layouts/footer'

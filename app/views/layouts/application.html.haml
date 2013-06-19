@@ -14,7 +14,7 @@
           .nav-collapse.collapse
             %ul.nav
               %li
-                %a{ :href => "welcome#about" }= t('.about_us')
+                %a{ :href => "/welcome/about" }= t('.about_us')
               %li
                 %a{ :href => lessons_path }= t('.schedule_and_prices')
               %li
@@ -22,7 +22,7 @@
               %li
                 %a{ :href => teachers_path }= t('.teachers')
               %li
-                %a{ :href => "welcome#contacts" }= t('.contacts')
+                %a{ :href => "/welcome/contacts" }= t('.contacts')
   .row-fluid
     .container.content
       = yield

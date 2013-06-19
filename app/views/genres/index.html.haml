@@ -1,13 +1,23 @@
-%h1 Listing genres
+= stylesheet_link_tag "genres"
 
-%table
+%h1= t('.dance_genres')
+
+%table.table.table-hover
   - @genres.each do |genre|
     %tr
-      %td= image_tag genre.photo.thumb.url
+      %td
+        %a{ :href => genre_path(genre) }
+          %img{ :src => genre.photo.thumb }
       %td
         %h3= link_to genre.title, genre
         %br= genre.description
+      %td
+        -#FIXME
+        - if session[:admin_id]
+          = link_to t('.edit'), edit_genre_path(genre), :class => 'btn btn-mini'
+          = link_to t('.destroy'), genre_path(genre), :method => :delete, :class => 'btn btn-mini btn-danger'
 
 %br
-
-= link_to 'New genre', new_genre_path
+-#FIXME
+- if session[:admin_id]
+  = link_to t('.new_genre'), new_genre_path, :class => 'btn btn-primary'

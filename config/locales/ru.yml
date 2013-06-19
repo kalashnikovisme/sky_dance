@@ -30,6 +30,13 @@ ru:
     edit:
       title:      'Редактировать данные преподавателя'
 
+  genres:
+    index:
+      dance_genres: 'Танцевальные жанры'
+      edit:         'Изменить'
+      destroy:      'Удалить'
+      new_genre:    'Добавить жанр'
+
   layouts:
     application:
       about_us:             'О нас'

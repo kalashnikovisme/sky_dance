@@ -3,7 +3,7 @@
 %h1= t('.sky_dance_teachers')
 %ul.thumbnails
   - @teachers.each do |teacher|
-    %li.span3
+    %li.span3.teacher_cell
       .thumbnail
         %a{ :href => teacher_path(teacher) }
           = teacher.first_photo

@@ -8,16 +8,55 @@ ru:
 
   teachers:
     show:
-      upload_photo: 'Загрузить фотографию'
-      back:         'Назад'
-      edit:         'Изменить'
-      destroy:      'Удалить'
+      upload_photo:   'Загрузить фотографию'
+      back:           'Назад'
+      edit:           'Изменить'
+      destroy:        'Удалить'
+      add_photo:      'Добавить фото'
+      admins_buttons:  'Кнопки администратора'
     index:
       sky_dance_teachers:   'Преподаватели Sky Dance'
       edit:                 'Изменить'
       destroy:              'Удалить'
       new_teacher:          'Добавить преподавателя'
+    form:
+      not_more_than_140_symbols:  'Не больше 140 символов'
+      add_teacher:                'Добавить преподавателя'
+      cancel:                     'Отмена'
+      teacher_description:        'Рассказ о преподавателя, о его деятельности, достижениях и заслугах'
+      required_fields:            '* - поля обязательные для заполнения'
+    new:
+      title:      'Добавить преподавателя'
+    edit:
+      title:      'Редактировать данные преподавателя'
 
+  genres:
+    index:
+      dance_genres: 'Танцевальные жанры'
+      edit:         'Изменить'
+      destroy:      'Удалить'
+      new_genre:    'Добавить жанр'
+    show:
+      admins_buttons:   'Кнопки администратора'
+      add_video:        'Добавить видео'
+      edit:             'Изменить'
+      destroy:          'Удалить'
+      back:             'Назад'
+    new:
+      title:            'Добавить жанр'
+    form:
+      save_genre:       'Сохранить жанр'
+      cancel:           'Отмена'
+
+  videos:
+    new:
+      title:                  'Добавить видео'
+    edit:
+      title:                  'Редактировать видео'
+    form:
+      adding_video_to_genre:  'Добавление видео к странице жанра '
+      add_video:              'Добавить видео'
+      cancel:                 'Отмена'
 
   layouts:
     application:

@@ -7,7 +7,9 @@ class VideosController < ApplicationController
   def create
     if admin_signed_in?
       @video = Video.new params[:video]
-      @video.genre = viewed_genre
+      #FIXME
+      @genre = viewed_genre
+      @video.genre = @genre
       if @video.save
         redirect_to @video.genre
       else

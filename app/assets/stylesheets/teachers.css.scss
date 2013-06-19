@@ -17,3 +17,15 @@
   margin-right: 5px;
   margin-bottom: 5px;
 }
+
+.field textarea {
+  height: 100px;
+}
+
+.field textarea:focus {
+  height: 300px;
+}
+
+.teacher_cell {
+  bottom: 0px;
+}

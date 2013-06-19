@@ -2,6 +2,8 @@ ru:
   activerecord:
     models:
       teacher:        Учитель
+      video:          Видео
+      genre:          Жанр
     attributes:
       teacher:
         first_name:   Фамилия
@@ -9,5 +11,8 @@ ru:
         description:  Резюме
         motto:        Девиз
         fio:          Полное имя
-      teacher_photo:
-        photo:        Фото
+      video:
+        link:         Ссылка
+      genre:
+        title:        Название
+        description:  Описание

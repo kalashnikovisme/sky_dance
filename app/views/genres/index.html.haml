@@ -10,7 +10,7 @@
           %img{ :src => genre.photo.thumb }
       %td
         %h3= link_to genre.title, genre
-        %br= genre.description
+        %br= genre.entry
       %td
         -#FIXME
         - if session[:admin_id]

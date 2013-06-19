@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
   def index
-    @genres = GenreDecorator.decorate_collection  Genre.all
+    @genres = GenreDecorator.decorate_collection Genre.all
   end
 
   def new

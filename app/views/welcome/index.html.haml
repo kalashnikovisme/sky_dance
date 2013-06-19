@@ -5,7 +5,7 @@
 .row
   .center
     %h2= t('.teachers')
-    .fotorama{ "data-nav" => "thumbs", "data-width" => "300px", "data-ratio" => "800/600" }
+    .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "300px","data-ratio" => "800/600" }
       = @teachers.each do |teacher|
         %img{ :src => teacher.photos.first.photo, "data-caption" => teacher.fio }
 %hr

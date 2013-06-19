@@ -42,6 +42,21 @@ ru:
       edit:             'Изменить'
       destroy:          'Удалить'
       back:             'Назад'
+    new:
+      title:            'Добавить жанр'
+    form:
+      save_genre:       'Сохранить жанр'
+      cancel:           'Отмена'
+
+  videos:
+    new:
+      title:                  'Добавить видео'
+    edit:
+      title:                  'Редактировать видео'
+    form:
+      adding_video_to_genre:  'Добавление видео к странице жанра '
+      add_video:              'Добавить видео'
+      cancel:                 'Отмена'
 
   layouts:
     application:

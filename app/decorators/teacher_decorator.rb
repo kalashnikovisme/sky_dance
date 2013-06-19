@@ -12,9 +12,4 @@ class TeacherDecorator < Draper::Decorator
     "#{model.first_name} #{model.middle_name}"
   end
 
-  def entry
-    if model.description
-      model.description.first 140
-    end
-  end
 end

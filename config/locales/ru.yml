@@ -12,6 +12,12 @@ ru:
       back:         'Назад'
       edit:         'Изменить'
       destroy:      'Удалить'
+    index:
+      sky_dance_teachers:   'Преподаватели Sky Dance'
+      edit:                 'Изменить'
+      destroy:              'Удалить'
+      new_teacher:          'Добавить преподавателя'
+
 
   layouts:
     application:
@@ -20,12 +26,22 @@ ru:
       dances:               'Танцы'
       teachers:             'Преподаватели '
       contacts:             'Контакты'
+    footer:
+      about_us:             'О нас'
+      our_adress:           'Наш адрес'
+      schedule_and_prices:  'Расписание и цены'
+      contacts:             'Контакты'
+      phone:                'Телефон'
 
   welcome:
     index:
       teachers:             'Преподаватели'
       text_about_sky_dance: 'SKYDance is the best dance school in the world!!!'
       sky_dance_video:      'Видео Sky Dance'
+      dances:               'Танцевальные жанры'
+      video_our_group_vk:   'Видео в нашей группе во ВКонтакте'
+      photo_our_group_vk:   'Фотографии в нашей группе во ВКонтакте'
+      last_photos:          'Последние фотографии'
 
   date:
     abbr_day_names:

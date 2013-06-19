@@ -3,7 +3,11 @@ class Group < ActiveRecord::Base
 
   attr_accessible :once_price,
                   :price,
-                  :space
+                  :space,
+                  :genre_id,
+                  :teacher_id,
+                  :category_id
+
 
   enumerize :space, in: [:there_places, :there_not_places, :group_formed],
                           default: :there_places

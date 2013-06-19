@@ -20,6 +20,12 @@ SkyDance::Application.routes.draw do
     end
   end
 
+  resources :welcome do
+    collection do
+      get "about"
+      get "contacts"
+    end
+  end
   resources :lessons
   resources :categories
   resources :groups

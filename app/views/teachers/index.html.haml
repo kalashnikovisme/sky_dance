@@ -3,7 +3,8 @@
   - @teachers.each do |teacher|
     %li.span3
       .thumbnail
-        = teacher.first_photo
+        %a{ :href => teacher_path(teacher) }
+          = teacher.first_photo
         %h3= teacher.fio
         %p= teacher.entry
         %a.btn.btn-large{ :href => teacher_path(teacher) } Подробнее

@@ -12,4 +12,11 @@ class TeacherDecorator < Draper::Decorator
     "#{model.first_name} #{model.middle_name}"
   end
 
+  def genres
+    genres = []
+    model.groups.each do |group|
+      genres.push(group.genre)
+    end
+    genres.uniq
+  end
 end

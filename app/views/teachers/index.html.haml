@@ -9,10 +9,9 @@
           = teacher.first_photo
         %h3= teacher.fio
         %p= teacher.motto
-        - teacher.groups.each do |group|
-          %a{ :href => genre_path(group.genre) }
-            %img.img-rounded.micro.float-left{ :src => group.genre.photo }
-        %br
+        - teacher.genres.each do |genre|
+          %a{ :href => genre_path(genre) }
+            %img.img-rounded.micro.row-icon{ :src => genre.photo }
         %br
         %br
         %a.btn.btn-medium{ :href => teacher_path(teacher) } Подробнее

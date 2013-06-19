@@ -12,6 +12,12 @@ ru:
       back:         'Назад'
       edit:         'Изменить'
       destroy:      'Удалить'
+    index:
+      sky_dance_teachers:   'Преподаватели Sky Dance'
+      edit:                 'Изменить'
+      destroy:              'Удалить'
+      new_teacher:          'Добавить преподавателя'
+
 
   layouts:
     application:

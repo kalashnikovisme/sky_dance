@@ -17,3 +17,11 @@
   margin-right: 5px;
   margin-bottom: 5px;
 }
+
+.field textarea {
+  height: 100px;
+}
+
+.field textarea:focus {
+  height: 300px;
+}

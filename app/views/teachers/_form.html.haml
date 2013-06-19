@@ -5,7 +5,8 @@
     .field
       = f.input :first_name
       = f.input :middle_name
-      = f.input :description
+      = f.label :description
+      = f.text_area :description, :class => :span6, :row => 5, :placeholder => "Описание преподавателя"
       = f.input :motto
       .form-actions
         = f.button :submit, :class => 'btn-primary'

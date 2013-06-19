@@ -8,10 +8,12 @@ ru:
 
   teachers:
     show:
-      upload_photo: 'Загрузить фотографию'
-      back:         'Назад'
-      edit:         'Изменить'
-      destroy:      'Удалить'
+      upload_photo:   'Загрузить фотографию'
+      back:           'Назад'
+      edit:           'Изменить'
+      destroy:        'Удалить'
+      add_photo:      'Добавить фото'
+      admins_buttons:  'Кнопки администратора'
     index:
       sky_dance_teachers:   'Преподаватели Sky Dance'
       edit:                 'Изменить'

@@ -2,28 +2,27 @@
 = stylesheet_link_tag     "fotorama"
 = javascript_include_tag  "fotorama"
 
-.row
-  .page-header
-    %h1= @teacher.fio
-.row
-  .span8
-    = @teacher.description
-  .span3
-    .row
-      .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "200px", "data-ratio" => "800/600" }
+.page-header
+  %h1= @teacher.fio
+.row-fluid
+  .span7
+    %p{ :align => "justify" }
+      = @teacher.description
+    %p
+      -#FIXME
+      - if session[:admin_id]
+        = link_to t('.add_photo'), add_photo_teacher_url, :class => 'btn'
+        .form-actions
+          %small= t('.admins_buttons')
+          %br
+          = link_to t('.edit'), edit_teacher_path(@teacher), :class => 'btn'
+          = link_to t('.destroy'), teacher_path(@teacher), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+    = link_to t('.back'), teachers_path, :class => 'btn'
+  .span5
+    .row-fluid
+      .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "400px", "data-ratio" => "800/600" }
         = @teacher.photos.each do |file|
           %img{ :src => file.photo }
-    .row
+    .row-fluid
       %h3= @teacher.motto
-  -#FIXME
-  - if session[:admin_id]
-    = link_to t('.add_photo'), add_photo_teacher_url, :class => 'btn'
-    .form-actions
-      = link_to t('.edit'), edit_teacher_path(@teacher), :class => 'btn'
-      = link_to t('.destroy'), teacher_path(@teacher), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
-  = link_to t('.back'), teachers_path, :class => 'btn'
-
-
-
-
 

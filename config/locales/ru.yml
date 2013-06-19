@@ -36,6 +36,12 @@ ru:
       edit:         'Изменить'
       destroy:      'Удалить'
       new_genre:    'Добавить жанр'
+    show:
+      admins_buttons:   'Кнопки администратора'
+      add_video:        'Добавить видео'
+      edit:             'Изменить'
+      destroy:          'Удалить'
+      back:             'Назад'
 
   layouts:
     application:

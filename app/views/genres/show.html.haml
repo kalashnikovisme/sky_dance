@@ -1,18 +1,26 @@
-- model_class = Genre
 .page-header
   %h1= @genre.title
-%p
-  %img{ :src => @genre.photo }
-%p
-  = @genre.description
-%p
-  - @genre.videos.each do |video|
-    %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "135", :src => "http://www.youtube.com/embed/#{video.link}", :title => "YouTube video player", :width => "240"}
-%br
-  -#FIXME
-  - if session[:admin_id]
-    =link_to t('.add_video'), new_video_path, :class => 'btn'
-    .form-actions
-      = link_to t('.edit'), edit_genre_path(@genre), :class => 'btn'
-      = link_to t('.destroy'), genre_path(@genre), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
-  = link_to t('.back'), genres_path, :class => 'btn'
+.row-fluid
+  .span9
+    .row-fluid
+      %p{ :align => "justify" }
+        = @genre.description
+    .row-fluid
+      - @genre.videos.each do |video|
+        .float-left
+          = video.decorate.from_youtube
+        %br
+    .row-fluid
+      -#FIXME
+      - if session[:admin_id]
+        .form-actions
+          %small= t('.admins_buttons')
+          %br
+          = link_to t('.add_video'), new_video_path, :class => 'btn'
+          = link_to t('.edit'), edit_genre_path(@genre), :class => 'btn'
+          = link_to t('.destroy'), genre_path(@genre), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+    = link_to t('.back'), teachers_path, :class => 'btn'
+  .span3
+    .row-fluid
+      %img{ :src => @genre.photo }
+

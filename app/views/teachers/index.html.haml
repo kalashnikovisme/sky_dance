@@ -1,3 +1,5 @@
+= stylesheet_link_tag "teachers", :media => "all"
+
 %h1= t('.sky_dance_teachers')
 %ul.thumbnails
   - @teachers.each do |teacher|
@@ -7,7 +9,13 @@
           = teacher.first_photo
         %h3= teacher.fio
         %p= teacher.motto
-        %a.btn.btn-large{ :href => teacher_path(teacher) } Подробнее
+        - teacher.groups.each do |group|
+          %a{ :href => genre_path(group.genre) }
+            %img.img-rounded.micro.float-left{ :src => group.genre.photo }
+        %br
+        %br
+        %br
+        %a.btn.btn-medium{ :href => teacher_path(teacher) } Подробнее
 
         -#FIXME
         - if session[:admin_id]

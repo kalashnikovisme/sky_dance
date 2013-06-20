@@ -7,5 +7,5 @@ class Video < ActiveRecord::Base
   #FIXME
   validates :link, presence: true
   #                 url: true
-  validates_associated :genre
+  validates :genre, presence: true
 end

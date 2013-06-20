@@ -17,9 +17,10 @@ class Group < ActiveRecord::Base
   belongs_to :category
   has_many :lessons, dependent: :destroy
 
+  #FIXME
   validates :once_price, presence: true
   validates :price, presence: true
-  validates :space, presence: true
+  #validates :space, presence: true
   validates :genre_id, presence: true
   validates :teacher_id, presence: true
   validates :category_id, presence: true

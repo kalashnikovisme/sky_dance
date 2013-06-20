@@ -1,6 +1,10 @@
 class GroupsController < ApplicationController
   def new
-    @group = Group.new
+    if admin_signed_in?
+      @group = Group.new
+    else
+      redirect_to '/404'
+    end
   end
 
   def create

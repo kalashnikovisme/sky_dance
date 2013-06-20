@@ -10,11 +10,20 @@ class GroupsControllerTest < ActionController::TestCase
     admin_sign_in @admin
 
     attributes = attributes_for :group
+
+    genre = create :genre
+    teacher = create :teacher
+    category = create :category
+
+    attributes[:genre_id] = genre.id
+    attributes[:teacher_id] = teacher.id
+    attributes[:category_id] = category.id
+
     post :create, group: attributes
     assert_response :redirect
 
     group = Group.last
-    assert_equal attributes[:category], group.category
+    assert_equal attributes[:category_id], group.category_id
   end
 
   test "should not create group" do

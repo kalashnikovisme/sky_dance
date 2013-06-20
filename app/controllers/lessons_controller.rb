@@ -3,14 +3,17 @@ class LessonsController < ApplicationController
   def index
     @genres = Genre.all
     @lessons = Lesson.all
+    #FIXME
+    @days = [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
   end
 
   def new
     @lesson = Lesson.new
   end
 
-  def create
+  def create(group_id)
     if admin_signed_in?
+      params[:group_id] = group_id
       @lesson = Lesson.new params[:lesson]
       if @lesson.save
         redirect_to lessons_path

@@ -7,4 +7,8 @@ class GroupDecorator < Draper::Decorator
       lesson.time.strftime("%H:%M")
     end
   end
+
+  def find_lesson_by_day(day)
+    model.lessons.find_by_day(day)
+  end
 end

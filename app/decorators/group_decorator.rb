@@ -23,15 +23,13 @@ class GroupDecorator < Draper::Decorator
   end
 
   #FIXME
-  def there_places_locale
-    "есть места в группе"
-  end
-
-  def there_not_places_locale
-    "мест в группе нет"
-  end
-
-  def group_formed_locale
-    "группа формируется"
+  def space_locale
+    if model.space === "there_places"
+      space_local = "есть места в группе"
+    end
+    if model.space === "there_not_places"
+      space_local = "мест в группе нет"
+    end
+    space_local = "группа формируется"
   end
 end

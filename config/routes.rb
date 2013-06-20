@@ -26,7 +26,11 @@ SkyDance::Application.routes.draw do
       get "contacts"
     end
   end
-  resources :categories, :except => [:show, :index]
+  resources :categories, :except => [:show, :index] do
+    collection do
+      get 'edit_all'
+    end
+  end
   resources :groups, :except => [:show, :index]
   resources :lessons, :except => :show
 

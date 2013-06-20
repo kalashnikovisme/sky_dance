@@ -19,6 +19,11 @@ ru:
         description:  Описание
       group:
         space:        Наличие мест в группе
+        once_price:   Цена за одно занятие
+        price:        Цена за комплекс занятий
+        genre:        Танцевальный жанр
+        teacher:      Преподаватель
+        category:     Категория группы
   enumerize:
     space:
       there_places:     Есть места

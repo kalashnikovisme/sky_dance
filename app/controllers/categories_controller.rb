@@ -17,9 +17,9 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def edit
+  def edit_all
     if admin_signed_in?
-      @category = Category.find params[:id]
+      @categories = Category.all
     else
       redirect_to '/404'
     end
@@ -27,12 +27,13 @@ class CategoriesController < ApplicationController
 
   def update
     if admin_signed_in?
-      @category = Category.find params[:id]
-
-      if @category.update_attributes params[:category]
-        redirect_to lessons_path
-      else
-        render action: "edit"
+      @categories = Category.all
+      @categories.each do |cat|
+        if cat.update_attributes params[:category]
+          redirect_to lessons_path
+        else
+          render action: "edit_all"
+        end
       end
     else
       redirect_to '/404'

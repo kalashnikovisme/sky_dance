@@ -1,0 +1,36 @@
+.table-aligned {
+  table-layout: fixed;
+  text-align: center;
+}
+
+.mini {
+  width: 50px;
+  height: 50px;
+}
+
+.micro-photo {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  float: left;
+}
+
+.micro-text-with-photo {
+  position: relative;
+  float: left;
+  width: 50px;
+  margin-left: 5px;
+  line-height: 15px;
+}
+
+.margin-top {
+  margin-top: 5px;
+}
+
+.margin-bottom {
+  margin-bottom: 5px;
+}
+
+.micro-text {
+  font-size: 7pt;
+}

@@ -1,50 +1,65 @@
-- model_class = Lesson
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize
-%table.table.table-striped
-  %thead
-    %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:time)
-      %th= model_class.human_attribute_name(:day)
-      %th= model_class.human_attribute_name(:group_id)
-      %th= model_class.human_attribute_name(:created_at)
-      %th=t '.actions', :default => t("helpers.actions")
-  %tbody
-    - @lessons.each do |lesson|
-      %tr
-        %td= link_to lesson.id, lesson_path(lesson)
-        %td= lesson.time
-        %td= lesson.day
-        %td= lesson.group_id
-        %td=l lesson.created_at
-        %td
-          = link_to t('.edit', :default => t("helpers.links.edit")), edit_lesson_path(lesson), :class => 'btn btn-mini'
-          = link_to t('.destroy', :default => t("helpers.links.destroy")), lesson_path(lesson), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
-
-= link_to t('.new', :default => t("helpers.links.new")), new_lesson_path, :class => 'btn btn-primary'
+= stylesheet_link_tag "lessons"
 
 .page-header
   %h1= t('.schedule')
 - @genres.each do |genre|
-  = genre.title
-  %table.table.talbe-striped
-    - genre.groups.decorate.each do |group|
+  -#FIXME
+  - if genre.groups.any? or session[:admin_id]
+    %a{ :href => genre_path(genre) }
+      %img.img-rounded.mini{ :src => genre.photo.thumb }
+      %big= genre.title
+    %br
+    %br
+    -#FIXME
+    - if session[:admin_id]
+      = link_to t('.add_group'), new_group_path, :class => 'btn btn-primary margin-bottom'
+    %table.table.talbe-striped.table-bordered.table-aligned
       %tr
         %td
-          = group.lesson_time(:monday)
+          %small= t('.group')
         %td
-          = group.lesson_time(:tuesday)
+          %small= t('.monday')
         %td
-          = group.lesson_time(:wednesday)
+          %small= t('.tuesday')
         %td
-          = group.lesson_time(:thursday)
+          %small= t('.wednesday')
         %td
-          = group.lesson_time(:friday)
+          %small= t('.thursday')
         %td
-          = group.lesson_time(:saturday)
+          %small= t('.friday')
         %td
-          = group.lesson_time(:sunday)
-
-
-
+          %small= t('.saturday')
+        %td
+          %small= t('.sunday')
+        -#FIXME
+        - if session[:admin_id]
+          %td
+            %small= t('.actions')
+      - genre.groups.decorate.each do |group|
+        %tr
+          -#FIXME
+          - if group.lessons.any? or session[:admin_id]
+            %td
+              %a{ :href => teacher_path(group.teacher)  }
+                .micro-photo
+                  = group.teacher.decorate.first_photo
+                .micro-text-with-photo
+                  %small.micro-text= group.teacher.decorate.fio
+              %small= group.category.describe
+              %br
+              %small.micro-text= group.price_rub
+              %small.micro-text= group.once_price_rub
+              %br
+              %small.micro-text= group.space
+            - @days.each do |day|
+              %td
+                %b= group.lesson_time(day)
+                -#FIXME
+                - if group.find_lesson_by_day(day) and session[:admin_id]
+                  %br
+                  = link_to t('.edit', :default => t("helpers.links.edit")), edit_lesson_path(group.find_lesson_by_day(day)), :class => 'btn btn-mini margin-top'
+                  = link_to t('.destroy', :default => t("helpers.links.destroy")), lesson_path(group.find_lesson_by_day(day)), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger margin-top'
+          - if session[:admin_id]
+            %td
+              = link_to t('.add_lesson'), "lessons/new/#{group.id}", :class => 'btn btn-mini btn-primary margin-top'
+              = link_to t('.destroy_group', :default => t("helpers.links.destroy")), group_path(group), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger margin-top'

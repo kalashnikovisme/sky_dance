@@ -10,6 +10,8 @@ class LessonsControllerTest < ActionController::TestCase
     admin_sign_in @admin
 
     attributes = attributes_for :lesson
+    group = create :group
+    attributes[:group_id] = group.id
     post :create, lesson: attributes
     assert_response :redirect
 

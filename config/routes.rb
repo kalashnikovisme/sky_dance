@@ -5,7 +5,7 @@ SkyDance::Application.routes.draw do
   match "/404" => "errors#not_found"
   match "admin" => "admins#login"
 
-  resources :photos
+  resources :photos, :except => [:show, :index, :edit]
   resources :teachers do
     member do
       get 'add_photo' => "photos#create"
@@ -26,13 +26,20 @@ SkyDance::Application.routes.draw do
       get "contacts"
     end
   end
-  resources :lessons
-  resources :categories
-  resources :groups
-  resources :videos
+  resources :categories, :except => [:show, :index] do
+    collection do
+      get 'edit_all'
+    end
+  end
+  resources :groups, :except => [:show, :index]
+  resources :lessons, :except => :show
+
+  resources :videos, :except => [:show, :index]
   resources :genres do
     member do
       get 'add_video' => "videos#create"
     end
   end
+
+  get ':controller/:action/:group_id'
 end

@@ -48,6 +48,26 @@ ru:
       save_genre:       'Сохранить жанр'
       cancel:           'Отмена'
 
+  lessons:
+    index:
+      schedule:         'Расписание'
+      group:            'Группа'
+      monday:           'Понедельник'
+      tuesday:          'Вторник'
+      wednesday:        'Среда'
+      thursday:         'Четверг'
+      friday:           'Пятница'
+      saturday:         'Суббота'
+      sunday:           'Воскресенье'
+      add_group:        'Добавить группу'
+      edit:             'Изменить'
+      destroy:          'Удалить'
+      add_lesson:       'Добавить урок'
+      confirm:          'Вы уверены? Все занятия этой группы будут удалены.'
+      destroy_lesson:   'Удалить занятие'
+      destroy_group:    'Удалить группу'
+      actions:          'Действия'
+
   videos:
     new:
       title:                  'Добавить видео'
@@ -57,6 +77,16 @@ ru:
       adding_video_to_genre:  'Добавление видео к странице жанра '
       add_video:              'Добавить видео'
       cancel:                 'Отмена'
+
+  groups:
+    form:
+      add_category: 'Добавить категорию'
+      add_group:    'Добавить группу'
+      cancel:       'Отмена'
+    new:
+      add_group:    'Добавить группу'
+    edit:
+      edit_group:   'Изменить группу'
 
   layouts:
     application:

@@ -1,7 +1,6 @@
 = simple_form_for @lesson, :html => { :class => 'form-horizontal' } do |f|
   = f.input :time
   = f.input :day
-  = f.input :group_id
   .form-actions
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), lessons_path, :class => 'btn'

@@ -4,7 +4,7 @@ class Teacher < ActiveRecord::Base
                   :middle_name,
                   :motto
 
-  has_many :photos
+  has_many :photos, dependent: :destroy
   has_many :groups
 
   validates :first_name, presence: true

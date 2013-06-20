@@ -7,7 +7,7 @@ class GenresControllerTest < ActionController::TestCase
   end
 
   test 'should create genre' do
-    admin_sign_in(@admin)
+    admin_sign_in @admin
 
     attributes = attributes_for :genre
     post :create, genre: attributes
@@ -26,7 +26,7 @@ class GenresControllerTest < ActionController::TestCase
   test "should get genres index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:genres)
+    assert_not_nil assigns :genres
   end
 
   test "should show genre" do

@@ -44,4 +44,5 @@ FactoryGirl.define do
   sequence :file do |n|
     fixture_file_upload('logo.png', 'image/png')
   end
+
 end

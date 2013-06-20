@@ -9,7 +9,9 @@ class Group < ActiveRecord::Base
                   :category_id
 
 
-  enumerize :space, in: [:there_places, :there_not_places, :group_formed],
+  enumerize :space, in: [:there_places,
+                         :there_not_places,
+                         :group_formed],
                           default: :there_places
 
   belongs_to :genre

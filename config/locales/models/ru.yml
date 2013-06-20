@@ -4,6 +4,7 @@ ru:
       teacher:        Учитель
       video:          Видео
       genre:          Жанр
+      group:          Группа
     attributes:
       teacher:
         first_name:   Фамилия
@@ -16,3 +17,10 @@ ru:
       genre:
         title:        Название
         description:  Описание
+      group:
+        space:        Наличие мест в группе
+  enumerize:
+    space:
+      there_places:     Есть места
+      there_not_places: Мест нет
+      group_formed:     Группа формируется

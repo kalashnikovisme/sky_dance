@@ -8,13 +8,19 @@ class LessonsController < ApplicationController
   end
 
   def new
-    @lesson = Lesson.new
+    if admin_signed_in? && Group.find(params[:group_id])
+      @lesson = Lesson.new
+      #FIXME
+      session[:group_id] = params[:group_id]
+    else
+      redirect_to '/404'
+    end
   end
 
-  def create(group_id)
+  def create
     if admin_signed_in?
-      params[:group_id] = group_id
       @lesson = Lesson.new params[:lesson]
+      @lesson.group_id = session[:group_id]
       if @lesson.save
         redirect_to lessons_path
       else

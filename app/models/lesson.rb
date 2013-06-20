@@ -5,7 +5,6 @@ class Lesson < ActiveRecord::Base
                   :time,
                   :group_id
 
-  serialize :day, Array
   enumerize :day, in: [:monday,
                        :tuesday,
                        :wednesday,
@@ -17,7 +16,8 @@ class Lesson < ActiveRecord::Base
 
   belongs_to :group
 
-  validates :day, presence: true
+  #FIXME
+  #validates :day, presence: true
   validates :time, presence: true
-  validates :group_id, presence: true
+  #validates :group_id, presence: true
 end

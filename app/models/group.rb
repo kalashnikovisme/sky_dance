@@ -20,4 +20,7 @@ class Group < ActiveRecord::Base
   validates :once_price, presence: true
   validates :price, presence: true
   validates :space, presence: true
+  validates_associated :genre
+  validates_associated :teacher
+  validates_associated :category
 end

@@ -18,4 +18,5 @@ class Lesson < ActiveRecord::Base
 
   validates :day, presence: true
   validates :time, presence: true
+  validates_associated :group
 end

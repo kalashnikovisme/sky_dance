@@ -33,4 +33,50 @@ class GenresControllerTest < ActionController::TestCase
     get :show, id: @genre
     assert_response :success
   end
+
+  test "should get edit"  do
+    admin_sign_in @admin
+
+    get :edit, id: @genre
+    assert_response :success
+  end
+
+  test "should not edit with no access" do
+    get :edit, id: @genre
+    assert_redirected_to '/404'
+  end
+
+  test "should update genre" do
+    admin_sign_in @admin
+
+    attributes = attributes_for :genre
+    put :update, id: @genre, genre: attributes
+    assert_response :redirect
+
+    @genre.reload
+    assert_equal attributes[:title], @genre.title
+  end
+
+  test "should not update genre with no access" do
+    attributes = attributes_for :genre
+    put :update, id: @genre, genre: attributes
+    assert_redirected_to '/404'
+  end
+
+  test "should destroy genre" do
+    admin_sign_in @admin
+
+    assert_difference('Genre.count', -1) do
+      delete :destroy, id: @genre
+    end
+
+    assert_redirected_to genres_path
+  end
+
+  test "should not destroy genre" do
+    assert_difference('Genre.count', 0) do
+      delete :destroy, id: @genre
+    end
+    assert_redirected_to '/404'
+  end
 end

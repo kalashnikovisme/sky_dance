@@ -32,6 +32,8 @@
     - genre.groups.decorate.each do |group|
       %tr
         %td
+          = group.category.describe
+        %td
           = group.lesson_time(:monday)
         %td
           = group.lesson_time(:tuesday)

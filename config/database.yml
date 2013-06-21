@@ -23,3 +23,5 @@ production:
   encoding: unicode
   database: skydance
   pool: 5
+  username: skydance
+  password: 4815162342

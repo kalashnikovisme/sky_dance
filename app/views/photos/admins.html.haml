@@ -2,6 +2,7 @@
 
 = link_to t('.back'), teachers_path, :class => 'btn margin-bottom'
 %br
+
 - @photos.each do |photo|
   .image.margin-bottom
     %img.img-polaroid.margin-bottom{ :src => photo.photo }

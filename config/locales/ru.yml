@@ -39,7 +39,7 @@ ru:
       new_genre:    'Добавить жанр'
     show:
       admins_buttons:   'Кнопки администратора'
-      add_video:        'Добавить видео'
+      admins_video:     'Администрирование видео'
       edit:             'Изменить'
       destroy:          'Удалить'
       back:             'Назад'
@@ -48,6 +48,7 @@ ru:
     form:
       save_genre:       'Сохранить жанр'
       cancel:           'Отмена'
+      choose_new_photo: 'Выбрать новое фото'
 
   lessons:
     index:
@@ -78,6 +79,8 @@ ru:
       adding_video_to_genre:  'Добавление видео к странице жанра '
       add_video:              'Добавить видео'
       cancel:                 'Отмена'
+      destroy:                'Удалить'
+      confirm:                'Вы уверены?'
 
   groups:
     form:

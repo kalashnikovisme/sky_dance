@@ -36,9 +36,10 @@ SkyDance::Application.routes.draw do
   resources :lessons, :except => :show
 
   resources :videos, :except => [:show, :index]
+
   resources :genres do
     member do
-      get 'add_video' => "videos#create"
+      get 'admins_video' => "videos#create"
     end
   end
 

@@ -1,0 +1,9 @@
+= stylesheet_link_tag "videos"
+
+= render 'form'
+
+- @videos.each do |video|
+  .video.margin-bottom
+    = video.from_youtube
+    %br
+    = link_to t('.destroy'), video, :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger margin-bottom'

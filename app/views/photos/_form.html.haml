@@ -1,4 +1,15 @@
+= stylesheet_link_tag "photos"
+
 = simple_form_for @photo, :html => { :multipart => true } do |f|
   = f.label :photo
   = f.file_field :photo
-  = f.submit
+  = f.button :submit, t('.add_photo'), :class => 'btn btn-primary'
+
+= link_to t('.back'), teachers_path, :class => 'btn margin-bottom'
+%br
+
+- @photos.each do |photo|
+  .image.margin-bottom
+    %img.img-polaroid.margin-bottom{ :src => photo.photo }
+    %br
+    = link_to t('.destroy'), photo, :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger margin-bottom'

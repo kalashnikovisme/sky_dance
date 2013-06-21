@@ -114,10 +114,11 @@ ru:
       last_photos:          'Последние фотографии'
 
   photos:
-    admins:
+    form:
       destroy:    'Удалить'
       confirm:    'Вы уверены?'
       back:       'Назад'
+      add_photo:  'Добавить фото'
 
   date:
     abbr_day_names:

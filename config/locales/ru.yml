@@ -10,10 +10,11 @@ ru:
     show:
       upload_photo:   'Загрузить фотографию'
       back:           'Назад'
-      edit:           'Изменить'
-      destroy:        'Удалить'
+      edit:           'Изменить данные преподавателя'
+      destroy:        'Удалить преподавателя'
       add_photo:      'Добавить фото'
-      admins_buttons:  'Кнопки администратора'
+      admins_photo:   'Администрировать фотографии преподавателя'
+      admins_buttons: 'Кнопки администратора'
     index:
       sky_dance_teachers:   'Преподаватели Sky Dance'
       edit:                 'Изменить'
@@ -111,6 +112,11 @@ ru:
       video_our_group_vk:   'Видео в нашей группе во ВКонтакте'
       photo_our_group_vk:   'Фотографии в нашей группе во ВКонтакте'
       last_photos:          'Последние фотографии'
+
+  photos:
+    admins:
+      destroy:    'Удалить'
+      confirm:    'Вы уверены?'
 
   date:
     abbr_day_names:

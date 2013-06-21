@@ -17,4 +17,19 @@ class PhotosController < ApplicationController
       redirect_to '/404'
     end
   end
+
+  def destroy
+    if admin_signed_in?
+      @photo = Photo.find params[:id]
+      teacher = @photo.teacher
+      @photo.destroy
+      redirect_to admins_photos_path
+    else
+      redirect_to '/404'
+    end
+  end
+
+  def admins
+    @photos = viewed_teacher.photos
+  end
 end

@@ -1,0 +1,7 @@
+=stylesheet_link_tag "photos"
+
+- @photos.each do |photo|
+  .image
+    %img.img-polaroid{ :src => photo.photo }
+    %br
+    = link_to t('.destroy'), photo, :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger'

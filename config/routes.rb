@@ -5,7 +5,12 @@ SkyDance::Application.routes.draw do
   match "/404" => "errors#not_found"
   match "admin" => "admins#login"
 
-  resources :photos, :except => [:show, :index, :edit]
+  resources :photos, :except => [:show, :index, :edit] do
+    collection do
+      get 'admins'
+    end
+  end
+
   resources :teachers do
     member do
       get 'add_photo' => "photos#create"

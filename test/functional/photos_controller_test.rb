@@ -35,7 +35,7 @@ class PhotosControllerTest < ActionController::TestCase
       delete :destroy, id: @photo
     end
 
-    assert_redirected_to teacher
+    assert_redirected_to admins_photo_teacher_url
   end
 
   test "should not destroy photo with no access" do

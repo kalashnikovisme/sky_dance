@@ -1,7 +1,9 @@
 =stylesheet_link_tag "photos"
 
+= link_to t('.back'), teachers_path, :class => 'btn margin-bottom'
+%br
 - @photos.each do |photo|
-  .image
-    %img.img-polaroid{ :src => photo.photo }
+  .image.margin-bottom
+    %img.img-polaroid.margin-bottom{ :src => photo.photo }
     %br
-    = link_to t('.destroy'), photo, :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger'
+    = link_to t('.destroy'), photo, :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger margin-bottom'

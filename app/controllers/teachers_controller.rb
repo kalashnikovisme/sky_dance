@@ -22,7 +22,6 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id]).decorate
-    set_viewed_teacher(@teacher)
   end
 
   def index

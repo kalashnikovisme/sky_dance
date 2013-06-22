@@ -1,19 +1,19 @@
 class VideosController < ApplicationController
   def admins
     @video = Video.new
-    @video.genre = viewed_genre
     @genre = Genre.find params[:id]
+    @video.genre = @genre
     @videos = VideoDecorator.decorate_collection @genre.videos
   end
 
   def create
     if admin_signed_in?
       @video = Video.new params[:video]
-      @video.genre = @genre
+      @video.genre = Genre.find params[:id]
       if @video.save
-        redirect_to admins_video_genre_url(@video.genre)
+        redirect_to admins_videos_url(@video.genre)
       else
-        render action: 'new'
+        render action: 'admins'
       end
     else
       redirect_to '/404'
@@ -32,7 +32,7 @@ class VideosController < ApplicationController
     if admin_signed_in?
       @video = Video.find params[:id]
       if @video.update_attributes params[:video]
-        redirect_to admins_video_genre_url(@video.genre)
+        redirect_to admins_videos_url(@video.genre)
       else
         render action: 'edit'
       end
@@ -44,8 +44,9 @@ class VideosController < ApplicationController
   def destroy
     if admin_signed_in?
       @video = Video.find params[:id]
+      genre = @video.genre
       @video.destroy
-      redirect_to admins_video_genre_path
+      redirect_to admins_videos_url(genre)
     else
       redirect_to '/404'
     end

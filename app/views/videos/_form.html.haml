@@ -3,4 +3,4 @@
     = f.input :link
     .form-actions
       = f.button :submit, t('.add_video'), :class => 'btn btn-primary'
-      = link_to t('.cancel'), genre_path(Genre.find(session[:viewed_genre_id])), :class => 'btn'
+      = link_to t('.cancel'), @genre, :class => 'btn'

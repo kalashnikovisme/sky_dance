@@ -29,7 +29,7 @@ SkyDance::Application.routes.draw do
   end
   resources :categories, :except => [:show, :index] do
     collection do
-      get 'edit_all'
+      get 'admins'
     end
   end
   resources :groups, :except => [:show, :index]

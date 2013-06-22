@@ -1,3 +1,5 @@
+= stylesheet_link_tag "videos"
+
 -#FIXME
 - if session[:viewed_genre_id]
   %h3= t('.adding_video_to_genre')
@@ -8,6 +10,11 @@
       .form-actions
         = f.button :submit, t('.add_video'), :class => 'btn btn-primary'
         = link_to t('.cancel'), genre_path(Genre.find(session[:viewed_genre_id])), :class => 'btn'
+  - @videos.each do |video|
+    .video.margin-bottom
+      = video.from_youtube
+      %br
+      = link_to t('.destroy'), video, :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger margin-bottom'
 -else
-  %h1 Такой страницы не существует
+
   -#= render 'errors/not_found'

@@ -45,10 +45,16 @@
                   = group.teacher.decorate.first_photo
                 .micro-text-with-photo
                   %small.micro-text= group.teacher.decorate.fio
-              %small= group.category.describe
               %br
-              %small.micro-text= group.price_rub
-              %small.micro-text= group.once_price_rub
+              %br
+              %small.micro-text= group.category.describe
+              %br
+              %small.micro-text
+                = group.price
+                = t('.rub')
+              %small.micro-text
+                = group.once_price
+                = t('.rub')
               %br
               %small.micro-text.micro-text-with-photo= group.space_locale
             - @days.each do |day|

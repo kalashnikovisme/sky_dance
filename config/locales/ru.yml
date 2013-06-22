@@ -69,6 +69,7 @@ ru:
       destroy_lesson:   'Удалить занятие'
       destroy_group:    'Удалить группу'
       actions:          'Действия'
+      rub:              ' руб.'
 
   videos:
     new:

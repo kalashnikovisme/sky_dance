@@ -12,16 +12,6 @@ class GroupDecorator < Draper::Decorator
     model.lessons.find_by_day(day)
   end
 
-  def price_rub
-    #FIXME
-    "#{model.price} руб."
-  end
-
-  def once_price_rub
-    #FIXME
-    "#{model.once_price} руб."
-  end
-
   #FIXME
   def space_locale
     if model.space === "there_places"

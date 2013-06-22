@@ -12,7 +12,7 @@ SkyDance::Application.routes.draw do
 
   resources :teachers do
     member do
-      get 'admins_photo' => "photos#create"
+      get 'admins_photo' => "photos#admins"
     end
   end
 

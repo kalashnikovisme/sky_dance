@@ -1,12 +1,12 @@
 class PhotosController < ApplicationController
+
   def admins
     @photo = Photo.new
-    @photo.teacher = viewed_teacher
+    @photos = viewed_teacher.photos
   end
 
   def create
     if admin_signed_in?
-      @photos = viewed_teacher.photos
       @photo = Photo.new params[:photo]
       @photo.teacher = viewed_teacher
       if @photo.save

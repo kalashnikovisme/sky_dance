@@ -128,10 +128,11 @@ ru:
       last_photos:          'Последние фотографии'
 
   photos:
-    form:
+    admins:
       destroy:    'Удалить'
       confirm:    'Вы уверены?'
       back:       'Назад'
+    form:
       add_photo:  'Добавить фото'
 
   date:

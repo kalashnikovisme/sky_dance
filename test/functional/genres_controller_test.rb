@@ -6,6 +6,13 @@ class GenresControllerTest < ActionController::TestCase
     @admin = create :admin
   end
 
+  test 'should get new genre' do
+    admin_sign_in @admin
+
+    get :new
+    assert_response :success
+  end
+
   test 'should create genre' do
     admin_sign_in @admin
 

@@ -7,6 +7,18 @@ class PhotosControllerTest < ActionController::TestCase
     @photo = create :photo
   end
 
+  #test "should get admins" do
+  #  admin_sign_in @admin
+
+  #  get 'teachers/#{@teacher.id}/admins_photo'
+  #  assert_response :success
+  #end
+
+  #test "should not get admins" do
+  #  get :admins
+  #  assert_response :success
+  #end
+
   test "should create photo" do
     admin_sign_in @admin
     set_viewed_teacher @teacher

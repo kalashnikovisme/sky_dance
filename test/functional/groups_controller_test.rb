@@ -6,6 +6,18 @@ class GroupsControllerTest < ActionController::TestCase
     @group = create :group
   end
 
+  test "should get new" do
+    admin_sign_in @admin
+
+    get :new
+    assert_response :success
+  end
+
+  test "should not get new" do
+    get :new
+    assert_redirected_to '/404'
+  end
+
   test "should create group" do
     admin_sign_in @admin
 

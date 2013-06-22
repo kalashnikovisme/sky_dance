@@ -11,9 +11,10 @@
 %hr
 .span4
   .row
-    %h3= t('.sky_dance_video')
-    = @video.from_youtube
-    %br
+    - if @video
+      %h3= t('.sky_dance_video')
+      = @video.from_youtube
+      %br
     %a.btn.btn-info{ :href => "http://vk.com/ulmic" }= t('.video_our_group_vk')
   .row
     %h3= t('.last_photos')

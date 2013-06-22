@@ -1,6 +1,11 @@
 = stylesheet_link_tag "videos"
 
+%h3= t('.admins_video_of_genre')
+%h3= @genre.title
+
 = render 'form'
+
+= link_to t('.back'), @genre, :class => 'btn margin-bottom'
 
 - @videos.each do |video|
   .video.margin-bottom

@@ -39,7 +39,7 @@ SkyDance::Application.routes.draw do
 
   resources :genres do
     member do
-      get 'admins_video' => "videos#create"
+      get 'admins_video' => "videos#admins"
     end
   end
 

@@ -76,11 +76,13 @@ ru:
     edit:
       title:                  'Редактировать видео'
     form:
-      adding_video_to_genre:  'Добавление видео к странице жанра '
       add_video:              'Добавить видео'
       cancel:                 'Отмена'
+    admins:
+      admins_video_of_genre:  'Администрирование видео жанра'
       destroy:                'Удалить'
       confirm:                'Вы уверены?'
+      back:                   'Назад'
 
   groups:
     form:

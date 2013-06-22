@@ -15,21 +15,21 @@
       = link_to t('.add_group'), new_group_path, :class => 'btn btn-primary margin-bottom'
     %table.table.talbe-striped.table-bordered.table-aligned
       %tr
-        %td
+        %th
           %small= t('.group')
-        %td
+        %th
           %small= t('.monday')
-        %td
+        %th
           %small= t('.tuesday')
-        %td
+        %th
           %small= t('.wednesday')
-        %td
+        %th
           %small= t('.thursday')
-        %td
+        %th
           %small= t('.friday')
-        %td
+        %th
           %small= t('.saturday')
-        %td
+        %th
           %small= t('.sunday')
         -#FIXME
         - if session[:admin_id]

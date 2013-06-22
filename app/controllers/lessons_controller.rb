@@ -2,7 +2,6 @@ class LessonsController < ApplicationController
 
   def schedule
     @genres = Genre.all
-    @lessons = Lesson.all
     #FIXME
     @days = [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
   end
@@ -20,7 +19,7 @@ class LessonsController < ApplicationController
       @lesson = Lesson.new params[:lesson]
       @lesson.group = Group.find params[:id]
       if @lesson.save
-        redirect_to lessons_path
+        redirect_to schedule_path
       else
         render action: 'new'
       end

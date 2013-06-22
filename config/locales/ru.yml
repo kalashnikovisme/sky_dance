@@ -92,6 +92,11 @@ ru:
     edit:
       edit_group:   'Изменить группу'
 
+  categories:
+    admins:
+      destroy:  'Удалить'
+      save:     'Сохранить'
+
   layouts:
     application:
       about_us:             'О нас'

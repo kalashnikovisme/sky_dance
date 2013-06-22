@@ -1,7 +1,6 @@
 = render 'form'
 
 - @categories.each do |cat|
-  = simple_form_for cat do |f|
-    = f.input :describe
-    = f.button :submit, t('.save'), :class => 'btn btn-danger margin-bottom'
-    = link_to t('.destroy'), cat, :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger margin-bottom'
+  = label_tag cat.describe
+  = link_to t('.edit'), edit_category_path(cat), :class => 'btn btn-warning margin-bottom'
+  = link_to t('.destroy'), cat, :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger margin-bottom'

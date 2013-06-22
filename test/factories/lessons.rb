@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :lesson do
     time  Time.now
     #FIXME
-    #day   { generate :enumerize }
+    #day   "#{:monday}"
     group
   end
 end

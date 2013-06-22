@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
 
   def schedule
     @genres = Genre.all
+    @lessons = Lesson.all
     #FIXME
     @days = [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
   end

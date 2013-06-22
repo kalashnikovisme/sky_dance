@@ -15,7 +15,7 @@
         .form-actions
           %small= t('.admins_buttons')
           %br
-          = link_to t('.admins_photo'), admins_photo_teacher_path, :class => 'btn btn-warning margin-bottom'
+          = link_to t('.admins_photo'), admins_photos_url(@teacher), :class => 'btn btn-warning margin-bottom'
           %br
           = link_to t('.edit'), edit_teacher_path(@teacher), :class => 'btn'
           = link_to t('.destroy'), teacher_path(@teacher), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

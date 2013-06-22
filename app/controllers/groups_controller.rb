@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
     if admin_signed_in?
       @group = Group.new params[:group]
       if @group.save
-        redirect_to lessons_path
+        redirect_to schedule_path
       else
         render action: 'new'
       end

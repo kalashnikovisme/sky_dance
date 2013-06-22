@@ -3,11 +3,11 @@
 
 .span4
   %h3= t('.about_us')
-  %a{ :href => "welcome#about" }= t('.about_us')
+  %a{ :href => about_welcome_index_path }= t('.about_us')
   %br
-  %a{ :href => "welcome#place" }= t('.our_adress')
+  %a{ :href => place_welcome_index_path }= t('.our_adress')
   %br
-  %a{ :href => lessons_path }= t('.schedule_and_prices')
+  %a{ :href => schedule_path }= t('.schedule_and_prices')
 .span4
   %h3= t('.contacts')
   =t ('.phone')

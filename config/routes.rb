@@ -4,9 +4,13 @@ SkyDance::Application.routes.draw do
 
   match "/404" => "errors#not_found"
   match "admin" => "admins#login"
+  get "schedule" => "lessons#schedule"
 
-  resources :groups, :except => [:show, :index]
-  resources :lessons, :except => :show
+  resources :groups, :except => [:show, :index] do
+    member do
+      resources :lessons, :except => [:show, :index]
+    end
+  end
 
   resources :teachers do
     member do
@@ -30,6 +34,7 @@ SkyDance::Application.routes.draw do
     collection do
       get "about"
       get "contacts"
+      get "place"
     end
   end
 

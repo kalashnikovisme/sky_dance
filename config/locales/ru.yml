@@ -51,7 +51,7 @@ ru:
       choose_new_photo: 'Выбрать новое фото'
 
   lessons:
-    index:
+    schedule:
       schedule:         'Расписание'
       group:            'Группа'
       monday:           'Понедельник'

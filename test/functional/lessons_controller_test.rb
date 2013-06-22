@@ -4,15 +4,31 @@ class LessonsControllerTest < ActionController::TestCase
   setup do
     @admin = create :admin
     @lesson = create :lesson
+    @group = create :group
+  end
+
+  test "should get index" do
+    get :schedule
+    assert_response :success
+  end
+
+  test "should get new" do
+    admin_sign_in @admin
+
+    get :new, id: @group
+    assert_response :success
+  end
+
+  test "should not get new" do
+    get :new, id: @group
+    assert_redirected_to '/404'
   end
 
   test "should create lesson" do
     admin_sign_in @admin
 
     attributes = attributes_for :lesson
-    group = create :group
-    attributes[:group_id] = group.id
-    post :create, lesson: attributes
+    post :create, id: @group, lesson: attributes
     assert_response :redirect
 
    # lesson = Lesson.last
@@ -21,7 +37,7 @@ class LessonsControllerTest < ActionController::TestCase
 
   test "should not create lesson" do
     attributes = attributes_for :lesson
-    post :create, lesson: attributes
+    post :create, id: @group, lesson: attributes
     assert_redirected_to '/404'
   end
 

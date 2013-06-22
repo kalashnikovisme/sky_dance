@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
 
-  def index
+  def schedule
     @genres = Genre.all
     @lessons = Lesson.all
     #FIXME
@@ -8,10 +8,8 @@ class LessonsController < ApplicationController
   end
 
   def new
-    if admin_signed_in? && Group.find(params[:group_id])
+    if admin_signed_in?
       @lesson = Lesson.new
-      #FIXME
-      session[:group_id] = params[:group_id]
     else
       redirect_to '/404'
     end
@@ -20,7 +18,7 @@ class LessonsController < ApplicationController
   def create
     if admin_signed_in?
       @lesson = Lesson.new params[:lesson]
-      @lesson.group_id = session[:group_id]
+      @lesson.group = Group.find params[:id]
       if @lesson.save
         redirect_to lessons_path
       else

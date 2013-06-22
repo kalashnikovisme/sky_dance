@@ -5,6 +5,7 @@ ru:
       video:          Видео
       genre:          Жанр
       group:          Группа
+      category:       Категория
     attributes:
       teacher:
         first_name:   Фамилия
@@ -23,7 +24,9 @@ ru:
         price:        Цена за комплекс занятий
         genre:        Танцевальный жанр
         teacher:      Преподаватель
-        category:     Категория группы
+      category:
+        describe:      Описание категории
+
   enumerize:
     space:
       there_places:     Есть места

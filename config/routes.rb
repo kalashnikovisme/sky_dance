@@ -6,6 +6,9 @@ SkyDance::Application.routes.draw do
   match "admin" => "admins#login"
 
   resources :photos, :except => [:show, :index, :edit]
+  resources :groups, :except => [:show, :index]
+  resources :lessons, :except => :show
+  resources :videos, :except => [:show, :index]
 
   resources :teachers do
     member do
@@ -27,15 +30,12 @@ SkyDance::Application.routes.draw do
       get "contacts"
     end
   end
+
   resources :categories, :except => [:show, :index] do
     collection do
       get 'admins'
     end
   end
-  resources :groups, :except => [:show, :index]
-  resources :lessons, :except => :show
-
-  resources :videos, :except => [:show, :index]
 
   resources :genres do
     member do

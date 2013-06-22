@@ -95,7 +95,13 @@ ru:
   categories:
     admins:
       destroy:  'Удалить'
-      save:     'Сохранить'
+      edit:     'Изменить'
+      actions:  'Действия'
+      title:    'Администрирование категорий'
+      confirm:  'Вы уверены? Будут удалены все группы, связанные с этой категорией.'
+    form:
+      new:      'Добавить категорию'
+      cancel:   'Отмена'
 
   layouts:
     application:

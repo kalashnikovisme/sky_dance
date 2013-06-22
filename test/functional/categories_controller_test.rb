@@ -60,7 +60,7 @@ class CategoriesControllerTest < ActionController::TestCase
       delete :destroy, id: @category
     end
 
-    assert_redirected_to lessons_path
+    assert_redirected_to admins_categories_path
   end
 
   test "should not destroy category" do

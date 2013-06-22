@@ -7,24 +7,23 @@ class PhotosControllerTest < ActionController::TestCase
     @photo = create :photo
   end
 
-  #test "should get admins" do
-  #  admin_sign_in @admin
+  test "should get admins" do
+    admin_sign_in @admin
 
-  #  get 'teachers/#{@teacher.id}/admins_photo'
-  #  assert_response :success
-  #end
+    get :admins, id: @teacher
+    assert_response :success
+  end
 
-  #test "should not get admins" do
-  #  get :admins
-  #  assert_response :success
-  #end
+  test "should not get admins" do
+    get :admins, id: @teacher
+    assert_response :success
+  end
 
   test "should create photo" do
     admin_sign_in @admin
-    set_viewed_teacher @teacher
 
     attributes = attributes_for :photo
-    post :create, photo: attributes
+    post :create, id: @teacher, photo: attributes
     assert_response :redirect
 
     #photo = Photo.last
@@ -32,10 +31,8 @@ class PhotosControllerTest < ActionController::TestCase
   end
 
   test "should not create photo" do
-    set_viewed_teacher @teacher
-
     attributes = attributes_for :photo
-    post :create, photo: attributes
+    post :create, id: @teacher, photo: attributes
     assert_redirected_to '/404'
   end
 
@@ -47,7 +44,7 @@ class PhotosControllerTest < ActionController::TestCase
       delete :destroy, id: @photo
     end
 
-    assert_redirected_to admins_photo_teacher_url
+    assert_redirected_to admins_photos_url(teacher)
   end
 
   test "should not destroy photo with no access" do

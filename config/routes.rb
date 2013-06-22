@@ -5,14 +5,16 @@ SkyDance::Application.routes.draw do
   match "/404" => "errors#not_found"
   match "admin" => "admins#login"
 
-  resources :photos, :except => [:show, :index, :edit]
   resources :groups, :except => [:show, :index]
   resources :lessons, :except => :show
-  resources :videos, :except => [:show, :index]
 
   resources :teachers do
     member do
-      get 'admins_photo' => "photos#admins"
+      resources :photos, :except => [:show, :index, :edit] do
+        collection do
+          get 'admins'
+        end
+      end
     end
   end
 
@@ -39,7 +41,11 @@ SkyDance::Application.routes.draw do
 
   resources :genres do
     member do
-      get 'admins_video' => "videos#admins"
+      resources :videos, :except => [:show, :index] do
+        collection do
+          get 'admins'
+        end
+      end
     end
   end
 

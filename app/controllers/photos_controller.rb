@@ -2,17 +2,18 @@ class PhotosController < ApplicationController
 
   def admins
     @photo = Photo.new
-    @photos = viewed_teacher.photos
+    @teacher = Teacher.find params[:id]
+    @photos = @teacher.photos
   end
 
   def create
     if admin_signed_in?
       @photo = Photo.new params[:photo]
-      @photo.teacher = viewed_teacher
+      @photo.teacher = Teacher.find params[:id]
       if @photo.save
-        redirect_to admins_photo_teacher_url(@photo.teacher)
+        redirect_to admins_photos_url(@photo.teacher)
       else
-        render action: 'new'
+        render action: 'admins'
       end
     else
       redirect_to '/404'
@@ -24,7 +25,7 @@ class PhotosController < ApplicationController
       @photo = Photo.find params[:id]
       teacher = @photo.teacher
       @photo.destroy
-      redirect_to admins_photo_teacher_path
+      redirect_to admins_photos_url(teacher)
     else
       redirect_to '/404'
     end

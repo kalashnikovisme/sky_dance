@@ -50,18 +50,30 @@ class VideosControllerTest < ActionController::TestCase
     assert_redirected_to '/404'
   end
 
-  #test "should destroy video" do
-  #  admin_sign_in @admin
+  test "should destroy video" do
+    admin_sign_in @admin
 
-   # assert_difference('Video.count', -1) do
-   #   delete :destroy, id: @video
-   # end
-  #end
+    assert_difference('Video.count', -1) do
+      delete :destroy, id: @video
+    end
+  end
 
   test "should not destroy video" do
     assert_difference('Video.count', 0) do
       delete :destroy, id: @video
     end
     assert_redirected_to '/404'
+  end
+
+  test "should get admins" do
+    admin_sign_in @admin
+
+    get :admins, id: @genre
+    assert_response :success
+  end
+
+  test "should not get admins" do
+    get :admins, id: @genre
+    assert_response :success
   end
 end

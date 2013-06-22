@@ -6,7 +6,6 @@ class CategoriesControllerTest < ActionController::TestCase
     @category = create :category
   end
 
-
   test "should create category" do
     admin_sign_in @admin
 
@@ -67,6 +66,18 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_difference('Category.count', 0) do
       delete :destroy, id: @category
     end
+    assert_redirected_to '/404'
+  end
+
+  test "should get admins" do
+    admin_sign_in @admin
+
+    get :admins
+    assert_response :success
+  end
+
+  test "should not get admins" do
+    get :admins
     assert_redirected_to '/404'
   end
 end

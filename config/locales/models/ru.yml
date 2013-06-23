@@ -28,7 +28,8 @@ ru:
         describe:      Описание категории
 
   enumerize:
-    space:
-      there_places:     Есть места
-      there_not_places: Мест нет
-      group_formed:     Группа формируется
+    group:
+      space:
+        there_places:     Есть места
+        there_not_places: Мест нет
+        group_formed:     Группа формируется

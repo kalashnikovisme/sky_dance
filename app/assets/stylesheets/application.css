@@ -8,12 +8,16 @@ body {
 }
 
 .navbar-opacity-white {
-  opacity: 0.7;
+  opacity: 0.9;
   background-color: #ffffff;
 }
 
 .navbar-margin-top {
   margin-top: 400px;
+}
+
+.navbar-big-text {
+  font-size: 11pt;
 }
 
 .content {

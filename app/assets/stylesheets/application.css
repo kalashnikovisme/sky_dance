@@ -1,10 +1,10 @@
 body {
   font-family: micfont;
-  background-color: lightgrey;
-  min-width: 1200px;
-  padding: 10px;
+  padding-top: 10px;
   padding-bottom: 100px;
   background-image: url(header.jpg);
+  background-color: #a2cdc0;
+  background-repeat: no-repeat;
 }
 
 .navbar-opacity-white {
@@ -13,7 +13,7 @@ body {
 }
 
 .navbar-margin-top {
-  margin-top: 200px;
+  margin-top: 400px;
 }
 
 .content {
@@ -26,3 +26,27 @@ body {
   min-height: 300px;
 }
 
+.main-logo {
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 100px;
+}
+
+.logo-sky-dance {
+  width: 300px;
+  height: 200px;
+  background-image: url(logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.gradient {
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#a2cdc0), to(#727376));
+  background: -webkit-linear-gradient(top, #a2cdc0, #727376);
+  background: -moz-linear-gradient(top, #a2cdc0, #727376);
+  background: -ms-linear-gradient(top, #a2cdc0, #727376);
+  background: -o-linear-gradient(top, #a2cdc0, #727376);
+  background-position: 50% 100%;
+}

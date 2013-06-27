@@ -54,5 +54,5 @@ SkyDance::Application.routes.draw do
     end
   end
 
-  get ':controller/:action/:group_id'
+  resources :news
 end

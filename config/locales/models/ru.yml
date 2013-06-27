@@ -6,6 +6,7 @@ ru:
       genre:          Жанр
       group:          Группа
       category:       Категория
+      news:           Новость
     attributes:
       teacher:
         first_name:   Фамилия
@@ -26,6 +27,11 @@ ru:
         teacher:      Преподаватель
       category:
         describe:      Описание категории
+      news:
+        title:        Заголовок
+        body:         Текст
+        published_at: Дата публикации
+        photo:        Фото
 
   enumerize:
     space:

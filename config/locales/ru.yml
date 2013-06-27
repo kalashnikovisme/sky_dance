@@ -120,6 +120,23 @@ ru:
       contacts:             'Контакты'
       phone:                'Телефон'
 
+  news:
+    show:
+      edit:     'Изменить'
+      back:     'Назад'
+      destroy:  'Удалить'
+      admins_buttons:   'Кнопки администратора'
+    edit:
+      title:    'Редактировать новость'
+    form:
+      save:     'Сохранить'
+      cancel:   'Отмена'
+    index:
+      title:    'Новости'
+      new:      'Добавить новость'
+      edit:     'Изменить'
+      destroy:  'Удалить'
+
   welcome:
     index:
       teachers:             'Преподаватели'

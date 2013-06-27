@@ -5,7 +5,6 @@ class News < ActiveRecord::Base
                   :title
 
   validates :body, presence: true
-  validates :photo, presence: true
   validates :published_at, presence: true
   validates :title, presence: true,
                     length: { :maximum => 140 }

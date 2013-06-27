@@ -1,10 +1,10 @@
 class NewsController < ApplicationController
   def index
-    @news = News.all
+    @news = NewsDecorator.decorate_collection News.all
   end
 
   def show
-    @news = News.find params[:id]
+    @news = News.find(params[:id]).decorate
   end
 
   def new
@@ -30,7 +30,7 @@ class NewsController < ApplicationController
 
   def edit
     if admin_signed_in?
-      @news = News.find params[:id]
+      @news = News.find(params[:id]).decorate
     else
       redirect_to '/404'
     end

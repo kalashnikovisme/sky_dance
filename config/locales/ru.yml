@@ -142,7 +142,6 @@ ru:
     new:
       title:    'Добавить новость'
 
-
   welcome:
     index:
       teachers:             'Преподаватели'
@@ -152,6 +151,8 @@ ru:
       video_our_group_vk:   'Видео в нашей группе во ВКонтакте'
       photo_our_group_vk:   'Фотографии в нашей группе во ВКонтакте'
       last_photos:          'Последние фотографии'
+      news:                 'Новости'
+      all_news:             'Все новости'
 
   photos:
     admins:

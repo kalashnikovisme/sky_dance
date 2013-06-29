@@ -2,20 +2,29 @@
 = stylesheet_link_tag     "fotorama"
 = javascript_include_tag  "fotorama"
 = stylesheet_link_tag     "welcome"
-.row
-  .center
-    %h2= t('.teachers')
-    .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "300px","data-ratio" => "800/600" }
-      = @teachers.each do |teacher|
-        %img{ :src => teacher.photos.first.photo, "data-caption" => teacher.fio }
-%hr
 .span4
+  .row
+    - if @news
+      %h3= t('.news')
+    %table.table.table-hover
+      - @news.each do |news|
+        %tr.table-aligned
+          %th
+            %a{ :href => news_path(news) }
+              %img.img-rounded.micro{ :src => news.main_photo_thumb }
+            %small= news.published_at
+          %th
+            %a{ :href => news_path(news) }
+              = news.title
+    %a.btn.btn-info{ :href => '/news' }= t('.all_news')
+    %hr
   .row
     - if @video
       %h3= t('.sky_dance_video')
       = @video.from_youtube
       %br
     %a.btn.btn-info{ :href => "http://vk.com/ulmic" }= t('.video_our_group_vk')
+    %hr
   .row
     %h3= t('.last_photos')
     - @photos_bottom.each do |photo|
@@ -24,8 +33,16 @@
     %br
     %a.btn.btn-info{ :href => "http://vk.com/ulmic" }= t('.photo_our_group_vk')
 .span4
-  = t('.text_about_sky_dance')
-.span4
+  .row
+    %h3= t('.teachers')
+    .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "300px","data-ratio" => "800/600" }
+      = @teachers.each do |teacher|
+        %img{ :src => teacher.photos.first.photo, "data-caption" => teacher.fio }
+    %br
+    %br
+  .row
+    = t('.text_about_sky_dance')
+.span3
   %h3= t('.dances')
   %table.table.table-hover
     - @genres.each do |genre|
@@ -36,4 +53,3 @@
         %th
           %a{ :href => genre_path(genre) }
             = genre.title
-

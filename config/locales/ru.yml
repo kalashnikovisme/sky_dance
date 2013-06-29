@@ -113,12 +113,34 @@ ru:
       dances:               'Танцы'
       teachers:             'Преподаватели '
       contacts:             'Контакты'
+      news:                 'Новости'
     footer:
       about_us:             'О нас'
       our_adress:           'Наш адрес'
       schedule_and_prices:  'Расписание и цены'
       contacts:             'Контакты'
       phone:                'Телефон'
+
+  news:
+    show:
+      edit:     'Изменить'
+      back:     'Назад'
+      destroy:  'Удалить'
+      admins_buttons:   'Кнопки администратора'
+    edit:
+      title:    'Редактировать новость'
+    form:
+      save:     'Сохранить'
+      cancel:   'Отмена'
+    index:
+      title:    'Новости'
+      new:      'Добавить новость'
+      edit:     'Изменить'
+      destroy:  'Удалить'
+      cut:      'Читать далее'
+      new_news: 'Добавить новость'
+    new:
+      title:    'Добавить новость'
 
   welcome:
     index:
@@ -129,6 +151,8 @@ ru:
       video_our_group_vk:   'Видео в нашей группе во ВКонтакте'
       photo_our_group_vk:   'Фотографии в нашей группе во ВКонтакте'
       last_photos:          'Последние фотографии'
+      news:                 'Новости'
+      all_news:             'Все новости'
 
   photos:
     admins:

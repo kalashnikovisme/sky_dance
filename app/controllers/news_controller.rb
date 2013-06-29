@@ -9,7 +9,7 @@ class NewsController < ApplicationController
 
   def new
     if admin_signed_in?
-      @news = News.new
+      @news = News.new.decorate
     else
       redirect_to '/404'
     end

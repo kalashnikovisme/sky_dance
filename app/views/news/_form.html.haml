@@ -3,7 +3,8 @@
     = f.input :title
     = f.input :body
     = f.input :published_at
-    = image_tag @news.main_photo.thumb if @news && @news.main_photo
+    - if @news.photo
+      = image_tag @news.main_photo.thumb
     = f.input :photo
     .form-actions
       = f.button :submit, t('.save'), :class => 'btn btn-primary'

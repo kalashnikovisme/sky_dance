@@ -9,6 +9,7 @@
         %a{ :href => news_path(news) }
           = image_tag news.main_photo_big_thumb
         %h3= news.title
+        %h5= news.published_at
         %p= news.lead
         %a.btn.btn-medium{ :href => news_path(news) }= t('.cut')
 

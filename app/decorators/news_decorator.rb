@@ -13,6 +13,12 @@ class NewsDecorator < Draper::Decorator
     end
   end
 
+  def main_photo_big_thumb
+    if model and model.photo
+      photo.big_thumb
+    end
+  end
+
   def lead
     body.first 140
   end

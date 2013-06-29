@@ -6,11 +6,11 @@
   - @news.each do |news|
     %li.span3.news_cell
       .thumbnail
-        %a{ :href => news }
+        %a{ :href => news_path(news) }
           = image_tag news.main_photo_big_thumb
         %h3= news.title
         %p= news.lead
-        %a.btn.btn-medium{ :href => @news }= t('.cut')
+        %a.btn.btn-medium{ :href => news_path(news) }= t('.cut')
 
         -#FIXME
         - if session[:admin_id]

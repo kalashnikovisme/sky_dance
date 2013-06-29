@@ -28,6 +28,7 @@ body {
   background-color: white;
   padding: 10px;
   min-height: 300px;
+  opacity: 0.9;
 }
 
 .main-logo {
@@ -54,3 +55,4 @@ body {
   background: -o-linear-gradient(top, #a2cdc0, #727376);
   background-position: 50% 100%;
 }
+

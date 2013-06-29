@@ -137,6 +137,10 @@ ru:
       edit:     'Изменить'
       destroy:  'Удалить'
       cut:      'Читать далее'
+      new_news: 'Добавить новость'
+    new:
+      title:    'Добавить новость'
+
 
   welcome:
     index:

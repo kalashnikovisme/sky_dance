@@ -2,7 +2,7 @@ class TeacherDecorator < Draper::Decorator
   delegate_all
 
   def first_photo
-    if model.photos.first
+    if model.photos.any?
       helpers.content_tag :img, src: model.photos.first.photo do
       end
     end

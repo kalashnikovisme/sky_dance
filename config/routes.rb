@@ -55,4 +55,9 @@ SkyDance::Application.routes.draw do
   end
 
   resources :news
+  resources :errors do
+    collection do
+      get "not_found"
+    end
+  end
 end

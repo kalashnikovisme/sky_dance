@@ -20,6 +20,10 @@ ru:
       login:        'Логин'
       password:     'Пароль'
 
+  errors:
+    not_found:
+      not_found:  'Страница не найдена'
+
   teachers:
     show:
       upload_photo:   'Загрузить фотографию'

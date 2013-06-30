@@ -3,7 +3,7 @@ class TeachersController < ApplicationController
     if admin_signed_in?
       @teacher = Teacher.new
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 

@@ -1,5 +1,15 @@
 %h4= t('.hello_admin')
 %b= t('.you_can')
+%br
+%br
 %p
-  %a.btn{:href => "/admins/logout"}
+  %a.btn{ :href => new_news_path }
+    = t('.add_news')
+  %a.btn{ :href => new_teacher_path }
+    = t('.add_teacher')
+  %a.btn{ :href => new_genre_path }
+    = t('.add_genre')
+  %a.btn{ :href => new_group_path }
+    = t('.add_group')
+  %a.btn{ :href => logout_admins_path }
     = t('.sign_out')

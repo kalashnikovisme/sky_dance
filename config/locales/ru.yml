@@ -6,6 +6,16 @@ ru:
     formats:
       default: "%d-%m-%Y %H:%M"
 
+  admins:
+    panel:
+      sign_out:     'Выйти'
+      add_news:     'Добавить новость'
+      add_teacher:  'Добавить преподавателя'
+      add_genre:    'Добавить танцевальный жанр'
+      add_group:    'Добавить группу'
+      hello_admin:  'Здравствуйте, Администратор'
+      you_can:      'Вы можете:'
+
   teachers:
     show:
       upload_photo:   'Загрузить фотографию'

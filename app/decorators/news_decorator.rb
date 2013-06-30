@@ -22,4 +22,8 @@ class NewsDecorator < Draper::Decorator
   def lead
     body.first 140
   end
+
+  def published_date
+    model.published_at.strftime("%d.%m")
+  end
 end

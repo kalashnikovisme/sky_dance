@@ -12,7 +12,8 @@
           %th
             %a{ :href => news_path(news) }
               %img.img-rounded.micro{ :src => news.main_photo_thumb }
-            %small= news.published_at
+            %p{ :align => "center" }
+              %small= news.published_date
           %th
             %a{ :href => news_path(news) }
               = news.title

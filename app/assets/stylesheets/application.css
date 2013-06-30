@@ -1,3 +1,8 @@
+@font-face {
+  font-family: micfont;
+  src: url(/fonts/BRDWAYN.TTF)
+}
+
 body {
   font-family: micfont;
   padding-top: 10px;

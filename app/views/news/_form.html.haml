@@ -1,6 +1,6 @@
 = simple_form_for @news do |f|
   - f.with_options :input_html => { :class => :span6 } do |f|
-    = f.input :title, :placeholder => t('.maximum_140_symbols')
+    = f.input :title, :placeholder => t('.maximum_70_symbols')
     = f.label :body
     = f.text_area :body, :rows => 5, :class => :span6
     = f.input :published_at

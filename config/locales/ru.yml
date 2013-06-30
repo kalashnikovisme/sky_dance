@@ -132,7 +132,7 @@ ru:
     form:
       save:                 'Сохранить'
       cancel:               'Отмена'
-      maximum_140_symbols:  'Максимум 140 символов'
+      maximum_70_symbols:  'Максимум 70 символов'
     index:
       title:    'Новости'
       new:      'Добавить новость'

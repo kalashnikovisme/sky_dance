@@ -90,6 +90,10 @@ ru:
       destroy_group:    'Удалить группу'
       actions:          'Действия'
       rub:              ' руб.'
+    new:
+      add_lesson:       'Добавить занятие'
+    form:
+      cancel:           'Отмена'
 
   videos:
     new:
@@ -107,9 +111,10 @@ ru:
 
   groups:
     form:
-      add_category: 'Добавить категорию'
-      add_group:    'Добавить группу'
-      cancel:       'Отмена'
+      add_category:         'Добавить категорию'
+      add_group:            'Добавить группу'
+      cancel:               'Отмена'
+      admins_categories:   'Администрирование категорий'
     new:
       add_group:    'Добавить группу'
     edit:
@@ -123,8 +128,11 @@ ru:
       title:    'Администрирование категорий'
       confirm:  'Вы уверены? Будут удалены все группы, связанные с этой категорией.'
     form:
-      new:      'Добавить категорию'
-      cancel:   'Отмена'
+      new:             'Добавить категорию'
+      cancel:         'Отмена'
+      add_category:   'Добавить категорию'
+    edit:
+      title:          'Редактировать категорию'
 
   layouts:
     application:

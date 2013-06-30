@@ -7,6 +7,7 @@ ru:
       group:          Группа
       category:       Категория
       news:           Новость
+      lesson:         Занятие
     attributes:
       teacher:
         first_name:   Фамилия
@@ -32,6 +33,9 @@ ru:
         body:         Текст
         published_at: Дата публикации
         photo:        Фото
+      lesson:
+        time:         Время
+        day:          День недели
 
   enumerize:
     group:
@@ -39,3 +43,12 @@ ru:
         there_places:     Есть места
         there_not_places: Мест нет
         group_formed:     Группа формируется
+    lesson:
+      day:
+        monday:           Понедельник
+        tuesday:          Вторник
+        wednesday:        Среда
+        thursday:         Четверг
+        friday:           Пятница
+        saturday:         Суббота
+        sunday:           Воскресенье

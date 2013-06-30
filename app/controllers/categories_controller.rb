@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
     if admin_signed_in?
       @category = Category.new params[:category]
       if @category.save
-        redirect_to categories_path
+        redirect_to new_group_path
       else
         render action: 'new'
       end
@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
     if admin_signed_in?
       @category = Category.find params[:id]
       if @category.update_attributes params[:category]
-        redirect_to lessons_path
+        redirect_to schedule_path
       else
         render action: "edit"
       end

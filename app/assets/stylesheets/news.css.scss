@@ -13,3 +13,13 @@
 .news_cell {
   bottom: 0px;
 }
+
+
+.field textarea {
+  height: 100px;
+}
+
+.field textarea:focus {
+  height: 500px;
+}
+

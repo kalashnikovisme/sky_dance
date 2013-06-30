@@ -20,7 +20,7 @@ class NewsDecorator < Draper::Decorator
   end
 
   def lead
-    body.first 140
+    "#{body.first 140}..."
   end
 
   def published_date

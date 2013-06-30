@@ -18,7 +18,7 @@ class VideosControllerTest < ActionController::TestCase
   test "should not create video" do
     attributes = attributes_for :video
     post :create, id: @genre, video: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get edit" do
@@ -30,7 +30,7 @@ class VideosControllerTest < ActionController::TestCase
 
   test "should not edit with no access" do
     get :edit, id: @video
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should update video" do
@@ -47,7 +47,7 @@ class VideosControllerTest < ActionController::TestCase
   test "should not update with no access" do
     attributes = attributes_for :video
     put :update, id: @video
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should destroy video" do
@@ -62,7 +62,7 @@ class VideosControllerTest < ActionController::TestCase
     assert_difference('Video.count', 0) do
       delete :destroy, id: @video
     end
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get admins" do

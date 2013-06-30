@@ -27,7 +27,7 @@ class GenresControllerTest < ActionController::TestCase
   test 'should not create genre without no access' do
     attributes = attributes_for :genre
     post :create, genre: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get genres index" do
@@ -50,7 +50,7 @@ class GenresControllerTest < ActionController::TestCase
 
   test "should not edit with no access" do
     get :edit, id: @genre
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should update genre" do
@@ -67,7 +67,7 @@ class GenresControllerTest < ActionController::TestCase
   test "should not update genre with no access" do
     attributes = attributes_for :genre
     put :update, id: @genre, genre: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should destroy genre" do
@@ -84,6 +84,6 @@ class GenresControllerTest < ActionController::TestCase
     assert_difference('Genre.count', 0) do
       delete :destroy, id: @genre
     end
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 end

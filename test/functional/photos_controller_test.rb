@@ -33,7 +33,7 @@ class PhotosControllerTest < ActionController::TestCase
   test "should not create photo" do
     attributes = attributes_for :photo
     post :create, id: @teacher, photo: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should destroy photo" do
@@ -51,6 +51,6 @@ class PhotosControllerTest < ActionController::TestCase
     assert_difference('Photo.count', 0) do
       delete :destroy, id: @photo
     end
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 end

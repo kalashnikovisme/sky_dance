@@ -15,7 +15,7 @@ class GroupsControllerTest < ActionController::TestCase
 
   test "should not get new" do
     get :new
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should create group" do
@@ -41,7 +41,7 @@ class GroupsControllerTest < ActionController::TestCase
   test "should not create group" do
     attributes = attributes_for :group
     post :create, group: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get edit" do
@@ -53,7 +53,7 @@ class GroupsControllerTest < ActionController::TestCase
 
   test "should not get edit with no access" do
     get :edit, id: @group
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should update group"  do
@@ -70,7 +70,7 @@ class GroupsControllerTest < ActionController::TestCase
   test "should not update with no access" do
     attributes = attributes_for :group
     put :update, id: @group
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should destroy group" do
@@ -87,6 +87,6 @@ class GroupsControllerTest < ActionController::TestCase
     assert_difference('Group.count', 0) do
       delete :destroy, id: @group
     end
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 end

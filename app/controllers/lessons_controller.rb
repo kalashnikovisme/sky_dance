@@ -11,7 +11,7 @@ class LessonsController < ApplicationController
     if admin_signed_in?
       @lesson = Lesson.new
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -25,7 +25,7 @@ class LessonsController < ApplicationController
         render action: 'new'
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -33,7 +33,7 @@ class LessonsController < ApplicationController
     if admin_signed_in?
       @lesson = Lesson.find params[:id]
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -46,7 +46,7 @@ class LessonsController < ApplicationController
         render action: 'edit'
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -56,7 +56,7 @@ class LessonsController < ApplicationController
       @lesson.destroy
       redirect_to lessons_path
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 end

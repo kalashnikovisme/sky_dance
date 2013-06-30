@@ -2,7 +2,6 @@ SkyDance::Application.routes.draw do
 
   root :to => "welcome#index"
 
-  match "/404" => "errors#not_found"
   match "admin" => "admins#login"
   get "schedule" => "lessons#schedule"
 

@@ -16,7 +16,7 @@ class GenresController < ApplicationController
         render action: "new"
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -28,7 +28,7 @@ class GenresController < ApplicationController
     if admin_signed_in?
       @genre = Genre.find params[:id]
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -42,7 +42,7 @@ class GenresController < ApplicationController
         render action: 'edit'
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -52,7 +52,7 @@ class GenresController < ApplicationController
       @genre.destroy
       redirect_to genres_url
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 end

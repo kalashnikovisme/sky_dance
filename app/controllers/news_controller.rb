@@ -11,7 +11,7 @@ class NewsController < ApplicationController
     if admin_signed_in?
       @news = News.new.decorate
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -24,7 +24,7 @@ class NewsController < ApplicationController
         render action: 'new'
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -32,7 +32,7 @@ class NewsController < ApplicationController
     if admin_signed_in?
       @news = News.find(params[:id]).decorate
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -45,7 +45,7 @@ class NewsController < ApplicationController
         render action: edit
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -55,7 +55,7 @@ class NewsController < ApplicationController
       @news.destroy
       redirect_to news_index_path
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 end

@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
     if admin_signed_in?
       @group = Group.new
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
         render action: 'new'
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
     if admin_signed_in?
       @group = Group.find params[:id]
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -37,7 +37,7 @@ class GroupsController < ApplicationController
         render action: 'edit'
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -47,7 +47,7 @@ class GroupsController < ApplicationController
       @group.destroy
       redirect_to lessons_path
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 end

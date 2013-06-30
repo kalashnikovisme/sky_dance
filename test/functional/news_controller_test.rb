@@ -25,7 +25,7 @@ class NewsControllerTest < ActionController::TestCase
 
   test "should not get new" do
     get :new
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should create" do
@@ -42,7 +42,7 @@ class NewsControllerTest < ActionController::TestCase
   test "should not create" do
     attributes = attributes_for :news
     post :create, news: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get edit" do
@@ -54,7 +54,7 @@ class NewsControllerTest < ActionController::TestCase
 
   test "should not get edit" do
     get :edit, id: @news
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should update news" do
@@ -71,7 +71,7 @@ class NewsControllerTest < ActionController::TestCase
   test "should not update news" do
     attributes = attributes_for :news
     post :update, id: @news, news: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should destroy" do
@@ -88,6 +88,6 @@ class NewsControllerTest < ActionController::TestCase
     assert_difference('News.count', 0) do
       delete :destroy, id: @news
     end
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 end

@@ -20,7 +20,7 @@ class CategoriesControllerTest < ActionController::TestCase
   test "should not create category" do
     attributes = attributes_for :category
     post :create, category: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get edit" do
@@ -32,7 +32,7 @@ class CategoriesControllerTest < ActionController::TestCase
 
   test "should not get edit with no access" do
     get :edit, id: @category
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should update category" do
@@ -49,7 +49,7 @@ class CategoriesControllerTest < ActionController::TestCase
   test "should not update with no access" do
     attributes = attributes_for :category
     put :update, id: @category
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should destroy category" do
@@ -66,7 +66,7 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_difference('Category.count', 0) do
       delete :destroy, id: @category
     end
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get admins" do
@@ -78,6 +78,6 @@ class CategoriesControllerTest < ActionController::TestCase
 
   test "should not get admins" do
     get :admins
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 end

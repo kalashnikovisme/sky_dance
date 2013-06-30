@@ -21,7 +21,7 @@ class LessonsControllerTest < ActionController::TestCase
 
   test "should not get new" do
     get :new, id: @group
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should create lesson" do
@@ -38,7 +38,7 @@ class LessonsControllerTest < ActionController::TestCase
   test "should not create lesson" do
     attributes = attributes_for :lesson
     post :create, id: @group, lesson: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get edit" do
@@ -50,7 +50,7 @@ class LessonsControllerTest < ActionController::TestCase
 
   test "should not get edit with no access" do
     get :edit, id: @lesson
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should update lesson" do
@@ -67,7 +67,7 @@ class LessonsControllerTest < ActionController::TestCase
   test "should not update with no access" do
     attributes = attributes_for :lesson
     put :update, id: @lesson
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should destroy lesson" do
@@ -84,6 +84,6 @@ class LessonsControllerTest < ActionController::TestCase
     assert_difference('Lesson.count', 0) do
       delete :destroy, id: @lesson
     end
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 end

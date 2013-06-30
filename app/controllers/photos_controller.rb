@@ -16,7 +16,7 @@ class PhotosController < ApplicationController
         render action: 'admins'
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -27,7 +27,7 @@ class PhotosController < ApplicationController
       @photo.destroy
       redirect_to admins_photos_url(teacher)
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 end

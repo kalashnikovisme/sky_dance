@@ -16,7 +16,7 @@ class VideosController < ApplicationController
         render action: 'admins'
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -24,7 +24,7 @@ class VideosController < ApplicationController
     if admin_signed_in?
       @video = Video.find params[:id]
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -37,7 +37,7 @@ class VideosController < ApplicationController
         render action: 'edit'
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -48,7 +48,7 @@ class VideosController < ApplicationController
       @video.destroy
       redirect_to admins_videos_url(genre)
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 end

@@ -15,7 +15,7 @@ class AdminsControllerTest < ActionController::TestCase
     admin_sign_in @admin
     attributes = attributes_for :admin
     post :login, attributes
-    assert_redirected_to "/admins/panel"
+    assert_redirected_to panel_admins_path
   end
 
   test "should sign_out admin" do

@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
       @categories = Category.all
       @category = Category.new
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
         render action: 'new'
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
     if admin_signed_in?
       @category = Category.find params[:id]
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -39,7 +39,7 @@ class CategoriesController < ApplicationController
         render action: "edit"
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -49,7 +49,7 @@ class CategoriesController < ApplicationController
       @category.destroy
       redirect_to admins_categories_path
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 end

@@ -20,7 +20,7 @@ class TeachersControllerTest < ActionController::TestCase
   test 'should not create teacher without no access' do
     attributes = attributes_for :teacher
     post :create, teacher: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test 'should show teacher' do
@@ -43,7 +43,7 @@ class TeachersControllerTest < ActionController::TestCase
 
   test 'should not get new' do
     get :new
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get edit" do
@@ -55,7 +55,7 @@ class TeachersControllerTest < ActionController::TestCase
 
   test "should not get edit with no access" do
     get :edit, id: @teacher
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should update teacher" do
@@ -72,7 +72,7 @@ class TeachersControllerTest < ActionController::TestCase
   test "should not update teacher with no access" do
     attributes = attributes_for :teacher
     put :update, id: @teacher, teacher: attributes
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should destroy teacher" do
@@ -89,6 +89,6 @@ class TeachersControllerTest < ActionController::TestCase
     assert_difference('Teacher.count', 0) do
       delete :destroy, id: @teacher
     end
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 end

@@ -16,7 +16,7 @@ class TeachersController < ApplicationController
         render action: "new"
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -32,7 +32,7 @@ class TeachersController < ApplicationController
     if admin_signed_in?
       @teacher = Teacher.find params[:id]
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -46,7 +46,7 @@ class TeachersController < ApplicationController
         render action: "edit"
       end
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
@@ -56,7 +56,7 @@ class TeachersController < ApplicationController
       @teacher.destroy
       redirect_to teachers_url
     else
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 end

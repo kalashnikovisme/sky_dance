@@ -94,6 +94,8 @@ ru:
       add_lesson:       'Добавить занятие'
     form:
       cancel:           'Отмена'
+    edit:
+      title:            'Редактировать занятие'
 
   videos:
     new:

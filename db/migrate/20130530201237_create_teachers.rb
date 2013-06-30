@@ -3,7 +3,7 @@ class CreateTeachers < ActiveRecord::Migration
     create_table :teachers do |t|
       t.string :first_name
       t.string :middle_name
-      t.string :description
+      t.text :description
       t.string :motto
 
       t.timestamps

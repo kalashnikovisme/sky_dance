@@ -15,6 +15,10 @@ ru:
       add_group:    'Добавить группу'
       hello_admin:  'Здравствуйте, Администратор'
       you_can:      'Вы можете:'
+    login:
+      enter:        'Войти'
+      login:        'Логин'
+      password:     'Пароль'
 
   teachers:
     show:
@@ -59,6 +63,8 @@ ru:
       save_genre:       'Сохранить жанр'
       cancel:           'Отмена'
       choose_new_photo: 'Выбрать новое фото'
+    edit:
+      edit_genre:       'Редактировать жанр'
 
   lessons:
     schedule:

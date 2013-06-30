@@ -1,13 +1,12 @@
 = simple_form_for @news do |f|
   - f.with_options :input_html => { :class => :span6 } do |f|
-    .field
-      = f.input :title
-      = f.label :body
-      = f.text_area :body, :rows => 5, :class => :span6
-      = f.input :published_at
-      - if @news.photo
-        = image_tag @news.main_photo.thumb
-      = f.input :photo
-      .form-actions
-        = f.button :submit, t('.save'), :class => 'btn btn-primary'
-        = link_to t('.cancel', :default => t("helpers.links.cancel")), news_index_path, :class => 'btn'
+    = f.input :title, :placeholder => t('.maximum_140_symbols')
+    = f.label :body
+    = f.text_area :body, :rows => 5, :class => :span6
+    = f.input :published_at
+    - if @news.photo
+      = image_tag @news.main_photo.thumb
+    = f.input :photo
+    .form-actions
+      = f.button :submit, t('.save'), :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), news_index_path, :class => 'btn'

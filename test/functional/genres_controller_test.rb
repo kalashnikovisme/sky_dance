@@ -13,6 +13,11 @@ class GenresControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not get new genre" do
+    get :new
+    assert_redirected_to not_found_errors_path
+  end
+
   test 'should create genre' do
     admin_sign_in @admin
 

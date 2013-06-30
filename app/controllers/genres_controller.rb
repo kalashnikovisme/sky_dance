@@ -4,7 +4,11 @@ class GenresController < ApplicationController
   end
 
   def new
-    @genre = Genre.new
+    if admin_signed_in?
+      @genre = Genre.new
+    else
+      redirect_to not_found_errors_path
+    end
   end
 
   def create

@@ -22,7 +22,7 @@ ru:
 
   errors:
     not_found:
-      not_found:  'Страница не найдена'
+      not_found:  'Страница, которую вы ищете, не найдена.'
 
   teachers:
     show:
@@ -179,6 +179,11 @@ ru:
       Вас ждут НУ ОООЧЕНЬ МНОГО сюрпризов, о которых вы даже не догадываетесь! ТЕПЕРЬ ТАНЦЫ - ЭТО НЕ ХОББИ, А ОБРАЗ ЖИЗНИ! ;)'
     about:
       about_sky_dance:      'О студии Sky Dance'
+    contacts:
+      our_adress:           'г. Ульяновск, 2 переулок Мира, 24.'
+      phone:                '70-02-28'
+      email:                'skystudio73@yandex.ru'
+      skype:                'Skype'
 
   photos:
     admins:

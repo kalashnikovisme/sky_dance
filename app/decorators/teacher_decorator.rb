@@ -3,7 +3,7 @@ class TeacherDecorator < Draper::Decorator
 
   def first_photo
     if model.photos.any?
-      helpers.content_tag :img, src: model.photos.first.photo do
+      helpers.content_tag :img, src: model.photos.first.photo.big_thumb do
       end
     end
   end

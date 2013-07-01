@@ -5,6 +5,6 @@
 
 - @photos.each do |photo|
   .image.margin-bottom
-    %img.img-polaroid.margin-bottom{ :src => photo.photo }
+    %img.img-polaroid.margin-bottom{ :src => photo.photo.big_thumb }
     %br
     = link_to t('.destroy'), photo, :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger margin-bottom'

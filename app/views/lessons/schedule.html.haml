@@ -70,3 +70,6 @@
             %td
               = link_to t('.add_lesson'), new_lesson_url(group), :class => 'btn btn-mini btn-primary margin-top'
               = link_to t('.destroy_group', :default => t("helpers.links.destroy")), group_path(group), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger margin-top'
+#vk_comments
+:javascript
+  VK.Widgets.Comments("vk_comments", {limit: 10, width: "496", attach: "*"});

@@ -27,3 +27,7 @@
           %img{ :src => file.photo }
     .row-fluid
       %h3= @teacher.motto
+.row-fluid
+  #vk_comments
+  :javascript
+    VK.Widgets.Comments("vk_comments", {limit: 10, width: "496", attach: "*"});

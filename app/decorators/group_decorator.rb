@@ -13,4 +13,14 @@ class GroupDecorator < Draper::Decorator
     #FIXME
     model.lessons.find_by_day("---\n- #{day}\n")
   end
+
+  def space_locale
+    if model.space == :there_places
+      space_local = "есть места в группе"
+    end
+    if model.space == :there_not_places
+      space_local = "мест в группе нет"
+    end
+    space_local = "группа формируется"
+   end
 end

@@ -56,7 +56,8 @@
                 = group.once_price
                 = t('.rub')
               %br
-              %small.micro-text.micro-text-with-photo= group.space
+              #FIXME
+              -#%small.micro-text.micro-text-with-photo= group.space_locale
           - @days.each do |day|
             %td
               %b= group.lesson_time(day)

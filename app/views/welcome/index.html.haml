@@ -2,6 +2,7 @@
 = stylesheet_link_tag     "fotorama"
 = javascript_include_tag  "fotorama"
 = stylesheet_link_tag     "welcome"
+%script{ :src => "http://vk.com/js/api/openapi.js", :type => "text/javascript" }
 .span4
   .row
     - if @news
@@ -29,10 +30,16 @@
   .row
     %h3= t('.last_photos')
     - @photos_bottom.each do |photo|
-      %img.img-polaroid.mini{ :src => photo.photo }
+      %img.img-polaroid.mini{ :src => photo.photo.thumb }
     %br
     %br
     %a.btn.btn-info{ :href => "http://vk.com/ulmic" }= t('.photo_our_group_vk')
+  %hr
+  .row
+    .vk-widget
+      #vk_groups
+      :javascript
+        VK.Widgets.Group("vk_groups", {mode: 0, width: "auto", height: "400"}, 54275923);
 .span4
   .row
     %h3= t('.teachers')

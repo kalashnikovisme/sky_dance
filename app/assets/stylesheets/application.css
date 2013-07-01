@@ -20,6 +20,10 @@ body {
 
 .navbar-margin-top {
   margin-top: 400px;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -khtml-border-radius:10px;
 }
 
 .navbar-big-text {
@@ -35,6 +39,7 @@ body {
   padding: 10px;
   min-height: 300px;
   opacity: 0.9;
+  width: 925px;
 }
 
 .main-logo {

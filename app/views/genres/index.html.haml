@@ -4,7 +4,7 @@
 
 %table.table.table-hover
   - @genres.each do |genre|
-    %tr
+    %tr{ :onclick => "return location.href = '#{genre_path(genre)}'" }
       %td
         %a{ :href => genre_path(genre) }
           %img{ :src => genre.photo.thumb }

@@ -6,7 +6,8 @@
 .span4
   .row
     - if @news
-      %h3= t('.news')
+      %a{ :href => news_index_path }
+        %h3= t('.news')
       %table.table.table-hover
         - @news.each do |news|
           %tr.table-aligned
@@ -42,7 +43,8 @@
         VK.Widgets.Group("vk_groups", {mode: 0, width: "auto", height: "400"}, 54275923);
 .span4
   .row
-    %h3= t('.teachers')
+    %a{ :href => teachers_index_path }
+      %h3= t('.teachers')
     .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "300px","data-ratio" => "800/600" }
       - @teachers.each do |teacher|
         %img{ :src => teacher.first_photo, "data-caption" => teacher.fio }
@@ -51,7 +53,8 @@
   .row
     = t('.text_about_sky_dance')
 .span3
-  %h3= t('.dances')
+  %a{ :href => genres_index_path }
+    %h3= t('.dances')
   %table.table.table-hover
     - @genres.each do |genre|
       %tr.table-aligned

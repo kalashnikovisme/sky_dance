@@ -1,4 +1,5 @@
 %html
+
   %head
     %title SkyDance
     = stylesheet_link_tag    "bootstrap_and_overrides", :media => "all"
@@ -9,10 +10,10 @@
     :javascript
       VK.init({apiId: 3721037, onlyWidgets: true});
   %body
-    %a{:href => '/'}
+    %a{ :href => "#footer" }
       .main-logo.logo-sky-dance
-    .navbar-wrapper.navbar-margin-top.navbar-big-text.navbar-size
-      .container
+    .container
+      .navbar-wrapper.navbar-margin-top.navbar-big-text.navbar-size
         .navbar.navbar-opacity-white
           .navbar-inner
             %a.btn.btn-navbar{ "data-target" => ".nav-collapse", "data-toggle" => "collapse" }

@@ -10,7 +10,7 @@
         %h3= t('.news')
       %table.table.table-hover
         - @news.each do |news|
-          %tr.table-aligned
+          %tr.table-aligned{ :onclick => "return location.href = '#{news_path(news)}'" }
             %th
               %a{ :href => news_path(news) }
                 %img.img-rounded.micro{ :src => news.main_photo_thumb }

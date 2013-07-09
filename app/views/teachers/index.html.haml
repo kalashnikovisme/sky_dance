@@ -1,6 +1,8 @@
 = stylesheet_link_tag "teachers", :media => "all"
 
-%h1= t('.sky_dance_teachers')
+%h1
+  = t('.teachers')
+  %span.eng_symbols Sky Dance
 %ul.thumbnails
   - @teachers.each do |teacher|
     %li.span3.teacher_cell

@@ -43,7 +43,7 @@
         VK.Widgets.Group("vk_groups", {mode: 0, width: "auto", height: "400"}, 54275923);
 .span4
   .row
-    %a{ :href => teachers_index_path }
+    %a{ :href => teachers_path }
       %h3= t('.teachers')
     .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "300px","data-ratio" => "800/600" }
       - @teachers.each do |teacher|
@@ -53,7 +53,7 @@
   .row
     = t('.text_about_sky_dance')
 .span3
-  %a{ :href => genres_index_path }
+  %a{ :href => genres_path }
     %h3= t('.dances')
   %table.table.table-hover
     - @genres.each do |genre|

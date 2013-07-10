@@ -6,9 +6,9 @@
 %ul.thumbnails
   - @teachers.each do |teacher|
     %li.span3.teacher_cell
-      .thumbnail
+      .thumbnail.height_thumbnail
         %a{ :href => teacher_path(teacher) }
-          = image_tag teacher.first_photo
+          = image_tag teacher.first_photo.big_thumb
         %h3= teacher.fio
         %p= teacher.motto
         - teacher.genres.each do |genre|

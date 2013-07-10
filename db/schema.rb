@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(:version => 20130626233610) do
   end
 
   create_table "categories", :force => true do |t|
-    t.string   "describe"
+    t.text     "describe"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "genres", :force => true do |t|
-    t.string "description"
-    t.string "photo"
+    t.text   "description"
+    t.text   "photo"
     t.string "title"
   end
 
@@ -53,16 +53,16 @@ ActiveRecord::Schema.define(:version => 20130626233610) do
 
   create_table "news", :force => true do |t|
     t.string   "title"
-    t.string   "body"
+    t.text     "body"
     t.date     "published_at"
-    t.string   "photo"
+    t.text     "photo"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
 
   create_table "photos", :force => true do |t|
     t.text     "description"
-    t.string   "photo"
+    t.text     "photo"
     t.integer  "attachable_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20130626233610) do
   create_table "teachers", :force => true do |t|
     t.string   "first_name"
     t.string   "middle_name"
-    t.string   "description"
+    t.text     "description"
     t.string   "motto"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20130626233610) do
   end
 
   create_table "videos", :force => true do |t|
-    t.string   "link"
+    t.text     "link"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "genre_id"

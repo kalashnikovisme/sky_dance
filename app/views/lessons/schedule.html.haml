@@ -46,7 +46,7 @@
             %td.first-column
               %a{ :href => teacher_path(group.teacher)  }
                 .micro-photo
-                  = image_tag group.teacher.decorate.first_photo.thumb
+                  = image_tag group.teacher.decorate.first_photo_thumb
                 .micro-text-with-photo
                   %small.micro-text= group.teacher.decorate.fio
               %br

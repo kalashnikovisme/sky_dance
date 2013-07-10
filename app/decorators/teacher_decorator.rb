@@ -7,6 +7,18 @@ class TeacherDecorator < Draper::Decorator
     end
   end
 
+  def first_photo_thumb
+    if model.photos.any?
+      model.photos.first.photo.thumb
+    end
+  end
+
+  def first_photo_big_thumb
+    if model.photos.any?
+      model.photos.first.photo.big_thumb
+    end
+  end
+
   def fio
     "#{model.first_name} #{model.middle_name}"
   end

@@ -9,7 +9,8 @@
         %a{ :href => genre_path(genre) }
           %img{ :src => genre.photo.thumb }
       %td
-        %h3= link_to genre.title, genre
+        = link_to genre.title, genre, :class => 'title'
+        %br
         %br= genre.entry
       %td
         -#FIXME

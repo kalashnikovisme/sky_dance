@@ -31,6 +31,16 @@ task :seed_data do
   run "cd #{current_path} && RAILS_ENV=#{rails_env} #{rake} db:seed"
 end
 
+desc "Photos caching"
+task :save_photos do
+  run "cd #{current_path}/public && cp -r uploads/ #{app_dir}/shared"
+end
+
+desc "Photos restoring"
+task :restore_photos do
+  run "cd #{current_path}/public && cp -r #{app_dir}/shared/uploads ./"
+end
+
 namespace :db do
   desc "Symlink to sqlite db"
     task :symlink do
@@ -44,6 +54,8 @@ namespace :bundler do
         end
 end
 
+before 'deploy:update', 'save_photos'
+after 'deploy:update', 'restore_photos'
 after 'deploy:create_symlink', 'db:symlink'
 after 'deploy:finalize_update', 'bundler:install'
 after 'deploy:migrate', 'bundler:install'

@@ -8,7 +8,7 @@
     %li.span3.teacher_cell
       .thumbnail
         %a{ :href => teacher_path(teacher) }
-          = teacher.first_photo
+          = image_tag teacher.first_photo
         %h3= teacher.fio
         %p= teacher.motto
         - teacher.genres.each do |genre|

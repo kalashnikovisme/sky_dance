@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (1.0.2)
     actionmailer (3.2.13)
       actionpack (= 3.2.13)
       mail (~> 2.5.3)
@@ -28,6 +29,7 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    afm (0.2.0)
     ansi (1.4.3)
     arel (3.0.2)
     better_errors (0.8.0)
@@ -88,6 +90,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    hashery (2.1.0)
     highline (1.6.19)
     hike (1.2.2)
     i18n (0.6.1)
@@ -108,6 +111,8 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.23)
+    mini_magick (3.6.0)
+      subexec (~> 0.2.1)
     minitest (4.3.3)
     multi_json (1.7.4)
     nested_form (0.3.2)
@@ -119,8 +124,20 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     orm_adapter (0.4.0)
+    pdf-reader (1.3.3)
+      Ascii85 (~> 1.0.0)
+      afm (~> 0.2.0)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
     pg (0.15.1)
     polyglot (0.3.3)
+    prawn (0.12.0)
+      pdf-reader (>= 0.9.0)
+      ttfunk (~> 1.0.2)
+    prawn_rails (0.0.11)
+      prawn (>= 0.11.1)
+      railties (>= 3.0.0)
     pry (0.9.12)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -164,6 +181,7 @@ GEM
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.13.0)
+    ruby-rc4 (0.1.5)
     rvm-capistrano (1.3.0)
       capistrano (>= 2.0.0)
     sass (3.2.9)
@@ -185,6 +203,7 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
+    subexec (0.2.3)
     tconsole (1.2.8)
       chattyproc (~> 1.0.0)
       minitest (~> 4.3.0)
@@ -198,6 +217,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    ttfunk (1.0.3)
     turn (0.9.6)
       ansi
     twitter-bootstrap-rails (2.2.0)
@@ -235,9 +255,12 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   less-rails
+  mini_magick
   minitest
   nested_form
   pg
+  prawn
+  prawn_rails
   pry
   rails (= 3.2.13)
   rmagick

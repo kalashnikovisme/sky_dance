@@ -11,8 +11,11 @@ gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
 gem "ckeditor"
+gem 'mini_magick'
 gem 'validates'
 gem 'enumerize'
+gem 'prawn'
+gem 'prawn_rails'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
@@ -22,9 +25,9 @@ gem 'nested_form'
 gem 'draper', '~> 1.0.0'
 gem 'enumerize'
 gem 'jquery-rails'
+gem 'prawn', :submodules => true
 
 group :assets do
-
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'

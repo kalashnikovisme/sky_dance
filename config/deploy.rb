@@ -33,12 +33,12 @@ end
 
 desc "Photos caching"
 task :save_photos do
-  run "cd #{current_path}/public && cp -r uploads/ #{app_dir}/shared"
+  run "mv #{app_dir}/shared/uploads/uploads #{app_dir}/shared/uploads/#{Time.now.utc.strftime("%Y%m%d%H%M%S")} && cd #{current_path}/public && cp -r uploads/ #{app_dir}/shared/uploads"
 end
 
 desc "Photos restoring"
 task :restore_photos do
-  run "cd #{current_path}/public && cp -r #{app_dir}/shared/uploads ./"
+  run "cd #{current_path}/public && cp -r #{app_dir}/shared/uploads/uploads ./"
 end
 
 namespace :db do
@@ -55,7 +55,9 @@ namespace :bundler do
 end
 
 before 'deploy:update', 'save_photos'
+before 'deploy:update', 'unicorn:stop'
 after 'deploy:update', 'restore_photos'
+after 'deploy:update', 'unicorn:start'
 after 'deploy:create_symlink', 'db:symlink'
 after 'deploy:finalize_update', 'bundler:install'
 after 'deploy:migrate', 'bundler:install'

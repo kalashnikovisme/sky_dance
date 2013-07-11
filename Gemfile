@@ -11,6 +11,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
 gem "ckeditor"
+gem 'mini_magick'
 gem 'validates'
 gem 'enumerize'
 gem "therubyracer"

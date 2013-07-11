@@ -45,7 +45,7 @@
   .row
     %a{ :href => teachers_path }
       %h3= t('.teachers')
-    .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "400px", "data-ratio" => "800/600", "data-fit" => "cover" }
+    .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "400px", "data-ratio" => "1600/1200", "data-fit" => "cover" }
       = @teachers.each do |teacher|
         %img{ :src => teacher.first_photo, "data-caption" => teacher.fio }
     %br

@@ -5,11 +5,12 @@
     .field
       = f.input :title, :placeholder => t('.maximum_70_symbols')
       = f.label :body
-      = f.text_area :body, :rows => 5, :class => :span6
+      = f.cktext_area :body
       = f.input :published_at
+      = f.label :photo
       - if @news.photo
         = image_tag @news.main_photo.thumb
-      = f.input :photo
+      = f.file_field :photo
       .form-actions
         = f.button :submit, t('.save'), :class => 'btn btn-primary'
         = link_to t('.cancel', :default => t("helpers.links.cancel")), news_index_path, :class => 'btn'

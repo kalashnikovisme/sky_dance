@@ -42,7 +42,7 @@
       - genre.groups.decorate.each do |group|
         %tr
           -#FIXME
-          - (if group.lessons.any? or session[:admin_id]) and group.teacher.present?
+          - if (group.lessons.any? or session[:admin_id]) and group.teacher.present?
             %td.first-column
               %a{ :href => teacher_path(group.teacher) }
                 .micro-photo

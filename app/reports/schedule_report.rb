@@ -1,5 +1,5 @@
 class ScheduleReport < Prawn::Document
-  Widths = [200, 200, 120]
+  Widths = [100, 100, 100]
   Headers = ['Дата добавления', 'Клиент', 'Баланс']
 
   def row(amount)
@@ -36,18 +36,20 @@ class ScheduleReport < Prawn::Document
 
     @days = [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
     @genres.each do |genre|
-      data << genre.groups.decorate.map { |genre|
-        [group.teacher.decorate.fio, group.category.decribe,
-          @days.map { |day|
-            group.lesson_time(day)
-          }
-        ]
+      text genre.title
+      data << ["Вторник"]
+      data << @days.map { |day|
+        genre.groups.decorate.map { |group|
+          [group.lesson_time(day)]
+        }
       }
+      head = make_table([Headers])
+      table(data) do
+        cells.style :overflow => :shrink_to_fit, :min_font_size => 8
+      end
     end
 
-    table(data)
 
-    #head = make_table([Headers], :column_widths => Widths)
     #table([[head], *(data.map{|d| [d]})], :header => true, :row_colors => %w[cccccc ffffff]) do
     #  row(0).style :background_color => '000000', :text_color => 'ffffff'
     #  cells.style :borders => []

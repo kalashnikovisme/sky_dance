@@ -74,6 +74,7 @@ ru:
     schedule:
       schedule:         'Расписание'
       group:            'Группа'
+      print:            'Печать'
       monday:           'Понедельник'
       tuesday:          'Вторник'
       wednesday:        'Среда'

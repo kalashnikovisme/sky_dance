@@ -14,8 +14,6 @@ gem "ckeditor"
 gem 'mini_magick'
 gem 'validates'
 gem 'enumerize'
-gem 'prawn'
-gem 'prawn_rails'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
@@ -25,7 +23,7 @@ gem 'nested_form'
 gem 'draper', '~> 1.0.0'
 gem 'enumerize'
 gem 'jquery-rails'
-gem 'prawn', :git => "https://github.com/prawnpdf/prawn.git", :ref => '8028ca0cd2'
+gem 'prawn', :git => "https://github.com/prawnpdf/prawn.git"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

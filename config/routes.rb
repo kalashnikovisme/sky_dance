@@ -1,5 +1,7 @@
 SkyDance::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   root :to => "welcome#index"
 
   match "admin" => "admins#login"

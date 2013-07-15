@@ -10,6 +10,8 @@ gem 'rspec'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
+gem "ckeditor"
+gem 'mini_magick'
 gem 'validates'
 gem 'enumerize'
 gem "therubyracer"
@@ -47,7 +49,6 @@ end
 group :development do
   gem 'better_errors'
 end
-
 
 group :production do
   gem 'pg'

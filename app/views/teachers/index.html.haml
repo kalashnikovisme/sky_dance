@@ -4,7 +4,9 @@
   = t('.teachers')
   %span.eng_symbols Sky Dance
 %ul.thumbnails
-  - @teachers.each do |teacher|
+  - @teachers.each_with_index do |teacher, i|
+    - if i % 4 == 0
+      %hr
     %li.span3.teacher_cell
       .thumbnail.height_thumbnail
         %a{ :href => teacher_path(teacher) }

@@ -204,7 +204,8 @@ ru:
       confirm:    'Вы уверены?'
       back:       'Назад'
     form:
-      add_photo:  'Добавить фото'
+      add_photo:               'Добавить фото'
+      gorizontal_photo_better: 'горизонтальные фото будут выглядеть значительно лучше'
 
   date:
     abbr_day_names:

@@ -22,7 +22,7 @@
     = link_to t('.back'), teachers_path, :class => 'btn'
   .span5
     .row-fluid
-      .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "400px", "data-ratio" => "800/600" }
+      .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "400px", "data-ratio" => "1600/1200", "data-fit" => "contain" }
         = @teacher.photos.each do |file|
           %img{ :src => file.photo }
     .row-fluid

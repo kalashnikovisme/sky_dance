@@ -21,17 +21,38 @@ class ScheduleReport < Prawn::Document
     text "Отчет за #{Time.zone.now.strftime('%b %Y')}", :size => 15, :style => :bold, :align => :center
     move_down(18)
     # выборка записей
-    @schedule = Lesson.all
+    @genres = Genre.all
     data = []
-    items = @schedule.each do |item|
-      data << row(item.group.genre.title)
+    #items = @genres.each do |item|
+    #  data << row(item.group.genre.title)
+    #end
+
+    #data << @genres.map { |genre|
+    #  genre.groups.map { |group|
+    #    [genre.id, genre.title]
+    #  }
+    #}
+
+
+    @days = [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
+    @genres.each do |genre|
+      data << genre.groups.decorate.map { |genre|
+        [group.teacher.decorate.fio, group.category.decribe,
+          @days.map { |day|
+            group.lesson_time(day)
+          }
+        ]
+      }
     end
 
-    head = make_table([Headers], :column_widths => Widths)
-    table([[head], *(data.map{|d| [d]})], :header => true, :row_colors => %w[cccccc ffffff]) do
-      row(0).style :background_color => '000000', :text_color => 'ffffff'
-      cells.style :borders => []
-    end
+    table(data)
+
+    #head = make_table([Headers], :column_widths => Widths)
+    #table([[head], *(data.map{|d| [d]})], :header => true, :row_colors => %w[cccccc ffffff]) do
+    #  row(0).style :background_color => '000000', :text_color => 'ffffff'
+    #  cells.style :borders => []
+    #end
+
     # добавим время создания внизу страницы
     creation_date = Time.zone.now.strftime("Отчет сгенерирован %e %b %Y в %H:%M")
     go_to_page(page_count)

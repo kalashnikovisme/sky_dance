@@ -51,7 +51,7 @@
                   %small.micro-text= group.teacher.decorate.fio
               %br
               %br
-              %small.micro-text= group.category.describe
+              %small.micro-text= group.category.describe if group.category.present?
               #FIXME
               -#%small.micro-text.micro-text-with-photo= group.space_locale
           - @days.each do |day|

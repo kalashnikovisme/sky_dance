@@ -2,6 +2,7 @@
 
 .page-header
   %h1= t('.schedule')
+  = link_to t('.print'), schedule_pdf_path, :class => 'btn'
 - @genres.each do |genre|
   -#FIXME
   - if genre.groups.any? or session[:admin_id]
@@ -42,9 +43,9 @@
       - genre.groups.decorate.each do |group|
         %tr
           -#FIXME
-          - if group.lessons.any? or session[:admin_id]
+          - if (group.lessons.any? or session[:admin_id]) and group.teacher.present?
             %td.first-column
-              %a{ :href => teacher_path(group.teacher)  }
+              %a{ :href => teacher_path(group.teacher) }
                 .micro-photo
                   = image_tag group.teacher.decorate.first_photo_thumb
                 .micro-text-with-photo

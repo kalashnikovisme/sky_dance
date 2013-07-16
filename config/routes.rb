@@ -6,6 +6,7 @@ SkyDance::Application.routes.draw do
 
   match "admin" => "admins#login"
   get "schedule" => "lessons#schedule"
+  get "schedule_pdf" => "lessons#schedule_to_pdf"
 
   resources :groups, :except => [:show, :index] do
     member do

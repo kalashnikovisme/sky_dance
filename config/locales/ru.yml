@@ -74,6 +74,7 @@ ru:
     schedule:
       schedule:         'Расписание'
       group:            'Группа'
+      edit_group:       'Изм. группу'
       print:            'Печать'
       monday:           'Понедельник'
       tuesday:          'Вторник'
@@ -88,7 +89,7 @@ ru:
       add_lesson:       'Добавить урок'
       confirm:          'Вы уверены? Все занятия этой группы будут удалены.'
       destroy_lesson:   'Удалить занятие'
-      destroy_group:    'Удалить группу'
+      destroy_group:    'Удал. группу'
       price:            'Цена за курс'
       once_price:       'за одно занятие'
       actions:          'Действия'

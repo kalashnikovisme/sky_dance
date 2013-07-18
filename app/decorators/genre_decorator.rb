@@ -3,7 +3,7 @@ class GenreDecorator < Draper::Decorator
 
   def entry
     if model.description
-      model.description.first 140
+      "#{model.description.first 140}..."
     end
   end
 end

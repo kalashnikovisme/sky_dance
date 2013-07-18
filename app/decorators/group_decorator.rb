@@ -15,12 +15,14 @@ class GroupDecorator < Draper::Decorator
   end
 
   #def space_locale
-  #  if model.space == :there_places
-  #    space_local = "есть места в группе"
+  #  if model.space.there_places?
+  #    "есть места в группе"
   #  end
-  #  if model.space == :there_not_places
-  #    space_local = "мест в группе нет"
+  #  if model.space.there_not_places?
+  #    "мест в группе нет"
   #  end
-  #  space_local = "группа формируется"
-  # end
+  #  if model.space.group_formed?
+  #    "группа формируется"
+  #  end
+  #end
 end

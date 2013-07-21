@@ -53,7 +53,7 @@
               %br
               %br
               %small.micro-text= group.category.describe if group.category.present?
-              #FIXME
+              -#FIXME
               -#%small.micro-text.micro-text-with-photo= group.space_locale
           - @days.each do |day|
             %td
@@ -72,7 +72,18 @@
           - if session[:admin_id]
             %td
               = link_to t('.add_lesson'), new_lesson_url(group), :class => 'btn btn-mini btn-primary margin-top'
+              = link_to t('.edit_group'), edit_group_path(group), class: 'btn btn-mini btn-primary margin-top'
               = link_to t('.destroy_group', :default => t("helpers.links.destroy")), group_path(group), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger margin-top'
+%small
+  %span * Абонемент действует 4 недели (продление в случае отъезда -желательно билеты; в случае болезни - желательно справка, при отмене занятия по решению администрации танцевального центра)
+  %ol
+    %li Абонемент действует 4 недели (читай выше)
+    %li
+      %span.eng_symbols Sky Dance
+      %span не несет ответственность за ухудшение здоровья, связанного с острым заболеванием либо обострением травмы или хронического заболевания, имеющегося у клиента до момента посещения, а также при получении травмы по неосторожности клиента.
+    %li Запрещено использование техники танцевального центра без разрешения администрации.
+    %li Администрация не несет ответственности за оставленные и забытые ценные вещи.
+    %li Вы можете оставить ваши ценности у администратора.
 #vk_comments
 :javascript
   VK.Widgets.Comments("vk_comments", {limit: 10, width: "496", attach: "*"});

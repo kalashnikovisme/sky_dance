@@ -2,6 +2,7 @@
 
 .page-header
   %h1= t('.schedule')
+  = link_to t('.print'), schedule_pdf_path, :class => 'btn'
 - @genres.each do |genre|
   -#FIXME
   - if genre.groups.any? or session[:admin_id]

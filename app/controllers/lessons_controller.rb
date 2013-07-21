@@ -1,3 +1,5 @@
+require "prawn"
+
 class LessonsController < ApplicationController
 
   def schedule
@@ -5,6 +7,16 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
     #FIXME
     @days = [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
+
+    respond_to do |format|
+      format.pdf { render :layout => false }
+      format.html
+    end
+  end
+
+  def schedule_to_pdf
+    output = ScheduleReport.new.to_pdf
+    send_data output, :type => 'application/pdf', :filename => "customers.pdf"
   end
 
   def new

@@ -41,9 +41,9 @@
           %td
             %small= t('.actions')
       - genre.groups.decorate.each do |group|
-        %tr
-          -#FIXME
-          - if (group.lessons.any? or session[:admin_id]) and group.teacher.present?
+        -# FIXME
+        - if (group.lessons.any? or session[:admin_id]) and group.teacher.present?
+          %tr
             %td.first-column
               %a{ :href => teacher_path(group.teacher) }
                 .micro-photo
@@ -54,25 +54,26 @@
               %br
               = group.space_identificator
               %small.micro-text= group.category.describe if group.category.present?
-          - @days.each do |day|
-            %td
-              %b= group.lesson_time(day)
-              -#FIXME
-              - if group.find_lesson_by_day(day) and session[:admin_id]
+            - @days.each do |day|
+              %td
                 %br
-                = link_to t('edit', :default => t("helpers.links.edit")), edit_lesson_path(group.find_lesson_by_day(day)), :class => 'btn btn-mini margin-top'
-                = link_to t('destroy', :default => t("helpers.links.destroy")), lesson_path(group.find_lesson_by_day(day)), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger margin-top'
-          %td
-            = group.price
-            = t('.rub')
-          %td
-            = group.once_price
-            = t('.rub')
-          - if session[:admin_id]
+                %b.lesson-time-text= group.lesson_time(day)
+                -#FIXME
+                - if group.find_lesson_by_day(day) and session[:admin_id]
+                  %br
+                  = link_to t('edit', :default => t("helpers.links.edit")), edit_lesson_path(group.find_lesson_by_day(day)), :class => 'btn btn-mini margin-top'
+                  = link_to t('destroy', :default => t("helpers.links.destroy")), lesson_path(group.find_lesson_by_day(day)), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger margin-top'
             %td
-              = link_to t('.add_lesson'), new_lesson_url(group), :class => 'btn btn-mini btn-primary margin-top'
-              = link_to t('.edit_group'), edit_group_path(group), class: 'btn btn-mini btn-primary margin-top'
-              = link_to t('.destroy_group', :default => t("helpers.links.destroy")), group_path(group), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger margin-top'
+              = group.price
+              = t('.rub')
+            %td
+              = group.once_price
+              = t('.rub')
+            - if session[:admin_id]
+              %td
+                = link_to t('.add_lesson'), new_lesson_url(group), :class => 'btn btn-mini btn-primary margin-top'
+                = link_to t('.edit_group'), edit_group_path(group), class: 'btn btn-mini btn-primary margin-top'
+                = link_to t('.destroy_group', :default => t("helpers.links.destroy")), group_path(group), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger margin-top'
 %small
   .there_places.ident
   %span - в данной группе имеются свободные места
@@ -82,7 +83,6 @@
   %br
   .group_formed.ident
   %span - группа формируется и занятия пока не начались
-  %br
   %span * Абонемент действует 4 недели (продление в случае отъезда -желательно билеты; в случае болезни - желательно справка, при отмене занятия по решению администрации танцевального центра)
   %ol
     %li Абонемент действует 4 недели (читай выше)

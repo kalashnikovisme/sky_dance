@@ -7,7 +7,7 @@ class ScheduleReport < Prawn::Document
         :normal  => "#{Rails.root}/public/assets/verdana.ttf"
         })
     font "Verdana", :size => 10
-    text I18n.t 'schedule', size: 22, style: :bold, align: :center
+    text "Расписание Sky Dance Studio", size: 22, style: :bold, align: :center
     move_down(18)
     @genres = Genre.all
     data = []

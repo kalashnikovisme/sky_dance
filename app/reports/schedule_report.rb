@@ -7,7 +7,7 @@ class ScheduleReport < Prawn::Document
         :normal  => "#{Rails.root}/public/assets/verdana.ttf"
         })
     font "Verdana", :size => 10
-    text "Расписание Sky Dance Studio", size: 22, style: :bold, align: :center
+    text I18n.t('reports.head'), size: 22, style: :bold, align: :center
     move_down(18)
     @genres = Genre.all
     data = []
@@ -25,7 +25,10 @@ class ScheduleReport < Prawn::Document
         text "#{group.teacher.decorate.fio} - #{group.category.describe}"
         move_down 10
         font_size 10
-        data << ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс", "Цена за курс", "за одно занятие"]
+        data = [I18n.t('date.abbr_day_names')[1..6] <<
+                I18n.t('date.abbr_day_names')[0] <<
+                I18n.t('reports.course_price') <<
+                I18n.t('reports.single_price')]
         font_size 12
         data << [group.lesson_time(:monday),
                  group.lesson_time(:tuesday),
@@ -34,13 +37,13 @@ class ScheduleReport < Prawn::Document
                  group.lesson_time(:friday),
                  group.lesson_time(:saturday),
                  group.lesson_time(:sunday),
-                 "#{group.price} руб.",
-                 "#{group.once_price} руб."]
+                 "#{group.price} #{I18n.t('rub')}",
+                 "#{group.once_price} #{I18n.t('rub')}"]
       end
       table data, width: 500
     end
 
-    creation_date = Time.zone.now.strftime("Расписание актуально на  %e %b %Y в %H:%M")
+    creation_date = Time.zone.now.strftime(I18n.t('report.actual_for'))
     go_to_page(page_count)
     move_down(710)
     text creation_date, :align => :right, :style => :italic, :size => 9

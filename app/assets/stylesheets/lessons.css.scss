@@ -46,3 +46,26 @@
 .first-column {
   width: 120px;
 }
+
+.ident {
+  width: 15px;
+  height: 15px;
+  float: left;
+  margin: 2px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -khtml-border-radius: 4px;
+}
+
+.there_places {
+  background-color: green;
+}
+
+.there_not_places {
+  background-color: red;
+}
+
+.group_formed {
+  background-color: yellow;
+}

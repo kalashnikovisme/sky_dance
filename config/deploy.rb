@@ -9,7 +9,7 @@ set :rvm_type, :user
 role :web, "skydance73.ru"
 role :db, "skydance73.ru", :primary => true
 
-set :user, "user"  # The server's user for deploys
+set :user, "skydance"  # The server's user for deploys
 
 set :use_sudo, false
 

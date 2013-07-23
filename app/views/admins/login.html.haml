@@ -1,11 +1,11 @@
 = flash[:notice]
 = form_tag do
-  =t('.login')
+  =t('login')
   %br
   = text_field_tag :login, params[:login], :class => "span4"
   %br
-  =t('.password')
+  =t('password')
   %br
   = password_field_tag :password, params[:password], :class => "span4"
   %br
-  = submit_tag t('.enter'), :class => "btn btn-success"
+  = submit_tag t('enter'), :class => "btn btn-success"

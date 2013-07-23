@@ -2,11 +2,12 @@ class ScheduleReport < Prawn::Document
   def to_pdf
     font_families.update(
       "Verdana" => {
-        :bold => "/home/pavel/prawn_fonts/verdanab.ttf",
-        :italic => "/home/pavel/prawn_fonts/verdanai.ttf",
-        :normal  => "/home/pavel/prawn_fonts/verdana.ttf" })
+        :bold => "#{Rails.root}/public/assets/verdana-bold.ttf",
+        :italic => "#{Rails.root}/public/assets/verdana-italic.ttf",
+        :normal  => "#{Rails.root}/public/assets/verdana.ttf"
+        })
     font "Verdana", :size => 10
-    text "Расписание школы танцев Sky Dance", size: 22, style: :bold, align: :center
+    text I18n.t 'schedule', size: 22, style: :bold, align: :center
     move_down(18)
     @genres = Genre.all
     data = []

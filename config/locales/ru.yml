@@ -1,5 +1,4 @@
 ru:
-
   wrong_login: 'Неверный логин или пароль'
 
   time:
@@ -16,7 +15,6 @@ ru:
       hello_admin:  'Здравствуйте, Администратор'
       you_can:      'Вы можете:'
     login:
-      enter:        'Войти'
       login:        'Логин'
       password:     'Пароль'
 
@@ -27,21 +25,14 @@ ru:
   teachers:
     show:
       upload_photo:   'Загрузить фотографию'
-      back:           'Назад'
-      edit:           'Изменить данные преподавателя'
-      destroy:        'Удалить преподавателя'
       add_photo:      'Добавить фото'
       admins_photo:   'Администрировать фотографии преподавателя'
       admins_buttons: 'Кнопки администратора'
     index:
-      teachers:   'Преподаватели'
-      edit:                 'Изменить'
-      destroy:              'Удалить'
       new_teacher:          'Добавить преподавателя'
     form:
       not_more_than_140_symbols:  'Не больше 140 символов'
       add_teacher:                'Добавить преподавателя'
-      cancel:                     'Отмена'
       teacher_description:        'Рассказ о преподавателя, о его деятельности, достижениях и заслугах'
       required_fields:            '* - поля обязательные для заполнения'
     new:
@@ -52,40 +43,22 @@ ru:
   genres:
     index:
       dance_genres: 'Танцевальные жанры'
-      edit:         'Изменить'
-      destroy:      'Удалить'
       new_genre:    'Добавить жанр'
     show:
       admins_buttons:   'Кнопки администратора'
       admins_video:     'Администрирование видео'
-      edit:             'Изменить'
-      destroy:          'Удалить'
-      back:             'Назад'
     new:
       title:            'Добавить жанр'
     form:
       save_genre:       'Сохранить жанр'
-      cancel:           'Отмена'
       choose_new_photo: 'Выбрать новое фото'
     edit:
       edit_genre:       'Редактировать жанр'
 
   lessons:
     schedule:
-      schedule:         'Расписание'
-      group:            'Группа'
       edit_group:       'Изм. группу'
-      print:            'Печать'
-      monday:           'Понедельник'
-      tuesday:          'Вторник'
-      wednesday:        'Среда'
-      thursday:         'Четверг'
-      friday:           'Пятница'
-      saturday:         'Суббота'
-      sunday:           'Воскресенье'
       add_group:        'Добавить группу'
-      edit:             'Изменить'
-      destroy:          'Удалить'
       add_lesson:       'Добавить урок'
       confirm:          'Вы уверены? Все занятия этой группы будут удалены.'
       destroy_lesson:   'Удалить занятие'
@@ -94,10 +67,10 @@ ru:
       once_price:       'за одно занятие'
       actions:          'Действия'
       rub:              ' руб.'
+
+
     new:
       add_lesson:       'Добавить занятие'
-    form:
-      cancel:           'Отмена'
     edit:
       title:            'Редактировать занятие'
 
@@ -108,19 +81,15 @@ ru:
       title:                  'Редактировать видео'
     form:
       add_video:              'Добавить видео'
-      cancel:                 'Отмена'
     admins:
       admins_video_of_genre:  'Администрирование видео жанра'
-      destroy:                'Удалить'
       confirm:                'Вы уверены?'
-      back:                   'Назад'
 
   groups:
     form:
-      add_category:         'Добавить категорию'
-      add_group:            'Добавить группу'
-      cancel:               'Отмена'
-      admins_categories:   'Администрирование категорий'
+      add_category:      'Добавить категорию'
+      add_group:         'Добавить группу'
+      admins_categories: 'Администрирование категорий'
     new:
       add_group:    'Добавить группу'
     edit:
@@ -128,50 +97,32 @@ ru:
 
   categories:
     admins:
-      destroy:  'Удалить'
-      edit:     'Изменить'
       actions:  'Действия'
       title:    'Администрирование категорий'
       confirm:  'Вы уверены? Будут удалены все группы, связанные с этой категорией.'
     form:
       new:             'Добавить категорию'
-      cancel:         'Отмена'
       add_category:   'Добавить категорию'
     edit:
       title:          'Редактировать категорию'
 
   layouts:
     application:
-      about_us:             'О нас'
       schedule_and_prices:  'Расписание и цены'
-      dances:               'Танцы'
-      teachers:             'Преподаватели '
-      contacts:             'Контакты'
-      news:                 'Новости'
     footer:
-      about_us:             'О нас'
       our_adress:           'Наш адрес'
       schedule_and_prices:  'Расписание и цены'
-      contacts:             'Контакты'
       phone:                'Телефон'
 
   news:
     show:
-      edit:     'Изменить'
-      back:     'Назад'
-      destroy:  'Удалить'
       admins_buttons:   'Кнопки администратора'
     edit:
       title:    'Редактировать новость'
     form:
-      save:                 'Сохранить'
-      cancel:               'Отмена'
       maximum_70_symbols:  'Максимум 70 символов'
     index:
-      title:    'Новости'
       new:      'Добавить новость'
-      edit:     'Изменить'
-      destroy:  'Удалить'
       cut:      'Читать далее'
       new_news: 'Добавить новость'
     new:
@@ -179,20 +130,16 @@ ru:
 
   welcome:
     index:
-      teachers:             'Преподаватели'
       text_about_sky_dance: 'SKYDance is the best dance school in the world!!!'
       sky_dance_video:      'Видео Sky Dance'
-      dances:               'Танцевальные жанры'
       video_our_group_vk:   'Видео в нашей группе во ВКонтакте'
       photo_our_group_vk:   'Фотографии в группе во ВКонтакте'
       last_photos:          'Последние фотографии'
-      news:                 'Новости'
       all_news:             'Все новости'
       text_about_sky_dance: 'ПЕРВАЯ В ГОРОДЕ СТУДИЯ POLE DANCE!!! Это уникальный танцевальный центр, несколько комфортабельных евро-залов, целых 6 пилонов для любимых клиентов, а также уникальное приспособление для занятий - впервые в городе -Воздушное кольцо. Множество самых модных и ярких танцевальных и фитнесс направлений и, конечно, сертифицированные, самые титулованные и позитивные преподаватели, которые научат вас танцевать.
 
       Вас ждут НУ ОООЧЕНЬ МНОГО сюрпризов, о которых вы даже не догадываетесь! ТЕПЕРЬ ТАНЦЫ - ЭТО НЕ ХОББИ, А ОБРАЗ ЖИЗНИ! ;)'
     about:
-      about:      'О студии'
       text_about_sky_dance: ''
     contacts:
       our_adress:           'г. Ульяновск, 2 переулок Мира, 24.'
@@ -202,12 +149,38 @@ ru:
 
   photos:
     admins:
-      destroy:    'Удалить'
       confirm:    'Вы уверены?'
-      back:       'Назад'
     form:
       add_photo:               'Добавить фото'
       gorizontal_photo_better: 'горизонтальные фото будут выглядеть значительно лучше'
+
+  schedule_report:
+    to_pdf:
+      schedule:         'Расписание школы Sky Dance'
+
+  edit:                'Изменить'
+  enter:               'Войти'
+  back:                'Назад'
+  destroy:             'Удалить'
+  cancel:              'Отмена'
+  dances:              'Жанры'
+  teachers:            'Преподаватели'
+  schedule:            'Расписание'
+  group:               'Группа'
+  print:               'Печать'
+  monday:              'Понедельник'
+  tuesday:             'Вторник'
+  wednesday:           'Среда'
+  thursday:            'Четверг'
+  friday:              'Пятница'
+  saturday:            'Суббота'
+  sunday:              'Воскресенье'
+  about:               'О нас'
+  news:                'Новости'
+  contacts:            'Контакты'
+  save:                'Сохранить'
+  schedule_and_prices: 'Расписание и цены'
+
 
   date:
     abbr_day_names:

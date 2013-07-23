@@ -14,13 +14,16 @@ class GroupDecorator < Draper::Decorator
     model.lessons.find_by_day("---\n- #{day}\n")
   end
 
-  def space_locale
+  def space_identificator
     if model.space.there_places?
-      "good"
+      helpers.content_tag :div, :class => "there_places ident" do
+      end
     elsif model.space.there_not_places?
-      "bad"
+      helpers.content_tag :div, :class => "there_not_places ident" do
+      end
     elsif model.space.group_formed?
-      "not bad"
+      helpers.content_tag :div, :class => "group_formed ident" do
+      end
     end
   end
 end

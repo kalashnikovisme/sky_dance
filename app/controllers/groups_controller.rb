@@ -32,7 +32,7 @@ class GroupsController < ApplicationController
     if admin_signed_in?
       @group = Group.find params[:id]
       if @group.update_attributes params[:group]
-        redirect_to lessons_path
+        redirect_to schedule_path
       else
         render action: 'edit'
       end

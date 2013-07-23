@@ -5,10 +5,10 @@
 
 = render 'form'
 
-= link_to t('.back'), @genre, :class => 'btn margin-bottom'
+= link_to t('back'), @genre, :class => 'btn margin-bottom'
 
 - @videos.each do |video|
   .video.margin-bottom
     = video.from_youtube
     %br
-    = link_to t('.destroy'), video, :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger margin-bottom'
+    = link_to t('destroy'), video, :method => :delete, :data => { :confirm => t('confirm') }, :class => 'btn btn-danger margin-bottom'

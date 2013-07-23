@@ -17,9 +17,9 @@
       .form-actions
         %small= t('.admins_buttons')
         %br
-        = link_to t('.back', :default => t("helpers.links.back")), '/news', :class => 'btn'
-        = link_to t('.edit', :default => t("helpers.links.edit")), edit_news_path(@news), :class => 'btn'
-        = link_to t('.destroy', :default => t("helpers.links.destroy")), news_path(@news), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+        = link_to t('back', :default => t("helpers.links.back")), '/news', :class => 'btn'
+        = link_to t('edit', :default => t("helpers.links.edit")), edit_news_path(@news), :class => 'btn'
+        = link_to t('destroy', :default => t("helpers.links.destroy")), news_path(@news), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
   .row
     #vk_comments
     :javascript

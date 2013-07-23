@@ -52,9 +52,8 @@
                   %small.micro-text= group.teacher.decorate.fio
               %br
               %br
+              = group.space_identificator
               %small.micro-text= group.category.describe if group.category.present?
-              -#FIXME
-              %small.micro-text.micro-text-with-photo= group.space_locale
           - @days.each do |day|
             %td
               %b= group.lesson_time(day)
@@ -75,6 +74,15 @@
               = link_to t('.edit_group'), edit_group_path(group), class: 'btn btn-mini btn-primary margin-top'
               = link_to t('.destroy_group', :default => t("helpers.links.destroy")), group_path(group), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger margin-top'
 %small
+  .there_places.ident
+  %span - в данной группе имеются свободные места
+  %br
+  .there_not_places.ident
+  %span - в данной группе все места заняты
+  %br
+  .group_formed.ident
+  %span - группа формируется и занятия пока не начались
+  %br
   %span * Абонемент действует 4 недели (продление в случае отъезда -желательно билеты; в случае болезни - желательно справка, при отмене занятия по решению администрации танцевального центра)
   %ol
     %li Абонемент действует 4 недели (читай выше)

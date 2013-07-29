@@ -1,4 +1,11 @@
 ru:
+  reports:
+    head: "Расписание школы танцев Sky Dance"
+    course_price: "Цена за курс"
+    single_price: "за одно занятие"
+    actual_for: "Расписание актуально на  %e %b %Y в %H:%M"
+
+  rub: "руб."
   wrong_login: 'Неверный логин или пароль'
 
   time:

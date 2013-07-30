@@ -15,8 +15,9 @@ class ScheduleReport < Prawn::Document
   end
 
   def every_day(group)
-    week_row = Lesson.day.values.each do |day|
-      group.lesson_time(day)
+    week_row = []
+    Lesson.day.values.each do |day|
+      week_row << group.lesson_time(day)
     end
     week_row + ["#{group.price} #{I18n.t('rub')}", "#{group.once_price} #{I18n.t('rub')}"]
   end

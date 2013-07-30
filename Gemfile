@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'pry'
-
 gem 'rails', '3.2.13'
 gem 'sqlite3'
 
@@ -48,6 +46,7 @@ end
 
 group :development do
   gem 'better_errors'
+  gem 'pry'
 end
 
 group :production do

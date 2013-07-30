@@ -2,9 +2,9 @@ class ScheduleReport < Prawn::Document
   def to_pdf
     font_families.update(
       "Verdana" => {
-        :bold => "#{Rails.root}/public/assets/verdana-bold.ttf",
-        :italic => "#{Rails.root}/public/assets/verdana-italic.ttf",
-        :normal  => "#{Rails.root}/public/assets/verdana.ttf"
+        bold: "#{Rails.root}/public/assets/verdana-bold.ttf",
+        italic:"#{Rails.root}/public/assets/verdana-italic.ttf",
+        normal: "#{Rails.root}/public/assets/verdana.ttf"
         })
     font "Verdana", :size => 10
     text I18n.t("reports.head"), size: 22, style: :bold, align: :center

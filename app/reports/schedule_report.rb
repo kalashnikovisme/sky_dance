@@ -14,6 +14,13 @@ class ScheduleReport < Prawn::Document
     move_down 18
   end
 
+  def every_day(group)
+    week_row = Lesson.day.values.each do |day|
+      group.lesson_time(day)
+    end
+    week_row + ["#{group.price} #{I18n.t('rub')}", "#{group.once_price} #{I18n.t('rub')}"]
+  end
+
   def group_row(group)
     image group.teacher.decorate.first_photo_thumb, width: 25
     move_down 5
@@ -26,15 +33,7 @@ class ScheduleReport < Prawn::Document
             I18n.t('reports.course_price') <<
             I18n.t('reports.single_price')]
     font_size 12
-    @data << [group.lesson_time(:monday),
-             group.lesson_time(:tuesday),
-             group.lesson_time(:wednesday),
-             group.lesson_time(:thursday),
-             group.lesson_time(:friday),
-             group.lesson_time(:saturday),
-             group.lesson_time(:sunday),
-             "#{group.price} #{I18n.t('rub')}",
-             "#{group.once_price} #{I18n.t('rub')}"]
+    @data << every_day(group)
   end
 
   def genre_table(genre)

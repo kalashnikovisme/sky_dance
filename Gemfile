@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'pry'
-
 gem 'rails', '3.2.13'
 gem 'sqlite3'
 
@@ -44,6 +42,7 @@ group :test do
   gem 'turn'
   gem 'tconsole'
   gem 'coveralls', require: false
+  gem 'pry'
 end
 
 group :development do

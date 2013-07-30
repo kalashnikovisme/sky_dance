@@ -42,11 +42,11 @@ group :test do
   gem 'turn'
   gem 'tconsole'
   gem 'coveralls', require: false
+  gem 'pry'
 end
 
 group :development do
   gem 'better_errors'
-  gem 'pry'
 end
 
 group :production do

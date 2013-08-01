@@ -6,4 +6,5 @@ env:
   - DB=sqlite3
   - DB=postgres
 script:
-  - RAILS_ENV=test bundle exec rake --trace db:migrate test && RAILS_ENV=test rake assets:precompile
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
+after_success: bundle exec rake assets:precompile

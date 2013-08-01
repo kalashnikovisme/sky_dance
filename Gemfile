@@ -11,7 +11,6 @@ gem 'simple_form'
 gem "ckeditor"
 gem 'mini_magick'
 gem 'validates'
-gem 'enumerize'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"

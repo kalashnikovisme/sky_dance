@@ -24,6 +24,6 @@ class NewsDecorator < Draper::Decorator
   end
 
   def published_date
-    model.published_at.strftime("%d.%m")
+    model.published_at.strftime "%d.%m"
   end
 end

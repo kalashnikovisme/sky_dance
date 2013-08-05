@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'sqlite3'
 
-gem 'syntax_fix', '0.0.3'
-
 gem 'rspec'
 
 gem 'haml'

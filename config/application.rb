@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 if defined?(Bundler)
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  Bundler.require(*Rails.groups(assets: %w(development test)))
 end
 
 module SkyDance
@@ -21,7 +21,7 @@ module SkyDance
 
     config.generators do |g|
       g.template_engine :haml
-      g.test_framework  :test_unit, :fixture => true, :fixture_replacement => :factory_girl
+      g.test_framework  :test_unit, fixture: true, fixture_replacement: :factory_girl
       g.stylesheets false
       g.javascripts false
     end

@@ -5,7 +5,7 @@ class GroupDecorator < Draper::Decorator
     #FIXME
     lesson = model.lessons.find_by_day("---\n- #{day}\n")
     if lesson
-      lesson.time.strftime("%H:%M")
+      lesson.time.strftime "%H:%M"
     end
   end
 

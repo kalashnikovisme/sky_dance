@@ -4,7 +4,7 @@ worker_processes 1
 
 working_directory APP_PATH + "/current" # available in 0.94.0+
 
-listen APP_PATH + "/shared/.sock", :backlog => 64
+listen APP_PATH + "/shared/.sock", backlog: 64
 
 timeout 30
 

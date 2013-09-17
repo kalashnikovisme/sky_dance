@@ -110,19 +110,20 @@ ru:
       our_adress:           'Наш адрес'
       schedule_and_prices:  'Расписание и цены'
       phone:                'Телефон'
+      sky_dance_is:         'Sky Dance - это...'
 
-  news:
-    show:
-      admins_buttons:   'Кнопки администратора'
-    edit:
-      title:    'Редактировать новость'
-    form:
-      maximum_70_symbols:  'Максимум 70 символов'
-    index:
-      new:      'Добавить новость'
-      new_news: 'Добавить новость'
-    new:
-      title:    'Добавить новость'
+
+
+
+
+
+
+
+
+
+
+
+
 
   welcome:
     index:
@@ -154,31 +155,35 @@ ru:
     to_pdf:
       schedule:         'Расписание школы Sky Dance'
 
-  edit:                'Изменить'
-  enter:               'Войти'
-  back:                'Назад'
-  destroy:             'Удалить'
-  cancel:              'Отмена'
-  dances:              'Жанры'
-  teachers:            'Преподаватели'
-  schedule:            'Расписание'
-  group:               'Группа'
-  print:               'Печать'
-  monday:              'Понедельник'
-  tuesday:             'Вторник'
-  wednesday:           'Среда'
-  thursday:            'Четверг'
-  friday:              'Пятница'
-  saturday:            'Суббота'
-  sunday:              'Воскресенье'
-  about:               'О нас'
-  news:                'Новости'
-  contacts:            'Контакты'
-  save:                'Сохранить'
-  schedule_and_prices: 'Расписание и цены'
-  required_fields:     '* - поля обязательные для заполнения'
-  not_more_than_140_symbols:  'Не больше 140 символов'
-  add_teacher:                'Добавить преподавателя'
+  edit:                      'Изменить'
+  enter:                     'Войти'
+  back:                      'Назад'
+  destroy:                   'Удалить'
+  cancel:                    'Отмена'
+  dances:                    'Жанры'
+  teachers:                  'Преподаватели'
+  schedule:                  'Расписание'
+  group:                     'Группа'
+  print:                     'Печать'
+  monday:                    'Понедельник'
+  tuesday:                   'Вторник'
+  wednesday:                 'Среда'
+  thursday:                  'Четверг'
+  friday:                    'Пятница'
+  saturday:                  'Суббота'
+  sunday:                    'Воскресенье'
+  about:                     'О нас'
+  news:                      'Новости'
+  contacts:                  'Контакты'
+  save:                      'Сохранить'
+  schedule_and_prices:       'Расписание и цены'
+  required_fields:           '* - поля обязательные для заполнения'
+  not_more_than_140_symbols: 'Не больше 140 символов'
+  add_teacher:               'Добавить преподавателя'
+  maximum_70_symbols:        'Максимум 70 символов'
+  admins_buttons:            'Кнопки администратора'
+  edit_news:                 'Редактировать новость'
+  new_news:                  'Добавить новость'
 
   date:
     abbr_day_names:

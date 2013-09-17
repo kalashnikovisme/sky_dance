@@ -1,6 +1,7 @@
 class NewsController < ApplicationController
   def index
     @news = NewsDecorator.decorate_collection News.all
+    @news = @news.reverse
   end
 
   def show

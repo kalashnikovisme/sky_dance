@@ -26,6 +26,7 @@ ru:
         price:        Цена за комплекс занятий
         genre:        Танцевальный жанр
         teacher:      Преподаватель
+        category:     Категория
       category:
         describe:      Описание категории
       news:

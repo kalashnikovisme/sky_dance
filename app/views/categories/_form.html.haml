@@ -1,6 +1,6 @@
-= simple_form_for @category, :html => { :class => 'form-horizontal' } do |f|
-  - f.with_options :input_html => { :class => :span6 } do |f|
+= simple_form_for @category, html: { class: 'form-horizontal' } do |f|
+  - f.with_options input_html: { class: :span6 } do |f|
     = f.input :describe
     .form-actions
-      = f.button :submit, t('.add_category'), :class => 'btn btn-primary'
-      = link_to t('.cancel', :default => t("helpers.links.cancel")), new_group_path, :class => 'btn'
+      = f.button :submit, t('.add_category'), class: 'btn btn-primary'
+      = link_to t('cancel', default: t("helpers.links.cancel")), new_group_path, class: 'btn'

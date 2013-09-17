@@ -7,7 +7,7 @@ set :rails_env,   "production"
 set :rvm_type, :user
 
 role :web, "skydance73.ru"
-role :db, "skydance73.ru", :primary => true
+role :db, "skydance73.ru", primary: true
 
 set :user, "skydance"  # The server's user for deploys
 
@@ -18,7 +18,7 @@ set :app_dir, "/srv/#{application}"
   set :current_path, "#{app_dir}/current"
 set :deploy_to, "#{app_dir}"
 
-set :ssh_options, { :forward_agent => true }
+set :ssh_options, { forward_agent: true }
 default_run_options[:pty] = true
 
 timestamp = Time.now.utc.strftime("%Y%m%d%H%M%S")

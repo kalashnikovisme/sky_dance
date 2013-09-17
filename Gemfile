@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'pry'
-
 gem 'rails', '3.2.13'
 gem 'sqlite3'
 
@@ -13,7 +11,6 @@ gem 'simple_form'
 gem "ckeditor"
 gem 'mini_magick'
 gem 'validates'
-gem 'enumerize'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
@@ -23,7 +20,7 @@ gem 'nested_form'
 gem 'draper', '~> 1.0.0'
 gem 'enumerize'
 gem 'jquery-rails'
-gem 'prawn', :git => "https://github.com/prawnpdf/prawn.git"
+gem 'prawn', git: "https://github.com/prawnpdf/prawn.git"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -38,16 +35,18 @@ gem 'capi'
 gem 'capistrano_colors'
 
 group :test do
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
   gem 'minitest'
-  gem 'factory_girl_rails', :require => false
+  gem 'factory_girl_rails', require: false
   gem 'turn'
   gem 'tconsole'
   gem 'coveralls', require: false
+  gem 'pry'
 end
 
 group :development do
   gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do

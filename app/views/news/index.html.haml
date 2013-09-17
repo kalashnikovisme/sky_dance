@@ -8,11 +8,12 @@
       .thumbnail
         %a{ href: news_path(news) }
           = image_tag news.main_photo_big_thumb
-        %h4= news.title
+        %a{ href: news_path(news) }
+          %h4= news.title
         %h4= news.published_at
         %p
           != strip_tags news.lead
-        %a.btn.btn-medium{ href: news_path(news) }= t('.cut')
+        %a.btn.btn-medium{ href: news_path(news) }= t('cut')
 
         -#FIXME
         - if session[:admin_id]

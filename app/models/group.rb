@@ -3,6 +3,7 @@ class Group < ActiveRecord::Base
 
   attr_accessible :once_price,
                   :price,
+                  :unlimit,
                   :space,
                   :genre_id,
                   :teacher_id,

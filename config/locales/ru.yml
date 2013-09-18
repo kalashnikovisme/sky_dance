@@ -87,7 +87,6 @@ ru:
   groups:
     form:
       add_category:      'Добавить категорию'
-      add_group:         'Добавить группу'
       admins_categories: 'Администрирование категорий'
     new:
       add_group:    'Добавить группу'

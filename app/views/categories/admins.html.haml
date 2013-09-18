@@ -1,13 +1,12 @@
 .page-header
   %h1=t '.title'
-
 = render 'form'
-
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-      %th=t '.actions', default: t("helpers.actions")
+- if any_categories
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+          %th=t '.actions', default: t("helpers.actions")
   %tbody
     - @categories.each do |category|
       %tr

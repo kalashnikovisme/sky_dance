@@ -31,7 +31,7 @@ class GroupDecorator < Draper::Decorator
     if model.unlimit
       model.unlimit
     else
-      I18n.t('.unlimit_is_unavaible')
+      I18n.t('ru.lessons.schedule.unlimit_is_unavaible')
     end
   end
 end

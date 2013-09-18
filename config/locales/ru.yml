@@ -67,7 +67,7 @@ ru:
       unlimit:              'Безлимит'
       actions:              'Действия'
       rub:                  ' руб.'
-      unlimit_is_unavaible: 'Безлимит для непредусмотрен'
+      unlimit_is_unavaible: 'Безлимит не предусмотрен'
     new:
       add_lesson:       'Добавить занятие'
     edit:

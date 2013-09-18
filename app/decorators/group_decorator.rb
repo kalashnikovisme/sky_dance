@@ -29,9 +29,11 @@ class GroupDecorator < Draper::Decorator
 
   def unlimit
     if model.unlimit
-      model.unlimit
+      "#{model.unlimit} #{I18n.t('.lessons.schedule.rub')}"
     else
-      I18n.t('ru.lessons.schedule.unlimit_is_unavaible')
+      helpers.content_tag :small, class: "micro-text" do
+        I18n.t('lessons.schedule.unlimit_is_unavaible')
+      end
     end
   end
 end

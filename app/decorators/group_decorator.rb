@@ -26,4 +26,12 @@ class GroupDecorator < Draper::Decorator
       end
     end
   end
+
+  def unlimit
+    if model.unlimit
+      model.unlimit
+    else
+      I18n.t('.unlimit_is_unavaible')
+    end
+  end
 end

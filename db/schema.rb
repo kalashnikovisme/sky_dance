@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711064856) do
+ActiveRecord::Schema.define(:version => 20130918183113) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20130711064856) do
     t.integer  "teacher_id"
     t.string   "space"
     t.integer  "category_id"
+    t.integer  "unlimit"
   end
 
   create_table "lessons", :force => true do |t|

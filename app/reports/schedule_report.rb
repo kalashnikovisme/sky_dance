@@ -23,18 +23,20 @@ class ScheduleReport < Prawn::Document
   end
 
   def group_row(group)
-    image group.teacher.decorate.first_photo_thumb, width: 25
-    move_down 5
-    font_size 16
-    text "#{group.teacher.decorate.fio} - #{group.category.describe}"
-    move_down 10
-    font_size 10
-    @data = [I18n.t('date.abbr_day_names')[1..6] <<
-            I18n.t('date.abbr_day_names')[0] <<
-            I18n.t('reports.course_price') <<
-            I18n.t('reports.single_price')]
-    font_size 12
-    @data << every_day(group)
+    if group.lessons.any?
+      image group.teacher.decorate.first_photo_thumb, width: 25
+      move_down 5
+      font_size 16
+      text "#{group.teacher.decorate.fio} - #{group.category.describe}"
+      move_down 10
+      font_size 10
+      @data = [I18n.t('date.abbr_day_names')[1..6] <<
+               I18n.t('date.abbr_day_names')[0] <<
+               I18n.t('reports.course_price') <<
+               I18n.t('reports.single_price')]
+               font_size 12
+               @data << every_day(group)
+    end
   end
 
   def genre_table(genre)

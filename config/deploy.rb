@@ -76,7 +76,7 @@ end
 
 before 'deploy:update', 'unicorn:stop', "files:backup", "db:backup"
 after 'deploy:finalize_update', 'bundler:install'
-after 'deploy:update', 'assets:precompile', 'files:link_update', 'unicorn:start'
+after 'deploy:update', 'assets:precompile', 'files:link_update', 'unicorn:start', 'db:seed'
 
 before 'assets:precompile', 'assets:clean'
 after 'deploy:migrate', 'bundler:install'

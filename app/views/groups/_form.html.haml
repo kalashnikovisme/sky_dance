@@ -2,7 +2,6 @@
   - f.with_options input_html: { class: :span6 } do |f|
     = f.input :once_price
     = f.input :price
-    = f.input :unlimit
     = f.input :space
     = f.association :genre, as: :select, label_method: :title, value_method: :id
     = f.association :teacher, as: :select, label_method: :first_name, value_method: :id

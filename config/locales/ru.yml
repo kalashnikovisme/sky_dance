@@ -142,6 +142,9 @@ ru:
   schedule_report:
     to_pdf:
       schedule:         'Расписание школы Sky Dance'
+  unlimits:
+    edit:
+      title: Изменить стоимость безлимита
 
   edit:                      'Изменить'
   enter:                     'Войти'

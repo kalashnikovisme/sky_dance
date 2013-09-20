@@ -41,6 +41,7 @@ ru:
         day:          День недели
       unlimit:
         price:        Стоимость
+        name:         Название
 
   enumerize:
     group:

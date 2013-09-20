@@ -144,8 +144,11 @@ ru:
       schedule:         'Расписание школы Sky Dance'
   unlimits:
     edit:
-      title: Изменить стоимость безлимита
+      title: Изменить безлимит
+    new:
+      title: Добавить безлимит
 
+  add:                        Добавить
   edit:                      'Изменить'
   enter:                     'Войти'
   back:                      'Назад'

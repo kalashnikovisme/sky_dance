@@ -62,5 +62,5 @@ SkyDance::Application.routes.draw do
       get "not_found"
     end
   end
-  resource :unlimit, only: [:edit, :update]
+  resources :unlimits, only: [:edit, :update]
 end

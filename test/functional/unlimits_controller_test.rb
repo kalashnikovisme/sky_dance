@@ -20,7 +20,6 @@ class UnlimitsControllerTest < ActionController::TestCase
     post :update, unlimit: attributes
     assert_response :redirect
 
-    @unlimit.reload
-    assert_equal attributes[:price], @unlimit.price
+    assert_equal attributes[:price], Unlimit.first.price
   end
 end

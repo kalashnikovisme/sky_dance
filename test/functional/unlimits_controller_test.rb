@@ -9,7 +9,7 @@ class UnlimitsControllerTest < ActionController::TestCase
   test "should edit unlimit" do
     admin_sign_in @admin
 
-    get :edit
+    get :edit, id: @unlimit
     assert_response :success
   end
 
@@ -17,9 +17,10 @@ class UnlimitsControllerTest < ActionController::TestCase
     admin_sign_in @admin
 
     attributes = attributes_for :unlimit
-    post :update, unlimit: attributes
+    post :update, id: @unlimit, unlimit: attributes
     assert_response :redirect
 
-    assert_equal attributes[:price], Unlimit.first.price
+    @unlimit.reload
+    assert_equal attributes[:price], @unlimit.price
   end
 end

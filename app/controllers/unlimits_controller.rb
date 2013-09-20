@@ -1,7 +1,7 @@
 class UnlimitsController < ApplicationController
   def edit
     if admin_signed_in?
-      @unlimit = Unlimit.first
+      @unlimit = Unlimit.find params[:id]
     else
       redirect_to not_found_errors_path
     end
@@ -9,7 +9,7 @@ class UnlimitsController < ApplicationController
 
   def update
     if admin_signed_in?
-      @unlimit = Unlimit.first
+      @unlimit = Unlimit.find params[:id]
 
       if @unlimit.update_attributes params[:unlimit]
         redirect_to schedule_path

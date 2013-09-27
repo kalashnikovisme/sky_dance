@@ -71,7 +71,7 @@ class UnlimitsControllerTest < ActionController::TestCase
       delete :destroy, id: @unlimit
     end
 
-    assert_redirected_to unlimits_path
+    assert_redirected_to schedule_path
   end
 
   test "should not destroy unlimit" do

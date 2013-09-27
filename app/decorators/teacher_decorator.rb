@@ -1,14 +1,6 @@
 class TeacherDecorator < Draper::Decorator
   delegate_all
 
-  def first_photo
-    if model.photos.any?
-      model.photos.first.photo
-    else
-      "#{Rails.root}/app/assets/images/user.jpg"
-    end
-  end
-
   def first_photo_thumb
     if model.photos.any?
       model.photos.first.photo.thumb

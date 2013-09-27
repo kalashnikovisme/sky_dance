@@ -5,10 +5,17 @@ class LessonsControllerTest < ActionController::TestCase
     @admin = create :admin
     @lesson = create :lesson
     @group = create :group
+    @photo = create :photo
+    @photo.teacher_id = @group.teacher.id
   end
 
-  test "should get index" do
+  test "should get schedule" do
     get :schedule
+    assert_response :success
+  end
+
+  test "should get schedule_pdf" do
+    get :schedule_to_pdf
     assert_response :success
   end
 

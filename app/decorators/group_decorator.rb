@@ -5,7 +5,7 @@ class GroupDecorator < Draper::Decorator
     #FIXME
     lesson = model.lessons.find_by_day("---\n- #{day}\n")
     if lesson
-      lesson.time.strftime("%H:%M")
+      lesson.time.strftime "%H:%M"
     end
   end
 
@@ -16,13 +16,13 @@ class GroupDecorator < Draper::Decorator
 
   def space_identificator
     if model.space.there_places?
-      helpers.content_tag :div, :class => "there_places ident" do
+      helpers.content_tag :div, class: "there_places ident" do
       end
     elsif model.space.there_not_places?
-      helpers.content_tag :div, :class => "there_not_places ident" do
+      helpers.content_tag :div, class: "there_not_places ident" do
       end
     elsif model.space.group_formed?
-      helpers.content_tag :div, :class => "group_formed ident" do
+      helpers.content_tag :div, class: "group_formed ident" do
       end
     end
   end

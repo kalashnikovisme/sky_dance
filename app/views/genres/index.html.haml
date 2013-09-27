@@ -1,24 +1,21 @@
 = stylesheet_link_tag "genres"
 
-%h1= t('.dance_genres')
+%h1= t '.dance_genres'
 
 %table.table.table-hover
   - @genres.each do |genre|
-    %tr{ :onclick => "return location.href = '#{genre_path(genre)}'" }
+    %tr{ onclick: "return location.href = '#{genre_path genre }'" }
       %td
-        %a{ :href => genre_path(genre) }
-          %img{ :src => genre.photo.thumb }
+        %a{ href: genre_path(genre) }
+          %img{ src: genre.photo.thumb }
       %td
-        = link_to genre.title, genre, :class => 'title'
+        = link_to genre.title, genre, class: 'title'
         %br
         %br= genre.entry
       %td
-        -#FIXME
-        - if session[:admin_id]
-          = link_to t('edit'), edit_genre_path(genre), :class => 'btn btn-mini'
-          = link_to t('destroy'), genre_path(genre), :method => :delete, :class => 'btn btn-mini btn-danger'
-
+        - if admin_signed_in?
+          = link_to t('edit'), edit_genre_path(genre), class: 'btn btn-mini'
+          = link_to t('destroy'), genre_path(genre), method: :delete, class: 'btn btn-mini btn-danger'
 %br
--#FIXME
-- if session[:admin_id]
-  = link_to t('.new_genre'), new_genre_path, :class => 'btn btn-primary'
+- if admin_signed_in?
+  = link_to t('.new_genre'), new_genre_path, class: 'btn btn-primary'

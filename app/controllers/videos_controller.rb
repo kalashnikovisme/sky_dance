@@ -11,7 +11,7 @@ class VideosController < ApplicationController
       @video = Video.new params[:video]
       @video.genre = Genre.find params[:id]
       if @video.save
-        redirect_to admins_videos_url(@video.genre)
+        redirect_to admins_videos_url @video.genre
       else
         render action: 'admins'
       end

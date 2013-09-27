@@ -1,5 +1,5 @@
-= simple_form_for @group, :html => { :class => 'form-horizontal' } do |f|
-  - f.with_options :input_html => { :class => :span6 } do |f|
+= simple_form_for @group, html: { class: 'form-horizontal' } do |f|
+  - f.with_options input_html: { class: :span6 } do |f|
     = f.input :once_price
     = f.input :price
     = f.input :space
@@ -7,7 +7,7 @@
     = f.association :teacher, as: :select, label_method: :first_name, value_method: :id
     = f.association :category, as: :select, label_method: :describe, value_method: :id
     %br
-    %a.btn.btn-warning{ :href => admins_categories_path }= t('.admins_categories')
+    %a.btn.btn-warning{ href: admins_categories_path }= t('.admins_categories')
     .form-actions
-      = f.button :submit, t('.add_group'), :class => 'btn btn-primary'
-      = link_to t('cancel', :default => t("helpers.links.cancel")), groups_path, :class => 'btn'
+      = f.button :submit, t('save'), class: 'btn btn-primary'
+      = link_to t('cancel', default: t("helpers.links.cancel")), groups_path, class: 'btn'

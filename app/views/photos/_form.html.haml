@@ -1,8 +1,8 @@
 = stylesheet_link_tag "photos"
 
-= simple_form_for @photo, :html => { :multipart => true } do |f|
+= simple_form_for @photo, html: { multipart: true } do |f|
   = f.label :photo
   %small= t('.gorizontal_photo_better')
   %br
   = f.file_field :photo
-  = f.button :submit, t('.add_photo'), :class => 'btn btn-primary'
+  = f.button :submit, t('.add_photo'), class: 'btn btn-primary'

@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(:version => 20130920194121) do
     t.integer  "price"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.text     "title"
     t.text     "name"
   end
 

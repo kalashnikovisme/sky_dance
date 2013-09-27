@@ -11,8 +11,7 @@
           = video.decorate.from_youtube
         %br
     .row-fluid
-      -#FIXME
-      - if session[:admin_id]
+      - if admin_signed_in?
         .form-actions
           %small= t '.admins_buttons'
           %br

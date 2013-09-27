@@ -12,8 +12,7 @@
     %br
     != strip_tags @news.body
   .row
-    #FIXME
-    - if session[:admin_id]
+    - if admin_signed_in?
       .form-actions
         %small= t('admins_buttons')
         %br

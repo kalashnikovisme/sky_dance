@@ -14,11 +14,8 @@
         %p
           != strip_tags news.lead
         %a.btn.btn-medium{ href: news_path(news) }= t('cut')
-
-        -#FIXME
-        - if session[:admin_id]
+        - if admin_signed_in?
           = link_to t('edit', default: t('helpers.links.edit')), edit_news_path(news), class: 'btn btn-mini'
           = link_to t('destroy', default: t("helpers.links.destroy")), news, method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
--#FIXME
-- if session[:admin_id]
+- if admin_signed_in?
   = link_to t('.new_news'), new_news_path, class: 'btn btn-primary'

@@ -5,6 +5,8 @@ class LessonsControllerTest < ActionController::TestCase
     @admin = create :admin
     @lesson = create :lesson
     @group = create :group
+    @photo = create :photo
+    @photo.teacher_id = @group.teacher.id
   end
 
   test "should get schedule" do

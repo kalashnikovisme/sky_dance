@@ -3,6 +3,8 @@ require 'test_helper'
 class TeachersControllerTest < ActionController::TestCase
   setup do
     @teacher = create :teacher
+    @photo = create :photo
+    @photo.teacher = @teacher
     @admin = create :admin
   end
 

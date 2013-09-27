@@ -7,12 +7,6 @@ class NewsDecorator < Draper::Decorator
     end
   end
 
-  def main_photo_thumb
-    if model && model.photo
-      photo.thumb
-    end
-  end
-
   def main_photo_big_thumb
     if model and model.photo
       photo.big_thumb

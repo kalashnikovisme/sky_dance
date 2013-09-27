@@ -20,7 +20,7 @@ gem 'nested_form'
 gem 'draper', '~> 1.0.0'
 gem 'enumerize'
 gem 'jquery-rails'
-gem 'prawn', git: "https://github.com/prawnpdf/prawn.git"
+gem 'prawn'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

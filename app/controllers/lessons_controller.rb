@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
     @genres = Genre.all
     @lessons = Lesson.all
     @days = Lesson.day.values
+    @unlimits = Unlimit.all
   end
 
   def schedule_to_pdf

@@ -13,7 +13,7 @@ class TeachersController < ApplicationController
       if @teacher.save
         redirect_to @teacher
       else
-        render action: "new"
+        render action: :new
       end
     else
       redirect_to not_found_errors_path
@@ -43,7 +43,7 @@ class TeachersController < ApplicationController
       if @teacher.update_attributes params[:teacher]
         redirect_to @teacher
       else
-        render action: "edit"
+        render action: :edit
       end
     else
       redirect_to not_found_errors_path

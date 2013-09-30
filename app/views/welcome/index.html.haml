@@ -2,39 +2,39 @@
 = stylesheet_link_tag     "fotorama"
 = javascript_include_tag  "fotorama"
 = stylesheet_link_tag     "welcome"
-%script{ :src => "http://vk.com/js/api/openapi.js", :type => "text/javascript" }
+%script{ src: "http://vk.com/js/api/openapi.js", type: "text/javascript" }
 .span4
   .row
     - if @news
-      %a{ :href => news_index_path }
+      %a{ href: news_index_path }
         %h3= t('news')
       %table.table.table-hover
         - @news.each do |news|
-          %tr.table-aligned{ :onclick => "return location.href = '#{news_path(news)}'" }
+          %tr.table-aligned{ onclick: "return location.href = '#{news_path(news)}'" }
             %th
-              %a{ :href => news_path(news) }
-                %img.img-rounded.micro{ :src => news.main_photo_thumb }
-              %p{ :align => "center" }
+              %a{ href: news_path(news) }
+                %img.img-rounded.micro{ src: news.main_photo_thumb }
+              %p{ align: "center" }
                 %small= news.published_date
             %th
-              %a{ :href => news_path(news) }
+              %a{ href: news_path(news) }
                 = news.title
-      %a.btn.btn-info{ :href => news_index_path }= t('.all_news')
+      %a.btn.btn-info{ href: news_index_path }= t('.all_news')
       %hr
   .row
     - if @video
       %h3= t('.sky_dance_video')
       = @video.from_youtube
       %br
-    %a.btn.btn-info{ :href => "http://vk.com/videos-54275923" }= t('.video_our_group_vk')
+    %a.btn.btn-info{ href: "http://vk.com/videos-54275923" }= t('.video_our_group_vk')
     %hr
   .row
     %h3= t('.last_photos')
     - @photos_bottom.each do |photo|
-      %img.img-polaroid.mini{ :src => photo.photo.thumb }
+      %img.img-polaroid.mini{ src: photo.photo.thumb }
     %br
     %br
-    %a.btn.btn-info{ :href => "http://vk.com/albums-54275923" }= t('.photo_our_group_vk')
+    %a.btn.btn-info{ href: "http://vk.com/albums-54275923" }= t('.photo_our_group_vk')
   %hr
   .row
     .vk-widget
@@ -43,25 +43,25 @@
         VK.Widgets.Group("vk_groups", {mode: 0, width: "auto", height: "400"}, 54275923);
 .span4
   .row
-    %a{ :href => teachers_path }
+    %a{ href: teachers_path }
       %h3= t('teachers')
-    .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "400px", "data-ratio" => "1600/1200", "data-fit" => "contain" }
+    .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-nav" => "thumbs", "data-width" => "100%", "data-ratio" => "1600/1200", "data-fit" => "contain" }
       = @teachers.each do |teacher|
-        %img{ :src => teacher.first_photo, "data-caption" => teacher.fio }
+        %img{ src: teacher.first_photo, "data-caption" => teacher.fio }
     %br
     %br
   .row
     .main_text
       = t('.text_about_sky_dance')
 .span3
-  %a{ :href => genres_path }
+  %a{ href: genres_path }
     %h3= t('dances')
   %table.table.table-hover
     - @genres.each do |genre|
       %tr.table-aligned
         %th
-          %a{ :href => genre_path(genre) }
-            %img.img-circle.micro{ :src => genre.photo }
+          %a{ href: genre_path(genre) }
+            %img.img-circle.micro{ src: genre.photo }
         %th
-          %a{ :href => genre_path(genre) }
+          %a{ href: genre_path(genre) }
             = genre.title

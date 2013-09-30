@@ -8,6 +8,7 @@ ru:
       category:       Категория
       news:           Новость
       lesson:         Занятие
+      unlimit:        Безлимит
     attributes:
       teacher:
         first_name:   Фамилия
@@ -24,8 +25,10 @@ ru:
         space:        Наличие мест в группе
         once_price:   Цена за одно занятие
         price:        Цена за комплекс занятий
+        unlimit:      Безлимит
         genre:        Танцевальный жанр
         teacher:      Преподаватель
+        category:     Категория
       category:
         describe:      Описание категории
       news:
@@ -36,6 +39,9 @@ ru:
       lesson:
         time:         Время
         day:          День недели
+      unlimit:
+        price:        Стоимость
+        name:         Название
 
   enumerize:
     group:

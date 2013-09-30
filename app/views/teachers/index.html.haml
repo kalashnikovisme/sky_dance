@@ -1,30 +1,27 @@
-= stylesheet_link_tag "teachers", :media => "all"
+= stylesheet_link_tag "teachers", media: "all"
 
 %h1
   = t('teachers')
   %span.eng_symbols Sky Dance
 %ul.thumbnails
   - @teachers.each_with_index do |teacher, i|
-    - if i % 4 == 0
+    - if index_multiple_four?(i)
       %hr
     %li.span3.teacher_cell
       .thumbnail.height_thumbnail
-        %a{ :href => teacher_path(teacher) }
+        %a{ href: teacher_path(teacher) }
           = image_tag teacher.first_photo_big_thumb
         %h3= teacher.fio
         %p= teacher.motto
         - teacher.genres.each do |genre|
-          %a{ :href => genre_path(genre) }
-            %img.img-rounded.micro.row-icon{ :src => genre.photo }
+          %a{ href: genre_path(genre) }
+            %img.img-rounded.micro.row-icon{ src: genre.photo }
         %br
         %br
-        %a.btn.btn-medium{ :href => teacher_path(teacher) } Подробнее
-
-        -#FIXME
-        - if session[:admin_id]
-          = link_to t('edit', :default => t('helpers.links.edit')), edit_teacher_path(teacher), :class => 'btn btn-mini'
-          = link_to t('destroy', :default => t("helpers.links.destroy")), teacher_path(teacher), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
--#FIXME
-- if session[:admin_id]
-  = link_to t('.new_teacher'), new_teacher_path, :class => 'btn btn-primary'
-
+        %a.btn.btn-medium{ href: teacher_path(teacher) } Подробнее
+        - if admin_signed_in?
+          = link_to t('edit', default: t('helpers.links.edit')), edit_teacher_path(teacher), class: 'btn btn-mini'
+          = link_to t('destroy', default: t("helpers.links.destroy")), teacher_path(teacher), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
+- if admin_signed_in?
+  %a{ href: new_teacher_path, class: 'btn btn-primary btn-medium' }
+    = t('add')

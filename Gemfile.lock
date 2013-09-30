@@ -1,13 +1,3 @@
-GIT
-  remote: https://github.com/prawnpdf/prawn.git
-  revision: 8028ca0cd2aae8c72df9fc4bf16388948423bcb2
-  specs:
-    prawn (1.0.0.rc2)
-      afm
-      pdf-reader (~> 1.2)
-      ruby-rc4
-      ttfunk (~> 1.0.3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -105,7 +95,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
-    hashery (2.1.0)
+    hashery (2.1.1)
     highline (1.6.19)
     hike (1.2.2)
     i18n (0.6.1)
@@ -145,8 +135,11 @@ GEM
       hashery (~> 2.0)
       ruby-rc4
       ttfunk
-    pg (0.15.1)
+    pg (0.17.0)
     polyglot (0.3.3)
+    prawn (0.12.0)
+      pdf-reader (>= 0.9.0)
+      ttfunk (~> 1.0.2)
     pry (0.9.12)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -270,7 +263,7 @@ DEPENDENCIES
   minitest
   nested_form
   pg
-  prawn!
+  prawn
   pry
   rails (= 3.2.13)
   rmagick

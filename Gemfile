@@ -20,6 +20,7 @@ gem 'nested_form'
 gem 'draper', '~> 1.0.0'
 gem 'enumerize'
 gem 'jquery-rails'
+gem 'fancybox-rails'
 gem 'prawn'
 
 group :assets do

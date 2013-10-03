@@ -3,20 +3,16 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'sqlite3'
 
-gem 'rspec'
-
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
 gem "ckeditor"
-gem 'mini_magick'
 gem 'validates'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'carrierwave'
 gem 'rmagick'
-gem 'nested_form'
 gem 'draper', '~> 1.0.0'
 gem 'enumerize'
 gem 'jquery-rails'
@@ -28,12 +24,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'unicorn'
-gem 'capistrano'
-gem 'rvm-capistrano'
-gem 'capi'
-gem 'capistrano_colors'
 
 group :test do
   gem 'simplecov', require: false
@@ -52,4 +42,9 @@ end
 
 group :production do
   gem 'pg'
+  gem 'unicorn'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+  gem 'capi'
+  gem 'capistrano_colors'
 end

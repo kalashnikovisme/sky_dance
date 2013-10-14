@@ -7,4 +7,5 @@ env:
   - DB=postgres
 script:
   - RAILS_ENV=test bundle exec rake --trace assets:precompile
+before_script:
   - RAILS_ENV=test bundle exec rake --trace db:migrate test

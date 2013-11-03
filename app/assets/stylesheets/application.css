@@ -66,3 +66,12 @@ body {
   background-repeat: no-repeat;
 }
 
+.search-input {
+  margin-top: 10px;
+  padding-top: 5px;
+  outline-color: transparent;
+  outline: none;
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+  color: #abaaaa;
+}

@@ -1,5 +1,4 @@
 %html
-
   %head
     %title SkyDance
     = stylesheet_link_tag    "bootstrap_and_overrides", media: "all"
@@ -31,6 +30,9 @@
                   %a{ href: teachers_path }= t('teachers')
                 %li
                   %a{ href: contacts_welcome_index_path }= t('contacts')
+                %li
+                  %script{ async: "true", src: "http://servant.indexisto.com/files/searchbox/searchbox.nocache.js?type=edit", type: "text/javascript" }
+                  %input#indx_srchbox_527561ab273e25f2a99cf7d2.search-input{ autocomplete: "on", autocorrect: "on", placeholder: "поиск", type: "text" }
     .row-fluid
       .container.content
         = yield

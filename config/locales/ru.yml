@@ -80,7 +80,8 @@ ru:
     edit:
       title:                  Редактировать видео
     form:
-      add_video:              Добавить видео
+      add_video:               Добавить видео
+      video_only_from_youtube: Следует добавлять видео только с Youtube
     admins:
       admins_video_of_genre:  Администрирование видео жанра
       confirm:                Вы уверены?

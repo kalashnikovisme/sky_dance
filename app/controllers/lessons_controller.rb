@@ -1,7 +1,6 @@
 require "prawn"
 
 class LessonsController < ApplicationController
-
   def schedule
     @genres = Genre.all
     @lessons = Lesson.all
@@ -27,7 +26,7 @@ class LessonsController < ApplicationController
       @lesson = Lesson.new params[:lesson]
       @lesson.group = Group.find params[:id]
       if @lesson.save
-        redirect_to schedule_path
+        redirect_to schedule_path, flash: :success
       else
         render action: 'new'
       end
@@ -48,7 +47,7 @@ class LessonsController < ApplicationController
     if admin_signed_in?
       @lesson = Lesson.find params[:id]
       if @lesson.update_attributes params[:lesson]
-        redirect_to lessons_path
+        redirect_to lessons_path, flash: :success
       else
         render action: 'edit'
       end
@@ -61,7 +60,7 @@ class LessonsController < ApplicationController
     if admin_signed_in?
       @lesson = Lesson.find params[:id]
       @lesson.destroy
-      redirect_to lessons_path
+      redirect_to lessons_path, flash: :success
     else
       redirect_to not_found_errors_path
     end

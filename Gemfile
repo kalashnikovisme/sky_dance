@@ -21,6 +21,7 @@ gem 'enumerize'
 gem 'jquery-rails'
 gem 'fancybox-rails'
 gem 'prawn'
+gem 'bootstrap_flash_messages'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

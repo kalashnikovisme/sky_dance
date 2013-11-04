@@ -7,9 +7,9 @@ class AdminsController < ApplicationController
       @admin = Admin.find_by_login params[:login]
       if @admin && authenticate_admin?(@admin, params[:password])
         admin_sign_in @admin
-        redirect_to panel_admins_path
+        redirect_to panel_admins_path, flash: :success
       else
-        flash[:notice] = t 'wrong_login'
+        flash_now! :error
       end
     end
   end

@@ -11,7 +11,7 @@ class TeachersController < ApplicationController
     if admin_signed_in?
       @teacher = Teacher.new params[:teacher]
       if @teacher.save
-        redirect_to @teacher
+        redirect_to @teacher, flash: :success
       else
         render action: :new
       end
@@ -41,7 +41,7 @@ class TeachersController < ApplicationController
       @teacher = Teacher.find params[:id]
 
       if @teacher.update_attributes params[:teacher]
-        redirect_to @teacher
+        redirect_to @teacher, flash: :success
       else
         render action: :edit
       end
@@ -54,7 +54,7 @@ class TeachersController < ApplicationController
     if admin_signed_in?
       @teacher = Teacher.find params[:id]
       @teacher.destroy
-      redirect_to teachers_url
+      redirect_to teachers_url, flash: :success
     else
       redirect_to not_found_errors_path
     end

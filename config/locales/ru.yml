@@ -178,6 +178,7 @@ ru:
   admins_buttons:            Кнопки администратора
   edit_news:                 Редактировать новость
   new_news:                  Добавить новость
+  view_map:                  Посмотреть карту на Google Maps
 
   date:
     abbr_day_names:

@@ -9,6 +9,12 @@ class TeacherDecorator < Draper::Decorator
     end
   end
 
+  def first_photo
+    if model.photos.any?
+      model.photos.first.photo
+    end
+  end
+
   def first_photo_big_thumb
     if model.photos.any?
       model.photos.first.photo.big_thumb

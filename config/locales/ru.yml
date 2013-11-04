@@ -15,13 +15,14 @@ ru:
 
   admins:
     panel:
-      sign_out:     Выйти
-      add_news:     Добавить новость
-      add_teacher:  Добавить преподавателя
-      add_genre:    Добавить танцевальный жанр
-      add_group:    Добавить группу
-      hello_admin:  Здравствуйте, Администратор
-      you_can:      "Вы можете:"
+      sign_out:        Выйти
+      add_news:        Добавить новость
+      add_teacher:     Добавить преподавателя
+      add_genre:       Добавить танцевальный жанр
+      add_group:       Добавить группу
+      hello_admin:     Здравствуйте, Администратор
+      you_can:         "Вы можете:"
+      edit_office_map: Изменить адрес офиса
     login:
       login:        Логин
       password:     Пароль

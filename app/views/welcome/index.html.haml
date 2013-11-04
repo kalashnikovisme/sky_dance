@@ -24,6 +24,9 @@
   .row
     - if @video
       %h3= t('.sky_dance_video')
+      %h4
+        %a{ href: genre_path(@video.genre) }
+          = @video.genre.title
       = @video.from_youtube
       %br
     %a.btn.btn-info{ href: "http://vk.com/videos-54275923" }= t('.video_our_group_vk')

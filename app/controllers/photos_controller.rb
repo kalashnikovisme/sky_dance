@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
       @photo = Photo.new params[:photo]
       @photo.teacher = Teacher.find params[:id]
       if @photo.save
-        redirect_to admins_photos_url @photo.teacher
+        redirect_to admins_photos_url @photo.teacher, flash: :success
       else
         render action: 'admins'
       end
@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
       @photo = Photo.find params[:id]
       teacher = @photo.teacher
       @photo.destroy
-      redirect_to admins_photos_url teacher
+      redirect_to admins_photos_url teacher, flash: :success
     else
       redirect_to not_found_errors_path
     end

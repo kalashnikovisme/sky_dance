@@ -1,0 +1,74 @@
+ru:
+  flash_messages:
+    headings:
+      success: "Готово!"
+      info: "Информация"
+      warning: "Опасность!"
+      error: "Ошибка!"
+    admins:
+      login:
+        success: "Авторизация прошла успешно!"
+        error:   "Неверный логин или пароль!"
+    teachers:
+      create:
+        success: "Преподаватель создан!"
+      update:
+        success: "Профиль преподавателя изменён"
+      destroy:
+        success: "Преподаватель удалён"
+    categories:
+      create:
+        success: "Категория добавлена!"
+      update:
+        success: "Категория отредактирована"
+      destroy:
+        success: "Категория удалена"
+    genres:
+      create:
+        success: "Жанр добавлен"
+      update:
+        success: Жанр отредактирован
+      destroy:
+        success: Жанр удалён
+    groups:
+      create:
+        success: Группа добавлена
+      update:
+        success: Группа отредактирована
+      destroy:
+        success: Группа удалена
+    lessons:
+      create:
+        success: Занятие добавлено
+      update:
+        success: Занятие отредактировано
+      destroy:
+        success: Занятие удалено
+    news:
+      create:
+        success: Новость добавлена
+      update:
+        success: Новость отредактирована
+      destroy:
+        success: Новость удалена
+    photos:
+      create:
+        success: Фото добавлено
+      update:
+        success: Фото отредактировано
+      destroy:
+        success: Фото удалено
+    unlimits:
+      create:
+        success: Безлимит добавлен
+      update:
+        success: Безлимит отредактирован
+      destroy:
+        success: Безлимит удалён
+    videos:
+      create:
+        success: Видео добавлено
+      update:
+        success: Видео отредактировано
+      destroy:
+        success: Видео удалено

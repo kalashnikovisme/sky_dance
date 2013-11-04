@@ -11,7 +11,7 @@ class VideosController < ApplicationController
       @video = Video.new params[:video]
       @video.genre = Genre.find params[:id]
       if @video.save
-        redirect_to admins_videos_url @video.genre
+        redirect_to admins_videos_url @video.genre, flash: :success
       else
         render action: 'admins'
       end
@@ -32,7 +32,7 @@ class VideosController < ApplicationController
     if admin_signed_in?
       @video = Video.find params[:id]
       if @video.update_attributes params[:video]
-        redirect_to admins_videos_url(@video.genre)
+        redirect_to admins_videos_url @video.genre, flash: :success
       else
         render action: 'edit'
       end
@@ -46,7 +46,7 @@ class VideosController < ApplicationController
       @video = Video.find params[:id]
       genre = @video.genre
       @video.destroy
-      redirect_to admins_videos_url(genre)
+      redirect_to admins_videos_url genre, flash: :success
     else
       redirect_to not_found_errors_path
     end

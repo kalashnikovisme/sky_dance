@@ -36,6 +36,7 @@
                   %input#indx_srchbox_527561ab273e25f2a99cf7d2.search-input{ autocomplete: "on", autocorrect: "on", placeholder: "поиск", type: "text" }
     .row-fluid
       .container.content
+        = flash_messages :close
         = yield
     = render 'layouts/reformal'
     = render 'layouts/footer'

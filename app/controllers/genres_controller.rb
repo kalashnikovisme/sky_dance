@@ -15,7 +15,7 @@ class GenresController < ApplicationController
     if admin_signed_in?
       @genre = Genre.new params[:genre]
       if @genre.save
-        redirect_to @genre
+        redirect_to @genre, flash: :success
       else
         render action: "new"
       end
@@ -41,7 +41,7 @@ class GenresController < ApplicationController
       @genre = Genre.find params[:id]
 
       if @genre.update_attributes params[:genre]
-        redirect_to @genre
+        redirect_to @genre, flash: :success
       else
         render action: 'edit'
       end
@@ -54,7 +54,7 @@ class GenresController < ApplicationController
     if admin_signed_in?
       @genre = Genre.find params[:id]
       @genre.destroy
-      redirect_to genres_url
+      redirect_to genres_url, flash: :success
     else
       redirect_to not_found_errors_path
     end

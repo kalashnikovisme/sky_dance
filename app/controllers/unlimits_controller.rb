@@ -11,7 +11,7 @@ class UnlimitsController < ApplicationController
     if admin_signed_in?
       @unlimit = Unlimit.find params[:id]
       if @unlimit.update_attributes params[:unlimit]
-        redirect_to schedule_path
+        redirect_to schedule_path, flash: :success
       else
         render action: :edit
       end
@@ -32,7 +32,7 @@ class UnlimitsController < ApplicationController
     if admin_signed_in?
       @unlimit = Unlimit.new params[:unlimit]
       if @unlimit.save
-        redirect_to schedule_path
+        redirect_to schedule_path, flash: :success
       else
         render action: :new
       end
@@ -45,7 +45,7 @@ class UnlimitsController < ApplicationController
     if admin_signed_in?
       @unlimit = Unlimit.find params[:id]
       @unlimit.destroy
-      redirect_to schedule_path
+      redirect_to schedule_path, flash: :success
     else
       redirect_to not_found_errors_path
     end

@@ -23,6 +23,7 @@ gem 'fancybox-rails'
 gem 'prawn'
 gem 'bootstrap_flash_messages'
 gem 'kaminari'
+gem 'auto_html'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

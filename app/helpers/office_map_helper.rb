@@ -1,0 +1,2 @@
+module OfficeMapHelper
+end

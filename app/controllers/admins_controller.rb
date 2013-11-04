@@ -20,5 +20,6 @@ class AdminsController < ApplicationController
   end
 
   def panel
+    @office_map = OfficeMap.first
   end
 end

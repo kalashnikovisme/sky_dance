@@ -72,3 +72,6 @@ ru:
         success: Видео отредактировано
       destroy:
         success: Видео удалено
+    office_map:
+      update:
+        success: Адрес офиса в Google Maps изменён

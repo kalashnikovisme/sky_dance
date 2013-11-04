@@ -149,6 +149,11 @@ ru:
     new:
       title: Добавить безлимит
 
+  office_map:
+    edit:
+      title: Изменить адрес офиса в Google Maps
+
+
   add:                        Добавить
   edit:                      Изменить
   enter:                     Войти

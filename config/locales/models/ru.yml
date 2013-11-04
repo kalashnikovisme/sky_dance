@@ -9,6 +9,7 @@ ru:
       news:           Новость
       lesson:         Занятие
       unlimit:        Безлимит
+      office_map:     Карта офиса
     attributes:
       teacher:
         first_name:   Фамилия
@@ -42,6 +43,8 @@ ru:
       unlimit:
         price:        Стоимость
         name:         Название
+      office_map:
+        link:         Ссылка в Google Maps
 
   enumerize:
     group:

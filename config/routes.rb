@@ -63,4 +63,5 @@ SkyDance::Application.routes.draw do
     end
   end
   resources :unlimits, except: [:show, :index]
+  resources :office_map, only: [ :edit, :update ]
 end

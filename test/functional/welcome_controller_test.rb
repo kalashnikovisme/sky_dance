@@ -16,6 +16,7 @@ class WelcomeControllerTest < ActionController::TestCase
   end
 
   test "should get contacts" do
+    office_map = create :office_map
     get :contacts
     assert_response :success
   end

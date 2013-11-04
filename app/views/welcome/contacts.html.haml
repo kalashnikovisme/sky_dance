@@ -1,6 +1,8 @@
 .span5
   = office_on_google_map
   %br
+  - if admin_signed_in?
+    = link_to edit_office_map, t('edit'), class: 'btn btn-warning'
   %br
   = t('.our_adress')
   %br

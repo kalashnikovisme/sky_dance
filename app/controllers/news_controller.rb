@@ -1,7 +1,6 @@
 class NewsController < ApplicationController
   def index
-    @news = NewsDecorator.decorate_collection News.all
-    @news = @news.reverse
+    @news = News.order(:published_at).page(params[:page]).per 1
   end
 
   def show

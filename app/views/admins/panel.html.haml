@@ -13,5 +13,6 @@
     = t('.add_group')
   %a.btn{ href: logout_admins_path }
     = t('.sign_out')
-  %a.btn{ href: edit_office_map_path(@office_map) }
-    = t('.edit_office_map')
+  - if @office_map
+    %a.btn{ href: edit_office_map_path(@office_map) }
+      = t('.edit_office_map')

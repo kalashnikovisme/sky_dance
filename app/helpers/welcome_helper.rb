@@ -9,4 +9,8 @@ module WelcomeHelper
       end
     end
   end
+
+  def any_office_maps?
+    OfficeMap.any?
+  end
 end

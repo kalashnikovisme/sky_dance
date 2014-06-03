@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.17'
 gem 'sqlite3'
 
 gem 'rspec'
@@ -37,7 +37,7 @@ group :test do
   gem 'minitest'
   gem 'factory_girl_rails', require: false
   gem 'turn'
-  gem 'tconsole'
+  gem 'tconsole', "1.3.0.pre3", git: "git://github.com/kalashnikovisme/tconsole"
   gem 'coveralls', require: false
   gem 'pry'
 end

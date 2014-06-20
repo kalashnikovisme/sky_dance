@@ -12,12 +12,11 @@ class Lesson < ActiveRecord::Base
                        :friday,
                        :saturday,
                        :sunday],
-                  default: :monday, multiple: true
+                  default: :monday
 
   belongs_to :group
 
-  #FIXME
-  #validates :day, presence: true
+  validates :day, presence: true
   validates :time, presence: true
   validates :group_id, presence: true
 end

@@ -20,7 +20,7 @@ gem 'draper', '~> 1.0.0'
 gem 'enumerize'
 gem 'jquery-rails'
 gem 'fancybox-rails'
-gem 'prawn'
+gem 'prawn', '0.12.0'
 gem 'bootstrap_flash_messages'
 gem 'kaminari'
 gem 'auto_html', git: "git://github.com/dejan/auto_html"

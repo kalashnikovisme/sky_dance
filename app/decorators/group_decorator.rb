@@ -6,12 +6,21 @@ class GroupDecorator < Draper::Decorator
     lesson = model.lessons.find_by_day("---\n- #{day}\n")
     if lesson
       lesson.time.strftime "%H:%M"
+    else
+      lesson = model.lesson.find_by_day(day)
+      if lesson
+        lesson.time.strftime "%H:%M"
+      end
     end
   end
 
   def find_lesson_by_day(day)
     #FIXME
-    model.lessons.find_by_day("---\n- #{day}\n")
+    lesson = model.lessons.find_by_day("---\n- #{day}\n")
+    unless lesson
+      lesson = model.lessons.find_by_day(day)
+    end
+    lesson
   end
 
   def space_identificator

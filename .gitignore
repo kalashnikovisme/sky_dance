@@ -23,9 +23,5 @@ rerun.txt
 pickle-email-*.html
 .project
 config/initializers/secret_token.rb
-*.swo
-*.swn
-*.swp
-*.swm
 *.sqlite3-journal
 *~

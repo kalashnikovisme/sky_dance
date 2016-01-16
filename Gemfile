@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.17'
+gem 'rails', '4.2.1'
 gem 'sqlite3'
 
 gem 'rspec'
@@ -23,21 +23,18 @@ gem 'fancybox-rails'
 gem 'prawn', '0.12.0'
 gem 'bootstrap_flash_messages'
 gem 'kaminari'
-gem 'auto_html', git: "git://github.com/dejan/auto_html"
+gem 'auto_html', github: "dejan/auto_html"
 gem 'configus'
-
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sass-rails', '~> 5.0'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'uglifier', '>= 1.0.3'
 
 group :test do
   gem 'simplecov', require: false
   gem 'minitest'
   gem 'factory_girl_rails', require: false
+  gem 'tconsole', github: 'ulmic/tconsole', branch: 'rails4'
   gem 'turn'
-  gem 'tconsole', "1.3.0.pre3", git: "git://github.com/kalashnikovisme/tconsole"
   gem 'coveralls', require: false
   gem 'pry'
 end

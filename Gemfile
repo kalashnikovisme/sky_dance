@@ -8,12 +8,12 @@ gem 'rspec'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
-gem "ckeditor"
+gem 'ckeditor'
 gem 'mini_magick'
 gem 'validates'
-gem "therubyracer"
-gem "less-rails"
-gem "twitter-bootstrap-rails"
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'draper', '~> 1.0.0'
@@ -23,7 +23,7 @@ gem 'fancybox-rails'
 gem 'prawn', '0.12.0'
 gem 'bootstrap_flash_messages'
 gem 'kaminari'
-gem 'auto_html', github: "dejan/auto_html"
+gem 'auto_html', github: 'dejan/auto_html'
 gem 'configus'
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -34,7 +34,6 @@ group :test do
   gem 'minitest'
   gem 'factory_girl_rails', require: false
   gem 'tconsole', github: 'ulmic/tconsole', branch: 'rails4'
-  gem 'turn'
   gem 'coveralls', require: false
   gem 'pry'
 end

@@ -12,7 +12,7 @@ gem 'mini_magick'
 gem 'validates'
 gem 'therubyracer'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails', '2.2.8'
+gem 'twitter-bootstrap-rails', '~> 3'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'draper', '~> 2.1.0'
@@ -41,13 +41,13 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'capistrano', '2.15.7'
-  gem 'rvm-capistrano'
-  gem 'capi'
-  gem 'capistrano_colors'
 end
 
 group :production do
   gem 'pg'
   gem 'unicorn'
+  gem 'capistrano', '2.15.7'
+  gem 'rvm-capistrano'
+  gem 'capi'
+  gem 'capistrano_colors'
 end

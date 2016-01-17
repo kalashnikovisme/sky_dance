@@ -7,7 +7,7 @@
   - @teachers.each_with_index do |teacher, i|
     - if index_multiple_four?(i)
       %hr
-    %li.span3.teacher_cell
+    %li.col-md-3.teacher_cell
       .thumbnail.height_thumbnail
         %a{ href: teacher_path(teacher) }
           = image_tag teacher.first_photo_big_thumb

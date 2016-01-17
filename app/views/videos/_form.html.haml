@@ -1,7 +1,7 @@
 %h4
   = t('.video_only_from_youtube')
 = simple_form_for @video, html: { class: 'form-horizontal' } do |f|
-  - f.with_options input_html: { class: :span6 } do |f|
+  - f.with_options input_html: { class: 'col-md-6' } do |f|
     = f.input :link
     .form-actions
       = f.button :submit, t('.add_video'), class: 'btn btn-primary'

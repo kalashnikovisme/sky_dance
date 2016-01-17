@@ -1,7 +1,7 @@
 .page-header
   %h1= @genre.title
 .row-fluid
-  .span9
+  .col-md-9
     .row-fluid
       %p{ align: "justify" }
         = @genre.description
@@ -19,7 +19,7 @@
           = link_to t('edit'), edit_genre_path(@genre), class: 'btn'
           = link_to t('destroy'), genre_path(@genre), method: "delete", data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-danger'
     = link_to t('back'), teachers_path, class: 'btn'
-  .span3
+  .col-md-3
     .row-fluid
       %img{ src: @genre.photo }
 

@@ -326,7 +326,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap_flash_messages
   capi
-  capistrano
+  capistrano (= 2.15.7)
   capistrano_colors
   carrierwave
   ckeditor

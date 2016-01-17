@@ -41,13 +41,13 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'capistrano', '2.15.7'
+  gem 'rvm-capistrano'
+  gem 'capi'
+  gem 'capistrano_colors'
 end
 
 group :production do
   gem 'pg'
   gem 'unicorn'
-  gem 'capistrano'
-  gem 'rvm-capistrano'
-  gem 'capi'
-  gem 'capistrano_colors'
 end

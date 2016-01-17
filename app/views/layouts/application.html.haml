@@ -13,27 +13,15 @@
     %a{ href: "/" }
       .main-logo.logo-sky-dance
     .container
-      .navbar-wrapper.navbar-margin-top.navbar-big-text.navbar-size
-        .navbar.navbar-opacity-white
-          .navbar-inner
-            %a.btn.btn-navbar{ "data-target" => ".nav-collapse", "data-toggle" => "collapse" }
-            .nav-collapse.collapse
-              %ul.nav
-                %li
-                  %a{ href: about_welcome_index_path }= t('about')
-                %li
-                  %a{ href: schedule_path }= t('schedule_and_prices')
-                %li
-                  %a{ href: news_index_path }= t('news')
-                %li
-                  %a{ href: genres_path }= t('dances')
-                %li
-                  %a{ href: teachers_path }= t('teachers')
-                %li
-                  %a{ href: contacts_welcome_index_path }= t('contacts')
-                %li
-                  %script{ async: "true", src: "http://servant.indexisto.com/files/searchbox/searchbox.nocache.js?type=edit", type: "text/javascript" }
-                  %input#indx_srchbox_527561ab273e25f2a99cf7d2.search-input{ autocomplete: "on", autocorrect: "on", placeholder: "поиск", type: "text" }
+      .navbar.navbar-default.navbar-margin-top
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            = menu_item t('about'), about_welcome_index_path
+            = menu_item t('schedule_and_prices'), schedule_path
+            = menu_item t('news'), news_index_path
+            = menu_item t('dances'), genres_path
+            = menu_item t('teachers'), teachers_path
+            = menu_item t('contacts'), contacts_welcome_index_path
     .row-fluid
       .container.content
         = flash_messages :close

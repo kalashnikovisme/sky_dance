@@ -295,10 +295,10 @@ GEM
     thread_safe (0.3.5)
     tilt (2.0.2)
     ttfunk (1.0.3)
-    twitter-bootstrap-rails (3.2.2)
+    twitter-bootstrap-rails (2.2.8)
       actionpack (>= 3.1)
-      execjs (>= 2.2.2, >= 2.2)
-      less-rails (>= 2.5.0)
+      execjs
+      rails (>= 3.1)
       railties (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -326,7 +326,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap_flash_messages
   capi
-  capistrano
+  capistrano (= 2.15.7)
   capistrano_colors
   carrierwave
   ckeditor
@@ -337,7 +337,6 @@ DEPENDENCIES
   enumerize
   factory_girl_rails
   fancybox-rails
-  haml
   haml-rails
   jquery-rails
   kaminari
@@ -358,7 +357,7 @@ DEPENDENCIES
   sqlite3
   tconsole!
   therubyracer
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails (= 2.2.8)
   uglifier (>= 1.0.3)
   unicorn
   validates

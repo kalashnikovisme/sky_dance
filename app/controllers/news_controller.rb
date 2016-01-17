@@ -9,7 +9,7 @@ class NewsController < ApplicationController
 
   def new
     if admin_signed_in?
-      @news = News.new.decorate
+      @news = NewsForm.new_with_model
     else
       redirect_to not_found_errors_path
     end
@@ -17,11 +17,11 @@ class NewsController < ApplicationController
 
   def create
     if admin_signed_in?
-      @news = News.new params[:news]
-      if @news.save
+      @news = NewsForm.new_with_model
+      if @news.submit params[:news]
         redirect_to @news, flash: :success
       else
-        render action: 'new'
+        render action: :new
       end
     else
       redirect_to not_found_errors_path
@@ -30,7 +30,7 @@ class NewsController < ApplicationController
 
   def edit
     if admin_signed_in?
-      @news = News.find(params[:id]).decorate
+      @news = NewsForm.find_with_model params[:id]
     else
       redirect_to not_found_errors_path
     end
@@ -38,11 +38,11 @@ class NewsController < ApplicationController
 
   def update
     if admin_signed_in?
-      @news = News.find params[:id]
-      if @news.update_attributes params[:news]
+      @news = NewsForm.find_with_model params[:id]
+      if @news.submit params[:news]
         redirect_to @news, flash: :success
       else
-        render action: edit
+        render action: :edit
       end
     else
       redirect_to not_found_errors_path

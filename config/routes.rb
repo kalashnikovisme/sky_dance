@@ -2,11 +2,11 @@ SkyDance::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
-  root to: "welcome#index"
+  root to: 'welcome#index'
 
-  match "admin" => "admins#login"
-  get "schedule" => "lessons#schedule"
-  get "schedule_pdf" => "lessons#schedule_to_pdf"
+  get 'admin' => 'admins#login'
+  get 'schedule' => 'lessons#schedule'
+  get 'schedule_pdf' => 'lessons#schedule_to_pdf'
 
   resources :groups, except: [:show, :index] do
     member do
@@ -26,17 +26,17 @@ SkyDance::Application.routes.draw do
 
   resources :admins do
     collection do
-      post "login"
-      get "logout" => "admins#logout"
-      get "panel" => "admins#panel"
+      post 'login'
+      get 'logout' => 'admins#logout'
+      get 'panel' => 'admins#panel'
     end
   end
 
   resources :welcome do
     collection do
-      get "about"
-      get "contacts"
-      get "place"
+      get 'about'
+      get 'contacts'
+      get 'place'
     end
   end
 
@@ -59,7 +59,7 @@ SkyDance::Application.routes.draw do
   resources :news
   resources :errors do
     collection do
-      get "not_found"
+      get 'not_found'
     end
   end
   resources :unlimits, except: [:show, :index]

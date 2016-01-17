@@ -1,10 +1,6 @@
 class Lesson < ActiveRecord::Base
   extend Enumerize
 
-  attr_accessible :day,
-                  :time,
-                  :group_id
-
   enumerize :day, in: [:monday,
                        :tuesday,
                        :wednesday,

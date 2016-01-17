@@ -35,12 +35,15 @@ group :test do
   gem 'factory_girl_rails', require: false
   gem 'tconsole', github: 'ulmic/tconsole', branch: 'rails4'
   gem 'coveralls', require: false
-  gem 'pry'
 end
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'pry'
 end
 
 group :production do

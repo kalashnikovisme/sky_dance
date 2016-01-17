@@ -14,7 +14,7 @@
         %h3= teacher.fio
         %p= teacher.motto
         - teacher.genres.each do |genre|
-          %a{ href: genre_path(genre) }
+          %a.genre{ href: genre_path(genre) }
             %img.img-rounded.micro.row-icon{ src: genre.photo }
         %br
         %br

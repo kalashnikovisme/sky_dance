@@ -1,7 +1,7 @@
 class UnlimitsController < ApplicationController
   def edit
     if admin_signed_in?
-      @unlimit = Unlimit.find params[:id]
+      @unlimit = UnlimitForm.find_with_model params[:id]
     else
       redirect_to not_found_errors_path
     end
@@ -9,8 +9,8 @@ class UnlimitsController < ApplicationController
 
   def update
     if admin_signed_in?
-      @unlimit = Unlimit.find params[:id]
-      if @unlimit.update_attributes params[:unlimit]
+      @unlimit = UnlimitForm.find_with_model params[:id]
+      if @unlimit.submit params[:unlimit]
         redirect_to schedule_path, flash: :success
       else
         render action: :edit
@@ -22,7 +22,7 @@ class UnlimitsController < ApplicationController
 
   def new
     if admin_signed_in?
-      @unlimit = Unlimit.new
+      @unlimit = UnlimitForm.new_with_model
     else
       redirect_to not_found_errors_path
     end
@@ -30,8 +30,8 @@ class UnlimitsController < ApplicationController
 
   def create
     if admin_signed_in?
-      @unlimit = Unlimit.new params[:unlimit]
-      if @unlimit.save
+      @unlimit = UnlimitForm.new_with_model
+      if @unlimit.submit params[:unlimit]
         redirect_to schedule_path, flash: :success
       else
         render action: :new

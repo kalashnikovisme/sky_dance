@@ -1,7 +1,7 @@
 class ScheduleReport < Prawn::Document
   def font_style
     font_families.update(
-      "Verdana" => {
+      'Verdana' => {
         bold: "#{Rails.root}/public/assets/verdana-bold.ttf",
         italic:"#{Rails.root}/public/assets/verdana-italic.ttf",
         normal: "#{Rails.root}/public/assets/verdana.ttf"
@@ -9,8 +9,8 @@ class ScheduleReport < Prawn::Document
   end
 
   def header
-    font "Verdana", size: 10
-    text I18n.t("reports.head"), size: 22, style: :bold, align: :center
+    font 'Verdana', size: 10
+    text I18n.t('reports.head'), size: 22, style: :bold, align: :center
     move_down 18
   end
 

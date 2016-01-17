@@ -8,12 +8,12 @@ class VideosController < ApplicationController
 
   def create
     if admin_signed_in?
-      @video = Video.new params[:video]
-      @video.genre = Genre.find params[:id]
-      if @video.save
+      params[:video].merge! genre_id: params[:id]
+      @video = VideoForm.new_with_model
+      if @video.submit params[:video]
         redirect_to admins_videos_url @video.genre, flash: :success
       else
-        render action: 'admins'
+        render action: :admins
       end
     else
       redirect_to not_found_errors_path
@@ -22,7 +22,7 @@ class VideosController < ApplicationController
 
   def edit
     if admin_signed_in?
-      @video = Video.find params[:id]
+      @video = VideoForm.find_with_model params[:id]
     else
       redirect_to not_found_errors_path
     end
@@ -30,11 +30,11 @@ class VideosController < ApplicationController
 
   def update
     if admin_signed_in?
-      @video = Video.find params[:id]
-      if @video.update_attributes params[:video]
+      @video = VideoForm.find_with_model params[:id]
+      if @video.submit params[:video]
         redirect_to admins_videos_url @video.genre, flash: :success
       else
-        render action: 'edit'
+        render action: :edit
       end
     else
       redirect_to not_found_errors_path

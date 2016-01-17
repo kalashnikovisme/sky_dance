@@ -1,7 +1,4 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :photo,
-                  :teacher_id
-
   belongs_to :teacher
 
   validates :photo, presence: true

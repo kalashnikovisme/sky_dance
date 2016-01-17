@@ -1,5 +1,4 @@
 class PhotosController < ApplicationController
-
   def admins
     @photo = Photo.new
     @teacher = Teacher.find params[:id]
@@ -8,12 +7,12 @@ class PhotosController < ApplicationController
 
   def create
     if admin_signed_in?
-      @photo = Photo.new params[:photo]
-      @photo.teacher = Teacher.find params[:id]
-      if @photo.save
-        redirect_to admins_photos_url @photo.teacher, flash: :success
+      params[:photo].merge! teacher_id: params[:id]
+      @photo = PhotoForm.new_with_model
+      if @photo.submit params[:photo]
+        redirect_to admins_photos_path @photo.teacher, flash: :success
       else
-        render action: 'admins'
+        render action: :admins
       end
     else
       redirect_to not_found_errors_path

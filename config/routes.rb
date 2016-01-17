@@ -4,16 +4,19 @@ SkyDance::Application.routes.draw do
 
   root to: 'welcome#index'
 
-  get 'admin' => 'admins#login'
+  get 'admin' => 'admin/welcome#index'
   get 'schedule' => 'lessons#schedule'
   get 'schedule_pdf' => 'lessons#schedule_to_pdf'
 
+  namespace :admin do
+    resources :welcome, only: :index
+  end
+  resource :session, only: [:new, :create, :destroy]
   resources :groups, except: [:show, :index] do
     member do
       resources :lessons, except: [:show, :index]
     end
   end
-
   resources :teachers do
     member do
       resources :photos, except: [:show, :index, :edit] do
@@ -23,7 +26,6 @@ SkyDance::Application.routes.draw do
       end
     end
   end
-
   resources :admins do
     collection do
       post 'login'

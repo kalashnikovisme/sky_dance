@@ -1,5 +1,5 @@
-.span5
-  %iframe{frameborder: "0", height: "450", src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2326.988702101511!2d48.39840790000002!3d54.32183109999989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415d37684fe2ff8d%3A0x2ac46db8dc54fd34!2zMi3QuSDQnNC40YDQsCDQv9C10YAuLCAyNCwg0KPQu9GM0Y_QvdC-0LLRgdC6LCDQo9C70YzRj9C90L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGM!5e0!3m2!1sru!2sru!4v1401825885763", style: "border:0", width: "600"}
+.col-md-5
+  %iframe{frameborder: '0', height: '450', src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2326.988702101511!2d48.39840790000002!3d54.32183109999989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415d37684fe2ff8d%3A0x2ac46db8dc54fd34!2zMi3QuSDQnNC40YDQsCDQv9C10YAuLCAyNCwg0KPQu9GM0Y_QvdC-0LLRgdC6LCDQo9C70YzRj9C90L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGM!5e0!3m2!1sru!2sru!4v1401825885763', style: 'border:0', width: '600'}
   %br
   - if admin_signed_in? and any_office_maps?
     = link_to edit_office_map, t('edit'), class: 'btn btn-warning'
@@ -10,15 +10,15 @@
   %br
   %span.eng_symbols= t('.email')
   %br
-.span4
+.col-md-4
   = t('.ride_to_us')
-.span2
-  %a.fancy{ href: "http://cs314625.vk.me/v314625602/1571/iCQR_l2YjSY.jpg" }
-    %img.img-polaroid{ src: "http://cs314625.vk.me/v314625602/1571/iCQR_l2YjSY.jpg" }/
+.col-md-2.photos
+  %a.fancy{ href: 'http://cs314625.vk.me/v314625602/1571/iCQR_l2YjSY.jpg' }
+    %img.img-polaroid{ src: 'http://cs314625.vk.me/v314625602/1571/iCQR_l2YjSY.jpg' }/
   %br
-  %a.fancy{ href: "http://cs314625.vk.me/v314625602/14f9/AuGOlAzfAGw.jpg" }
-    %img.img-polaroid{ src: "http://cs314625.vk.me/v314625602/14f9/AuGOlAzfAGw.jpg" }/
+  %a.fancy{ href: 'http://cs314625.vk.me/v314625602/14f9/AuGOlAzfAGw.jpg' }
+    %img.img-polaroid{ src: 'http://cs314625.vk.me/v314625602/14f9/AuGOlAzfAGw.jpg' }/
   %br
-  %a.fancy{ href: "http://cs314625.vk.me/v314625602/1567/YucReQXoujE.jpg" }
-    %img.img-polaroid{ src: "http://cs314625.vk.me/v314625602/1567/YucReQXoujE.jpg" }/
+  %a.fancy{ href: 'http://cs314625.vk.me/v314625602/1567/YucReQXoujE.jpg' }
+    %img.img-polaroid{ src: 'http://cs314625.vk.me/v314625602/1567/YucReQXoujE.jpg' }/
   %br

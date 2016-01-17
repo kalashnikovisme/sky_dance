@@ -1,0 +1,19 @@
+%h4= t('.hello_admin')
+%b= t('.you_can')
+%br
+%br
+%p
+  %a.btn.btn-default{ href: new_news_path }
+    = t('.add_news')
+  %a.btn.btn-default{ href: new_teacher_path }
+    = t('.add_teacher')
+  %a.btn.btn-default{ href: new_genre_path }
+    = t('.add_genre')
+  %a.btn.btn-default{ href: new_group_path }
+    = t('.add_group')
+  %a.btn.btn-default{ href: logout_admins_path }
+    = t('.sign_out')
+  - if @office_map
+    %a.btn.btn-default{ href: edit_office_map_path(@office_map) }
+      = t('.edit_office_map')
+

@@ -1,0 +1,12 @@
+.navbar.navbar-default.navbar-margin-top
+  .navbar-collapse.collapse
+    %ul.nav.navbar-nav
+      = menu_item t('about'), about_welcome_index_path
+      = menu_item t('schedule_and_prices'), schedule_path
+      = menu_item t('news'), news_index_path
+      = menu_item t('dances'), genres_path
+      = menu_item t('teachers'), teachers_path
+      = menu_item t('contacts'), contacts_welcome_index_path
+    - if admin_signed_in?
+      %ul.nav.navbar-nav.pull-right
+        = menu_item t('adminka'), admin_path

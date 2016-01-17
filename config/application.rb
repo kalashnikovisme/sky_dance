@@ -9,7 +9,8 @@ Bundler.require(*Rails.groups)
 module SkyDance
   class Application < Rails::Application
     config.autoload_paths += Dir[
-      "#{config.root}/lib/**/"
+      "#{config.root}/lib/**/",
+      "#{config.root}/app/reports"
     ]
     config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews" unless Rails.env == 'production'
     config.active_record.raise_in_transactional_callbacks = true

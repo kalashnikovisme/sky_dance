@@ -5,7 +5,7 @@ class GenresController < ApplicationController
 
   def new
     if admin_signed_in?
-      @genre = Genre.new
+      @genre = GenreForm.new_with_model
     else
       redirect_to not_found_errors_path
     end
@@ -13,11 +13,11 @@ class GenresController < ApplicationController
 
   def create
     if admin_signed_in?
-      @genre = Genre.new params[:genre]
-      if @genre.save
+      @genre = GenreForm.new_with_model
+      if @genre.submit params[:genre]
         redirect_to @genre, flash: :success
       else
-        render action: "new"
+        render action: :new
       end
     else
       redirect_to not_found_errors_path
@@ -30,7 +30,7 @@ class GenresController < ApplicationController
 
   def edit
     if admin_signed_in?
-      @genre = Genre.find params[:id]
+      @genre = GenreForm.find_with_model params[:id]
     else
       redirect_to not_found_errors_path
     end
@@ -38,12 +38,11 @@ class GenresController < ApplicationController
 
   def update
     if admin_signed_in?
-      @genre = Genre.find params[:id]
-
-      if @genre.update_attributes params[:genre]
+      @genre = GenreForm.find_with_model params[:id]
+      if @genre.submit params[:genre]
         redirect_to @genre, flash: :success
       else
-        render action: 'edit'
+        render action: :edit
       end
     else
       redirect_to not_found_errors_path

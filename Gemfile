@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.17'
+gem 'rails', '4.2.1'
 gem 'sqlite3'
 
 gem 'rspec'
@@ -8,36 +8,33 @@ gem 'rspec'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
-gem "ckeditor"
+gem 'ckeditor'
 gem 'mini_magick'
 gem 'validates'
-gem "therubyracer"
-gem "less-rails"
-gem "twitter-bootstrap-rails"
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 gem 'carrierwave'
 gem 'rmagick'
-gem 'draper', '~> 1.0.0'
+gem 'draper', '~> 2.1.0'
 gem 'enumerize'
 gem 'jquery-rails'
 gem 'fancybox-rails'
 gem 'prawn', '0.12.0'
 gem 'bootstrap_flash_messages'
 gem 'kaminari'
-gem 'auto_html', git: "git://github.com/dejan/auto_html"
+gem 'auto_html', '1.6.4'
 gem 'configus'
-
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sass-rails', '~> 5.0'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'uglifier', '>= 1.0.3'
+gem 'reform'
 
 group :test do
   gem 'simplecov', require: false
   gem 'minitest'
   gem 'factory_girl_rails', require: false
-  gem 'turn'
-  gem 'tconsole', "1.3.0.pre3", git: "git://github.com/kalashnikovisme/tconsole"
+  gem 'tconsole', github: 'ulmic/tconsole', branch: 'rails4'
   gem 'coveralls', require: false
   gem 'pry'
 end

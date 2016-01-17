@@ -1,9 +1,4 @@
 class Teacher < ActiveRecord::Base
-  attr_accessible :description,
-                  :first_name,
-                  :middle_name,
-                  :motto
-
   has_many :photos, dependent: :destroy
   has_many :groups
 

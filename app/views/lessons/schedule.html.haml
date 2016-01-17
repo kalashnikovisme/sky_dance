@@ -45,7 +45,7 @@
         - if admin_signed_in?
           %td
             %small= t('.actions')
-      - genre.groups.decorate.each do |group|
+      - genre.groups.each do |group|
         - if (group_has_lessons?(group) or admin_signed_in?) and group.teacher.present?
           %tr
             %td.first-column

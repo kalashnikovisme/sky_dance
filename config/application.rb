@@ -2,28 +2,33 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-if defined?(Bundler)
-  Bundler.require(*Rails.groups(assets: %w(development test)))
-end
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+Bundler.require(*Rails.groups)
 
 module SkyDance
   class Application < Rails::Application
-    config.encoding = "utf-8"
-    config.autoload_paths += %W(#{config.root}/lib)
-    config.filter_parameters += [:password]
-    config.active_support.escape_html_entities_in_json = true
-    config.autoload_paths << "#{Rails.root}/app/reports"
-    config.active_record.whitelist_attributes = true
-    config.assets.enabled = true
-    config.assets.version = '1.0'
-    config.i18n.default_locale = :ru
+    config.autoload_paths += Dir[
+      "#{config.root}/lib/**/"
+    ]
+    config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews" unless Rails.env == 'production'
+    config.active_record.raise_in_transactional_callbacks = true
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-
+    config.i18n.available_locales = [:en, :ru]
+    config.i18n.default_locale = :ru
+    config.assets.enabled = true
+    config.assets.initialize_on_precompile = true
+    config.assets.version = '1.0'
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join('app', 'assets', '*.ico')
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     config.generators do |g|
       g.template_engine :haml
-      g.test_framework  :test_unit, fixture: true, fixture_replacement: :factory_girl
       g.stylesheets false
       g.javascripts false
+      g.helper false
+      g.decorator false
     end
+    config.time_zone = 'Moscow'
   end
 end

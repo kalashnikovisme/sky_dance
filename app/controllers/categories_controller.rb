@@ -10,11 +10,11 @@ class CategoriesController < ApplicationController
 
   def create
     if admin_signed_in?
-      @category = Category.new params[:category]
-      if @category.save
+      @category = CategoryForm.new_with_model
+      if @category.submit params[:category]
         redirect_to new_group_path, flash: :success
       else
-        render action: 'new'
+        render action: :new
       end
     else
       redirect_to not_found_errors_path
@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
 
   def edit
     if admin_signed_in?
-      @category = Category.find params[:id]
+      @category = CategoryForm.find_with_model params[:id]
     else
       redirect_to not_found_errors_path
     end
@@ -31,11 +31,11 @@ class CategoriesController < ApplicationController
 
   def update
     if admin_signed_in?
-      @category = Category.find params[:id]
-      if @category.update_attributes params[:category]
+      @category = CategoryForm.find_with_model params[:id]
+      if @category.submit params[:category]
         redirect_to schedule_path, flash: :success
       else
-        render action: "edit"
+        render action: :edit
       end
     else
       redirect_to not_found_errors_path

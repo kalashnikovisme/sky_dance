@@ -9,11 +9,11 @@ class GroupsController < ApplicationController
 
   def create
     if admin_signed_in?
-      @group = Group.new params[:group]
-      if @group.save
+      @group = GroupForm.new_with_model
+      if @group.submit params[:group]
         redirect_to schedule_path, flash: :success
       else
-        render action: 'new'
+        render action: :new
       end
     else
       redirect_to not_found_errors_path
@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
 
   def edit
     if admin_signed_in?
-      @group = Group.find params[:id]
+      @group = GroupForm.find_with_model params[:id]
     else
       redirect_to not_found_errors_path
     end
@@ -30,11 +30,11 @@ class GroupsController < ApplicationController
 
   def update
     if admin_signed_in?
-      @group = Group.find params[:id]
-      if @group.update_attributes params[:group]
+      @group = GroupForm.find_with_model params[:id]
+      if @group.submit params[:group]
         redirect_to schedule_path, flash: :success
       else
-        render action: 'edit'
+        render action: :edit
       end
     else
       redirect_to not_found_errors_path

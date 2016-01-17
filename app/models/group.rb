@@ -1,15 +1,5 @@
 class Group < ActiveRecord::Base
   extend Enumerize
-
-  attr_accessible :once_price,
-                  :price,
-                  :unlimit,
-                  :space,
-                  :genre_id,
-                  :teacher_id,
-                  :category_id
-
-
   enumerize :space, in: [:there_places,
                          :there_not_places,
                          :group_formed],

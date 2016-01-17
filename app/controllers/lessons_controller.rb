@@ -1,8 +1,8 @@
-require "prawn"
+require 'prawn'
 
 class LessonsController < ApplicationController
   def schedule
-    @genres = Genre.all
+    @genres = GenreDecorator.decorate_collection Genre.all
     @lessons = Lesson.all
     @days = Lesson.day.values
     @unlimits = Unlimit.all
@@ -10,12 +10,12 @@ class LessonsController < ApplicationController
 
   def schedule_to_pdf
     output = ScheduleReport.new.to_pdf
-    send_data output, type: 'application/pdf', filename: "schedule.pdf"
+    send_data output, type: 'application/pdf', filename: 'schedule.pdf'
   end
 
   def new
     if admin_signed_in?
-      @lesson = Lesson.new
+      @lesson = LessonForm.new_with_model
     else
       redirect_to not_found_errors_path
     end
@@ -23,12 +23,12 @@ class LessonsController < ApplicationController
 
   def create
     if admin_signed_in?
-      @lesson = Lesson.new params[:lesson]
-      @lesson.group = Group.find params[:id]
-      if @lesson.save
+      params[:lesson].merge! group_id: params[:id]
+      @lesson = LessonForm.new_with_model
+      if @lesson.submit params[:lesson]
         redirect_to schedule_path, flash: :success
       else
-        render action: 'new'
+        render action: :new
       end
     else
       redirect_to not_found_errors_path
@@ -37,7 +37,7 @@ class LessonsController < ApplicationController
 
   def edit
     if admin_signed_in?
-      @lesson = Lesson.find params[:id]
+      @lesson = LessonForm.find_with_model params[:id]
     else
       redirect_to not_found_errors_path
     end
@@ -45,11 +45,11 @@ class LessonsController < ApplicationController
 
   def update
     if admin_signed_in?
-      @lesson = Lesson.find params[:id]
-      if @lesson.update_attributes params[:lesson]
+      @lesson = LessonForm.find_with_model params[:id]
+      if @lesson.submit params[:lesson]
         redirect_to lessons_path, flash: :success
       else
-        render action: 'edit'
+        render action: :edit
       end
     else
       redirect_to not_found_errors_path

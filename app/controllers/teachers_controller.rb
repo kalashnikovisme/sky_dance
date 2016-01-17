@@ -1,7 +1,7 @@
 class TeachersController < ApplicationController
   def new
     if admin_signed_in?
-      @teacher = Teacher.new
+      @teacher = TeacherForm.new_with_model
     else
       redirect_to not_found_errors_path
     end
@@ -9,8 +9,8 @@ class TeachersController < ApplicationController
 
   def create
     if admin_signed_in?
-      @teacher = Teacher.new params[:teacher]
-      if @teacher.save
+      @teacher = TeacherForm.new_with_model
+      if @teacher.submit params[:teacher]
         redirect_to @teacher, flash: :success
       else
         render action: :new
@@ -25,12 +25,12 @@ class TeachersController < ApplicationController
   end
 
   def index
-    @teachers = TeacherDecorator.decorate_collection Teacher.all
+    @teachers = Teacher.all.decorate
   end
 
   def edit
     if admin_signed_in?
-      @teacher = Teacher.find params[:id]
+      @teacher = TeacherForm.find_with_model params[:id]
     else
       redirect_to not_found_errors_path
     end
@@ -38,9 +38,8 @@ class TeachersController < ApplicationController
 
   def update
     if admin_signed_in?
-      @teacher = Teacher.find params[:id]
-
-      if @teacher.update_attributes params[:teacher]
+      @teacher = TeacherForm.find_with_model params[:id]
+      if @teacher.submit params[:teacher]
         redirect_to @teacher, flash: :success
       else
         render action: :edit

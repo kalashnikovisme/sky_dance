@@ -7,7 +7,7 @@ class GroupDecorator < Draper::Decorator
     if lesson
       lesson.time.strftime "%H:%M"
     else
-      lesson = model.lesson.find_by_day(day)
+      lesson = model.lessons.find_by_day(day)
       if lesson
         lesson.time.strftime "%H:%M"
       end

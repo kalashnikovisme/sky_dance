@@ -1,6 +1,21 @@
 module AppicationHelper
   include AuthHelper
 
+  def title(page_title = default_title, area = :default)
+    if area != :default
+      title_text = "#{page_title} | #{t(area)} | #{t('application.name')}"
+    elsif page_title == :app_name
+      title_text = t('application.name')
+    else
+      title_text = "#{page_title} | #{t('application.name')}"
+    end
+    content_for(:title) { title_text }
+  end
+
+  def default_title
+    t('.title')
+  end
+
   def menu_item(name = nil, path = '#', *args, &block)
     path = name || path if block_given?
     options = args.extract_options!

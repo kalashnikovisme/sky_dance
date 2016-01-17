@@ -349,6 +349,7 @@ ru:
         one:   ! "%{model}: сохранение не удалось из-за %{count} ошибки"
         other: ! "%{model}: сохранение не удалось из-за %{count} ошибки"
   helpers:
+    enter: Войти
     select:
       prompt: ! "Выберите:"
     submit:

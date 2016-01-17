@@ -1,0 +1,7 @@
+- title
+.row
+  .col-md-6
+    = simple_form_for @admin, url: { controller: 'sessions', action: :create }, method: :post do |f|
+      = f.input :login, as: :string
+      = f.input :password, required: true
+      = f.button :submit, t('helpers.enter'), class: "mic-flat-button"

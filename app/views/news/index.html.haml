@@ -4,20 +4,22 @@
   %h1
     = t 'news'
 %ul.thumbnails
-  - @news.each do |news|
-    %li.col-md-3.news_cell
-      .thumbnail
-        %a{ href: news_path(news) }
-          = image_tag news.decorate.main_photo_big_thumb
-        %a{ href: news_path(news) }
-          %h4= news.title
-        %h4= news.published_at
-        %p
-          != strip_tags news.decorate.lead
-        %a.btn.btn-medium{ href: news_path(news) }= t('cut')
-        - if admin_signed_in?
-          = link_to t('edit', default: t('helpers.links.edit')), edit_news_path(news), class: 'btn btn-mini'
-          = link_to t('destroy', default: t('helpers.links.destroy')), news, method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
+  - @news.each_slice(4) do |n|
+    .row
+      - n.each do |news|
+        %li.col-md-3.news_cell
+          .thumbnail
+            %a{ href: news_path(news) }
+              = image_tag news.decorate.main_photo_big_thumb
+            %a{ href: news_path(news) }
+              %h4= news.title
+            %h4= news.published_at
+            %p
+              != strip_tags news.decorate.lead
+            %a.btn.btn-medium{ href: news_path(news) }= t('cut')
+            - if admin_signed_in?
+              = link_to t('edit', default: t('helpers.links.edit')), edit_news_path(news), class: 'btn  btn-default btn-mini'
+              = link_to t('destroy', default: t('helpers.links.destroy')), news, method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
 - if admin_signed_in?
   = link_to t('.new_news'), new_news_path, class: 'btn btn-primary'
 = paginate @news

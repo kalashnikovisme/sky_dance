@@ -1,0 +1,28 @@
+= stylesheet_link_tag 'lessons'
+%table.table.table-striped.table-bordered.table-aligned
+  %thead
+    %th.first-column
+      %small.very-small-text= t('group')
+    %th
+      %small.very-small-text= t('group_number')
+    %th
+      %small.very-small-text= t('category')
+    %th
+      %small.very-small-text= t('monday')
+    %th
+      %small.very-small-text= t('tuesday')
+    %th
+      %small.very-small-text= t('wednesday')
+    %th
+      %small.very-small-text= t('thursday')
+    %th
+      %small.very-small-text= t('friday')
+    %th
+      %small.very-small-text= t('saturday')
+    %th
+      %small.very-small-text= t('sunday')
+    - if admin_signed_in?
+      %td
+        %small= t('.actions')
+  - teacher.groups.each do |group|
+    = render 'lessons/group', group: group.decorate

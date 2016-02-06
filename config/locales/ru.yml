@@ -60,7 +60,7 @@ ru:
       edit_genre:       Редактировать жанр
 
   lessons:
-    genre:
+    group:
       edit_group:           Изм. группу
       add_group:            Добавить группу
       add_lesson:           Добавить урок

@@ -22,7 +22,7 @@ ru:
         sign_out:        Выйти
         add_news:        Добавить новость
         add_teacher:     Добавить преподавателя
-        add_genre:       Добавить танцевальный жанр
+        add_genre:       Добавить стиль танца
         add_group:       Добавить группу
         hello_admin:     Здравствуйте, Администратор
         you_can:         "Вы можете:"
@@ -46,18 +46,18 @@ ru:
 
   genres:
     index:
-      dance_genres: Танцевальные жанры
-      new_genre:    Добавить жанр
+      dance_genres: Стили танцев
+      new_genre:    Добавить стиль танца
     show:
       admins_buttons:   Кнопки администратора
       admins_video:     Администрирование видео
     new:
-      title:            Добавить жанр
+      title:            Добавить стиль танца
     form:
-      save_genre:       Сохранить жанр
+      save_genre:       Сохранить стиль танца
       choose_new_photo: Выбрать новое фото
     edit:
-      edit_genre:       Редактировать жанр
+      edit_genre:       Редактировать стиль танца
 
   lessons:
     group:
@@ -88,7 +88,7 @@ ru:
       add_video:               Добавить видео
       video_only_from_youtube: Следует добавлять видео только с Youtube
     admins:
-      admins_video_of_genre:  Администрирование видео жанра
+      admins_video_of_genre:  Администрирование видео стиля
       confirm:                Вы уверены?
 
   groups:
@@ -166,7 +166,7 @@ ru:
   back:                      Назад
   destroy:                   Удалить
   cancel:                    Отмена
-  dances:                    Жанры
+  dances:                    Стили танцев
   teachers:                  Преподаватели
   schedule:                  Расписание
   group:                     Группа

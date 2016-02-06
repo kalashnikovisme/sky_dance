@@ -1,10 +1,11 @@
 require 'prawn'
 
 class LessonsController < ApplicationController
+  before_filter :need_days, only: :schedule
+
   def schedule
     @genres = GenreDecorator.decorate_collection Genre.all
     @lessons = Lesson.all
-    @days = Lesson.day.values
     @unlimits = Unlimit.all
   end
 

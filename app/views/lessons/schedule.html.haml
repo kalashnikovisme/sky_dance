@@ -3,68 +3,7 @@
 .page-header
   %h1= t('schedule')
 - @genres.each do |genre|
-  - if genre_has_groups?(genre) or admin_signed_in?
-    %a{ href: genre_path(genre) }
-      %img.img-rounded.mini{ src: genre.photo.thumb }
-      %big= genre.title
-    %br
-    %br
-    - if admin_signed_in?
-      = link_to t('.add_group'), new_group_path, class: 'btn btn-primary margin-bottom'
-    %table.table.table-striped.table-bordered.table-aligned
-      %thead
-        %th.first-column
-          %small.very-small-text= t('group')
-        %th
-          %small.very-small-text= t('group_number')
-        %th
-          %small.very-small-text= t('category')
-        %th
-          %small.very-small-text= t('monday')
-        %th
-          %small.very-small-text= t('tuesday')
-        %th
-          %small.very-small-text= t('wednesday')
-        %th
-          %small.very-small-text= t('thursday')
-        %th
-          %small.very-small-text= t('friday')
-        %th
-          %small.very-small-text= t('saturday')
-        %th
-          %small.very-small-text= t('sunday')
-        - if admin_signed_in?
-          %td
-            %small= t('.actions')
-      - genre.groups.each do |group|
-        - if (group_has_lessons?(group) or admin_signed_in?) and group.teacher.present?
-          %tr
-            %td.first-column
-              %a{ href: teacher_path(group.teacher) }
-                .micro-photo
-                  = image_tag group.teacher.decorate.first_photo_thumb
-                .micro-text-with-photo
-                  %small.micro-text= group.teacher.decorate.fio
-              %br
-              %br
-              = t "enumerize.group.space.#{group.space}"
-            %td
-              %small.micro-text= group.number
-            %td
-              %small.micro-text= group.category.describe if group.category.present?
-            - @days.each do |day|
-              %td
-                %br
-                %b.lesson-time-text= group.lesson_time(day)
-                - if group_has_lessons_on_day?(group, day) and admin_signed_in?
-                  %br
-                  = link_to t('edit', default: t("helpers.links.edit")), edit_lesson_path(group.find_lesson_by_day(day)), class: 'btn btn-xs margin-top'
-                  = link_to t('destroy', default: t("helpers.links.destroy")), lesson_path(group.find_lesson_by_day(day)), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-xs btn-danger margin-top'
-            - if session[:admin_id]
-              %td
-                = link_to t('.add_lesson'), new_lesson_url(group), class: 'btn btn-xs btn-primary margin-top'
-                = link_to t('.edit_group'), edit_group_path(group), class: 'btn btn-xs btn-primary margin-top'
-                = link_to t('.destroy_group', default: t("helpers.links.destroy")), group_path(group), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-xs btn-danger margin-top'
+  = render 'genre', genre: genre
 = link_to t('print'), schedule_pdf_path, class: 'btn'
 %br
 %br

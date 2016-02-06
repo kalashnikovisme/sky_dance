@@ -60,7 +60,7 @@ ru:
       edit_genre:       Редактировать жанр
 
   lessons:
-    schedule:
+    genre:
       edit_group:           Изм. группу
       add_group:            Добавить группу
       add_lesson:           Добавить урок
@@ -68,9 +68,10 @@ ru:
       destroy_lesson:       Удалить занятие
       destroy_group:        Удал. группу
       price:                Цена за курс
+      actions:              Действия
+    schedule:
       once_price:           за одно занятие
       unlimit:              Безлимит
-      actions:              Действия
       rub:                   руб.
       unlimit_is_unavaible: Безлимит не предусмотрен
     new:

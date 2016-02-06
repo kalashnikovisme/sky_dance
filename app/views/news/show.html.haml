@@ -10,7 +10,7 @@
     %small= @news.published_at
   .row
     %br
-    != strip_tags @news.body
+    != @news.body
   .row
     - if admin_signed_in?
       .form-actions

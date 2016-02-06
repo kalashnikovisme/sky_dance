@@ -22,17 +22,4 @@ class GroupDecorator < Draper::Decorator
     end
     lesson
   end
-
-  def space_identificator
-    if model.space.there_places?
-      helpers.content_tag :div, class: "there_places ident" do
-      end
-    elsif model.space.there_not_places?
-      helpers.content_tag :div, class: "there_not_places ident" do
-      end
-    elsif model.space.group_formed?
-      helpers.content_tag :div, class: "group_formed ident" do
-      end
-    end
-  end
 end

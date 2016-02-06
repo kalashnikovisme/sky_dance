@@ -30,6 +30,7 @@ ru:
         genre:        Танцевальный жанр
         teacher:      Преподаватель
         category:     Категория
+        number:       № группы
       category:
         describe:      Описание категории
       news:

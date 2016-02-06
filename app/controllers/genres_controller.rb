@@ -1,4 +1,6 @@
 class GenresController < ApplicationController
+  before_filter :need_days, only: :show
+
   def index
     @genres = GenreDecorator.decorate_collection Genre.all
   end
@@ -25,7 +27,7 @@ class GenresController < ApplicationController
   end
 
   def show
-    @genre = Genre.find params[:id]
+    @genre = Genre.find(params[:id]).decorate
   end
 
   def edit

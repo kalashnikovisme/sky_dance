@@ -1,0 +1,35 @@
+- if genre_has_groups?(genre) or admin_signed_in?
+  %a{ href: genre_path(genre) }
+    %img.img-rounded.mini{ src: genre.photo.thumb }
+    %big= genre.title
+  %br
+  %br
+  - if admin_signed_in?
+    = link_to t('.add_group'), new_group_path, class: 'btn btn-primary margin-bottom'
+  %table.table.table-striped.table-bordered.table-aligned
+    %thead
+      %th.first-column
+        %small.very-small-text= t('group')
+      %th
+        %small.very-small-text= t('group_number')
+      %th
+        %small.very-small-text= t('category')
+      %th
+        %small.very-small-text= t('monday')
+      %th
+        %small.very-small-text= t('tuesday')
+      %th
+        %small.very-small-text= t('wednesday')
+      %th
+        %small.very-small-text= t('thursday')
+      %th
+        %small.very-small-text= t('friday')
+      %th
+        %small.very-small-text= t('saturday')
+      %th
+        %small.very-small-text= t('sunday')
+      - if admin_signed_in?
+        %td
+          %small= t('.actions')
+    - genre.groups.each do |group|
+      = render 'group', group: group

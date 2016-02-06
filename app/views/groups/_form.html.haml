@@ -1,7 +1,8 @@
-= simple_form_for @group, html: { class: 'form-horizontal' } do |f|
+= simple_form_for @group do |f|
   - f.with_options input_html: { class: 'col-md-6' } do |f|
     = f.input :once_price
     = f.input :price
+    = f.input :number, as: :string
     = f.input :space
     = f.association :genre, as: :select, label_method: :title, value_method: :id
     = f.association :teacher, as: :select, label_method: :first_name, value_method: :id

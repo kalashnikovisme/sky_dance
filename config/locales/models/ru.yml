@@ -3,7 +3,7 @@ ru:
     models:
       teacher:        Учитель
       video:          Видео
-      genre:          Жанр
+      genre:          Стиль танцСтиль танца
       group:          Группа
       category:       Категория
       news:           Новость
@@ -27,9 +27,10 @@ ru:
         once_price:   Цена за одно занятие
         price:        Цена за комплекс занятий
         unlimit:      Безлимит
-        genre:        Танцевальный жанр
+        genre:        Стиль танца
         teacher:      Преподаватель
         category:     Категория
+        number:       № группы
       category:
         describe:      Описание категории
       news:

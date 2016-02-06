@@ -1,3 +1,4 @@
+= stylesheet_link_tag 'lessons'
 .page-header
   %h1= @genre.title
 .row-fluid
@@ -22,3 +23,6 @@
   .col-md-3.photos
     .row-fluid
       %img{ src: @genre.photo }
+.row-fluid
+  .col-md-12{ style: 'margin-top: 10px; border-top: 1px solid lightgray; padding-top: 10px;' }
+    = render 'lessons/genre', genre: @genre

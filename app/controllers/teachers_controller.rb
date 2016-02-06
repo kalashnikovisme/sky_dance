@@ -1,4 +1,6 @@
 class TeachersController < ApplicationController
+  before_filter :need_days, only: :show
+
   def new
     if admin_signed_in?
       @teacher = TeacherForm.new_with_model

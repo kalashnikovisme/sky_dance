@@ -9,7 +9,8 @@
       %br
       %br
       = t "enumerize.group.space.#{group.space}"
-      = link_to group.genre.title, genre_path(group.genre), class: 'micro-text'
+      - if teacher_view?
+        = link_to group.genre.title, genre_path(group.genre), class: 'micro-text'
     %td
       %small.micro-text= group.number
     %td

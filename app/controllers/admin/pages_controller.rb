@@ -10,7 +10,7 @@ class Admin::PagesController < Admin::ApplicationController
   def create
     @page = PageForm.new_with_model
     if @page.submit params[:page]
-      redirect_to page_path(@page.slug), flash: :success
+      redirect_to show_pages_path(@page.slug), flash: :success
     else
       render action: :new
     end
@@ -23,7 +23,7 @@ class Admin::PagesController < Admin::ApplicationController
   def update
     @page = PageForm.find_with_model params[:id]
     if @page.submit params[:page]
-      redirect_to page_path(@page.slug), flash: :success
+      redirect_to show_pages_path(@page.slug), flash: :success
     else
       render action: :edit
     end
@@ -32,6 +32,6 @@ class Admin::PagesController < Admin::ApplicationController
   def destroy
     @page = Page.find params[:id]
     @page.destroy
-    redirect_to admin_path, flash: :success
+    redirect_to admin_pages_path, flash: :success
   end
 end

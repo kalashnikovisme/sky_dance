@@ -1,3 +1,3 @@
 class PageForm < ApplicationForm
-  property :title, :body, :slug
+  properties :title, :body, :slug
 end

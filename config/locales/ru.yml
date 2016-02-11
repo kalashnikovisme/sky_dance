@@ -355,6 +355,8 @@ ru:
         other: ! "%{model}: сохранение не удалось из-за %{count} ошибки"
   helpers:
     enter: Войти
+    edit: Изменить
+    destroy: Удалить
     select:
       prompt: ! "Выберите:"
     submit:

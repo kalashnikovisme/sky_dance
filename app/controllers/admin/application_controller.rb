@@ -8,7 +8,7 @@ class Admin::ApplicationController < ApplicationController
   end
 
   def signed_in?
-    current_user
+    session[:admin_id]
   end
 
   def signed_as_admin?
@@ -16,6 +16,6 @@ class Admin::ApplicationController < ApplicationController
   end
 
   def authenticate_admin!
-    redirect_to new_session_path unless signed_as_admin?
+    redirect_to not_found_errors_path unless signed_as_admin?
   end
 end

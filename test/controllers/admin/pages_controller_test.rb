@@ -23,19 +23,11 @@ class Admin::PagesControllerTest < ActionController::TestCase
 
     attributes = attributes_for :page
 
-    genre = create :genre
-    teacher = create :teacher
-    category = create :category
-
-    attributes[:genre_id] = genre.id
-    attributes[:teacher_id] = teacher.id
-    attributes[:category_id] = category.id
-
     post :create, page: attributes
     assert_response :redirect
 
     page = Page.last
-    assert_equal attributes[:category_id], page.category_id
+    assert_equal attributes[:body], page.body
   end
 
   test 'should not create page' do
@@ -64,7 +56,7 @@ class Admin::PagesControllerTest < ActionController::TestCase
     assert_response :redirect
 
     @page.reload
-    assert_equal attributes[:price], @page.price
+    assert_equal attributes[:body], @page.body
   end
 
   test 'should not update with no access' do
@@ -81,7 +73,7 @@ class Admin::PagesControllerTest < ActionController::TestCase
       delete :destroy, id: @page
     end
 
-    assert_redirected_to lessons_path
+    assert_redirected_to admin_pages_path
   end
 
   test 'should not destroy page' do

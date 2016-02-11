@@ -1,0 +1,5 @@
+= simple_form_for @page, url: { controller: 'admin/pages', action: action } do |f|
+  = f.input :title, as: :string
+  = f.input :body, as: :ckeditor
+  = f.input :slug, as: :string
+  = f.submit

@@ -3,7 +3,7 @@
   = simple_form_for @teacher do |f|
     = f.input :first_name
     = f.input :middle_name
-    = f.input :description
+    = f.input :description, as: :ckeditor
     = f.input :motto, placeholder: t('not_more_than_140_symbols')
     %small= t('required_fields')
     %br

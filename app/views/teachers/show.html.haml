@@ -8,7 +8,7 @@
 .row-fluid
   .col-md-7
     %p{ align: "justify" }
-      = @teacher.description
+      != @teacher.description
     %p
       - if admin_signed_in?
         .form-actions

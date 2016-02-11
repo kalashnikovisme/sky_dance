@@ -10,6 +10,7 @@ ru:
       lesson:         Занятие
       unlimit:        Безлимит
       office_map:     Карта офиса
+      page:           Страница
     attributes:
       teacher:
         first_name:   Фамилия
@@ -46,6 +47,10 @@ ru:
         name:         Название
       office_map:
         link:         Ссылка в Google Maps
+      page:
+        title: Название
+        body: Текст
+        slug: Ссылка
 
   enumerize:
     group:

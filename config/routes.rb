@@ -10,6 +10,7 @@ SkyDance::Application.routes.draw do
 
   namespace :admin do
     resources :welcome, only: :index
+    resources :pages, except: :show
   end
   resource :session, only: [:new, :create, :destroy]
   resources :groups, except: [:show, :index] do

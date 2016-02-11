@@ -113,7 +113,7 @@ ru:
 
   layouts:
     application:
-      schedule_and_prices:  Расписание и цены
+      schedule:  Расписание
     footer:
       our_adress:           Наш адрес
       schedule_and_prices:  Расписание и цены

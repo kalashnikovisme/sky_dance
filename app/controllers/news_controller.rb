@@ -1,6 +1,8 @@
 class NewsController < ApplicationController
+  before_filter :format_published_at, only: [ :create, :update ]
+
   def index
-    @news = News.order(:published_at).page(params[:page])
+    @news = News.order('published_at desc').page params[:page]
   end
 
   def show
@@ -57,5 +59,13 @@ class NewsController < ApplicationController
     else
       redirect_to not_found_errors_path
     end
+  end
+
+  private
+
+  def format_published_at
+    params[:news][:published_at] ||= DateTime.new params[:news]['published_at(1i)'].to_i,
+    				    params[:news]['published_at(2i)'].to_i,
+    				    params[:news]['published_at(3i)'].to_i
   end
 end

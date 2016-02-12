@@ -75,3 +75,11 @@ ru:
     office_map:
       update:
         success: Адрес офиса в Google Maps изменён
+    admin:    
+      pages:
+        create:
+          success: Страница добавлена
+        update:
+          success: Страница отредактирована
+        destroy:
+          success: Страница удалена

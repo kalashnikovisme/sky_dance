@@ -2,11 +2,13 @@ require 'prawn'
 
 class LessonsController < ApplicationController
   before_filter :need_days, only: :schedule
+  before_filter :format_time, only: [ :create, :update ]
 
   def schedule
     @genres = GenreDecorator.decorate_collection Genre.all
     @lessons = Lesson.all
     @unlimits = Unlimit.all
+    @page = Page.find_by_slug :prices
   end
 
   def schedule_to_pdf
@@ -65,5 +67,16 @@ class LessonsController < ApplicationController
     else
       redirect_to not_found_errors_path
     end
+  end
+
+  private
+
+  def format_time
+    params[:lesson][:time] ||= Time.new params[:lesson]['time(1i)'].to_i,
+					params[:lesson]['time(2i)'].to_i,
+					params[:lesson]['time(3i)'].to_i,
+					(params[:lesson]['time(4i)'].to_i + 3) % 24,
+					params[:lesson]['time(5i)'].to_i,
+					params[:lesson]['time(6i)'].to_i
   end
 end

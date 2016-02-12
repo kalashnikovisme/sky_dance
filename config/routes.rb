@@ -10,6 +10,12 @@ SkyDance::Application.routes.draw do
 
   namespace :admin do
     resources :welcome, only: :index
+    resources :pages, except: :show
+  end
+  resources :pages, only: [] do
+    collection do
+      get '/:slug' => 'pages#show', as: :show
+    end
   end
   resource :session, only: [:new, :create, :destroy]
   resources :groups, except: [:show, :index] do

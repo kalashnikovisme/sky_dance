@@ -73,7 +73,7 @@ class LessonsControllerTest < ActionController::TestCase
 
   test "should not update with no access" do
     attributes = attributes_for :lesson
-    put :update, id: @lesson
+    put :update, id: @lesson, lesson: attributes
     assert_redirected_to not_found_errors_path
   end
 

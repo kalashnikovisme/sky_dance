@@ -23,7 +23,7 @@ class ScheduleReport < Prawn::Document
   end
 
   def group_row(group)
-    if group.lessons.any?
+    if group.lessons.any? && group.teacher.present?
       image group.teacher.decorate.first_photo_thumb, width: 25
       move_down 5
       font_size 16

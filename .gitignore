@@ -27,3 +27,4 @@ config/initializers/secret_token.rb
 *~
 !/public/assets/verdana.ttf
 !/public/assets/verdana-bold.ttf
+!/public/assets/verdana-italic.ttf

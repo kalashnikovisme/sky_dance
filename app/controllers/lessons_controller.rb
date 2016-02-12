@@ -8,6 +8,7 @@ class LessonsController < ApplicationController
     @genres = GenreDecorator.decorate_collection Genre.all
     @lessons = Lesson.all
     @unlimits = Unlimit.all
+    @page = Page.find_by_slug :prices
   end
 
   def schedule_to_pdf

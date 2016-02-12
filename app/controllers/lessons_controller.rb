@@ -72,11 +72,11 @@ class LessonsController < ApplicationController
   private
 
   def format_time
-    params[:lesson][:time] = Time.new params[:lesson]['time(1i)'].to_i,
-				      params[:lesson]['time(2i)'].to_i,
-				      params[:lesson]['time(3i)'].to_i,
-				      params[:lesson]['time(4i)'].to_i + 3,
-				      params[:lesson]['time(5i)'].to_i,
-				      params[:lesson]['time(6i)'].to_i
+    params[:lesson][:time] ||= Time.new params[:lesson]['time(1i)'].to_i,
+					params[:lesson]['time(2i)'].to_i,
+					params[:lesson]['time(3i)'].to_i,
+					(params[:lesson]['time(4i)'].to_i + 3) % 24,
+					params[:lesson]['time(5i)'].to_i,
+					params[:lesson]['time(6i)'].to_i
   end
 end

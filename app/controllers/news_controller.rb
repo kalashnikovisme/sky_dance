@@ -64,7 +64,7 @@ class NewsController < ApplicationController
   private
 
   def format_published_at
-    params[:news][:published_at] = DateTime.new params[:news]['published_at(1i)'].to_i,
+    params[:news][:published_at] ||= DateTime.new params[:news]['published_at(1i)'].to_i,
     				    params[:news]['published_at(2i)'].to_i,
     				    params[:news]['published_at(3i)'].to_i
   end

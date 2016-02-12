@@ -1,0 +1,17 @@
+.row-fluid
+  = link_to 'Новая страница', new_admin_page_path, class: 'btn btn-primary'
+  %table.table.table-striped.table-bordered
+    %thead
+      %th Название
+      %th Текст
+      %th Slug
+      %th Действия
+    %tbody
+      - @pages.each do |page|
+        %tr
+          %td= link_to page.title, edit_admin_page_path(page)
+          %td= strip_tags page.body.first(200)
+          %td= page.slug
+          %td
+            = link_to t('helpers.edit'), edit_admin_page_path(page), class: 'btn btn-warning btn-xs'
+            = link_to t('helpers.destroy'), admin_page_path(page), method: :delete, class: 'btn btn-danger btn-xs'

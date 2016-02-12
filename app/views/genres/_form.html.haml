@@ -4,8 +4,7 @@
   - f.with_options input_html: { class: 'col-md-6' } do |f|
     .field
       = f.input :title
-      = f.label :description
-      = f.text_area :description, rows: 5, class: 'col-md-6'
+      = f.input :description, as: :ckeditor
       %br
       - if @genre and @genre.photo
         = image_tag @genre.photo.thumb, class: 'img-polaroid'

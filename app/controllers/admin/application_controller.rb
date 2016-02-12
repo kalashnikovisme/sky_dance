@@ -8,7 +8,7 @@ class Admin::ApplicationController < ApplicationController
   end
 
   def signed_in?
-    session[:admin_id]
+    Admin.find_by id: session[:admin_id]
   end
 
   def signed_as_admin?

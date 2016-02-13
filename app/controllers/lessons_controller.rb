@@ -63,7 +63,7 @@ class LessonsController < ApplicationController
     if admin_signed_in?
       @lesson = Lesson.find params[:id]
       @lesson.destroy
-      redirect_to lessons_path, flash: :success
+      redirect_to schedule_path, flash: :success
     else
       redirect_to not_found_errors_path
     end

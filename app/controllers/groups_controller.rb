@@ -45,7 +45,7 @@ class GroupsController < ApplicationController
     if admin_signed_in?
       @group = Group.find params[:id]
       @group.destroy
-      redirect_to lessons_path, flash: :success
+      redirect_to schedule_path, flash: :success
     else
       redirect_to not_found_errors_path
     end

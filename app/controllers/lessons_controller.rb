@@ -50,7 +50,7 @@ class LessonsController < ApplicationController
     if admin_signed_in?
       @lesson = LessonForm.find_with_model params[:id]
       if @lesson.submit params[:lesson]
-        redirect_to lessons_path, flash: :success
+        redirect_to schedule_path, flash: :success
       else
         render action: :edit
       end

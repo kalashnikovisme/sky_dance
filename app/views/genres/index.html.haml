@@ -11,7 +11,7 @@
       %td
         = link_to genre.title, genre, class: 'title'
         %br
-        %br= genre.entry
+        %br!= genre.entry
       %td
         - if admin_signed_in?
           = link_to t('edit'), edit_genre_path(genre), class: 'btn btn-mini'

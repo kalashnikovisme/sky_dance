@@ -13,11 +13,6 @@
           = image_tag teacher.first_photo_big_thumb
         %h3= teacher.fio
         %p= teacher.motto
-        - teacher.genres.each do |genre|
-          %a.genre{ href: genre_path(genre) }
-            %img.img-rounded.micro.row-icon{ src: genre.photo }
-        %br
-        %br
         %a.btn.btn-default.btn-medium{ href: teacher_path(teacher) } Подробнее
         - if admin_signed_in?
           = link_to t('edit', default: t('helpers.links.edit')), edit_teacher_path(teacher), class: 'btn btn-xs btn-warning'

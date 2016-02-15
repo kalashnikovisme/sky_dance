@@ -10,8 +10,6 @@ class Group < ActiveRecord::Base
   belongs_to :category
   has_many :lessons, dependent: :destroy
 
-  validates :once_price, presence: true
-  validates :price, presence: true
   validates :space, presence: true
   validates :genre_id, presence: true
   validates :teacher_id, presence: true

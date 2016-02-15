@@ -1,7 +1,5 @@
 = simple_form_for @group do |f|
   - f.with_options input_html: { class: 'col-md-6' } do |f|
-    = f.input :once_price
-    = f.input :price
     = f.input :number, as: :string
     = f.input :space
     = f.association :genre, as: :select, label_method: :title, value_method: :id
@@ -11,4 +9,4 @@
     %a.btn.btn-warning{ href: admins_categories_path }= t('.admins_categories')
     .form-actions
       = f.button :submit, t('save'), class: 'btn btn-primary'
-      = link_to t('cancel', default: t("helpers.links.cancel")), groups_path, class: 'btn'
+      = link_to t('cancel', default: t("helpers.links.cancel")), schedule_path, class: 'btn'

@@ -7,6 +7,7 @@
       = menu_item t('dances'), genres_path
       = menu_item t('teachers'), teachers_path
       = menu_item t('contacts'), contacts_welcome_index_path
+      = menu_item t('prices'), show_pages_path(:prices)
     - if admin_signed_in?
       %ul.nav.navbar-nav.pull-right
         = menu_item t('adminka'), admin_path

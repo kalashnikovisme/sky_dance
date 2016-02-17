@@ -61,6 +61,16 @@
   .row
     .main_text
       = t('.text_about_sky_dance')
+  .row
+    - unless params[:contact] == 'success'
+      %hr
+      %h3
+        Форма для связи
+      = simple_form_for @contact, url: { controller: 'api/contacts', action: :create } do |f|
+        = f.input :name, as: :string
+        = f.input :phone, as: :string
+        = f.input :email, as: :string
+        = f.button :submit, t('.request_call')
 .col-md-3
   %a{ href: genres_path }
     %h3

@@ -1,0 +1,17 @@
+.row-fluid
+  = link_to 'Новый контакт', new_admin_contact_path, class: 'btn btn-primary'
+  %table.table.table-striped.table-bordered
+    %thead
+      %th Имя
+      %th Телефон
+      %th Email
+      %th Действия
+    %tbody
+      - @contacts.each do |contact|
+        %tr
+          %td= link_to contact.name, edit_admin_contact_path(contact)
+          %td= contact.phone
+          %td= contact.email
+          %td
+            = link_to t('helpers.edit'), edit_admin_contact_path(contact), class: 'btn btn-warning btn-xs'
+            = link_to t('helpers.destroy'), admin_contact_path(contact), method: :delete, class: 'btn btn-danger btn-xs'

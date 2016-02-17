@@ -51,7 +51,10 @@ ru:
         title: Название
         body: Текст
         slug: Ссылка
-
+      contact:
+        name: Имя
+        phone: Телефон
+        email: Электронная почта
   enumerize:
     group:
       space:

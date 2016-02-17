@@ -11,6 +11,7 @@ SkyDance::Application.routes.draw do
   namespace :admin do
     resources :welcome, only: :index
     resources :pages, except: :show
+    resources :contacts, except: :show
   end
   resources :pages, only: [] do
     collection do

@@ -7,6 +7,7 @@ class WelcomeController < ApplicationController
     @photos_bottom = Photo.last 3
     @teachers = TeacherDecorator.decorate_collection Teacher.all.shuffle
     @video = Video.last.decorate if Video.any?
+    @contact = Contact.new
   end
 
   def contacts

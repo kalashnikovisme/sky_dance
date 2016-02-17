@@ -72,4 +72,7 @@ SkyDance::Application.routes.draw do
   end
   resources :unlimits, except: [:show, :index]
   resources :office_map, only: [ :edit, :update ]
+  namespace :api do
+    resources :contacts, only: :create
+  end
 end

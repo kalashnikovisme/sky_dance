@@ -1,3 +1,3 @@
 class ContactForm < ApplicationForm
-  properties :name, :email, :phone
+  properties :name, :comment, :phone
 end

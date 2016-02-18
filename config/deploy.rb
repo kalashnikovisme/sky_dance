@@ -79,7 +79,7 @@ after 'deploy:finalize_update', 'bundler:install'
 after 'deploy:update', 'assets:precompile', 'files:link_update', 'unicorn:start'
 
 before 'assets:precompile', 'assets:clean'
-after 'deploy:migrate', 'bundler:install'
+before 'deploy:migrate', 'bundler:install'
 
 require 'capistrano_colors'
 

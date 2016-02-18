@@ -54,7 +54,7 @@ ru:
       contact:
         name: Имя
         phone: Телефон
-        email: Электронная почта
+        comment: Комментарий
   enumerize:
     group:
       space:

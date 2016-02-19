@@ -4,7 +4,7 @@
   %h1= t('schedule')
 - @genres.each do |genre|
   = render 'genre', genre: genre
-= link_to t('print'), schedule_pdf_path, class: 'btn'
+= link_to t('print'), '#', class: 'btn print_button'
 %br
 %br
 %small

@@ -9,3 +9,5 @@
 $ ->
   $('.link').click ->
     location.href = $(this).data('href')
+  $('.print_button').click ->
+    window.print()

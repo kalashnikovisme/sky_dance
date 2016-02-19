@@ -74,9 +74,9 @@ namespace :assets do
 
 end
 
-before 'deploy:update', 'unicorn:stop', "files:backup", "db:backup"
+before 'deploy:update',  "files:backup", "db:backup"
 after 'deploy:finalize_update', 'bundler:install'
-after 'deploy:update', 'assets:precompile', 'files:link_update', 'unicorn:start'
+after 'deploy:update', 'assets:precompile', 'files:link_update', 'unicorn:restart'
 
 before 'assets:precompile', 'assets:clean'
 before 'deploy:migrate', 'bundler:install'
